@@ -16,7 +16,7 @@ $docemail=$_POST['docemail'];
 $sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
 if($sql)
 {
-	echo "<script>window.location.href ='Manage-doctors.php'</script>";
+	echo "<script>window.location.href ='manage-doctors.php'</script>";
 $msg="Detalles del doctor actualizados exitosamente";
 
 }

@@ -17,7 +17,7 @@ $sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,doc
 if($sql)
 {
 echo "<script>alert('Doctor Agregado Exitosamente');</script>";
-echo "<script>window.location.href ='Manage-doctors.php'</script>";
+echo "<script>window.location.href ='manage-doctors.php'</script>";
 
 }
 }
