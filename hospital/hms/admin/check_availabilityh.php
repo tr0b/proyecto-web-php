@@ -11,7 +11,7 @@ echo "<span style='color:red'>la cama ya existe.</span>";
  echo "<script>$('#submit').prop('disabled',true);</script>";
 } else{
 	
-	echo "<span style='color:green'> Esta disponible.</span>";
+	echo "<span style='color:green'> Esta disponible la cama.</span>";
  echo "<script>$('#submit').prop('disabled',false);</script>";
 }
 }

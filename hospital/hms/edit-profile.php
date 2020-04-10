@@ -116,9 +116,9 @@ while($data=mysqli_fetch_array($sql))
 														</div>
 <div class="form-group">
 															<label for="Docid">
-																Cédula
+																Numero de Documento registrado
 															</label>
-		<input type="text" name="Docid" class="form-control" required="required"  value="<?php echo htmlentities($data['Docid']);?>" >
+		<input type="text" name="Docid" class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['Docid']);?>" >
 														</div>
 	
 <div class="form-group">                                        Género
