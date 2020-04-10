@@ -1,37 +1,38 @@
 <?php
-session_start();
-error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
-check_login();
+	session_start();
+	error_reporting(0);
+	include('include/config.php');
+	include('include/checklogin.php');
+	check_login();
 
-if(isset($_POST['submit']))
-{	
-	$docid=$_SESSION['id'];
-	$patname=$_POST['patname'];
-$patcontact=$_POST['patcontact'];
-$patemail=$_POST['patemail'];
-$gender=$_POST['gender'];
-$pataddress=$_POST['pataddress'];
-$patage=$_POST['patage'];
-$medhis=$_POST['medhis'];
-$password=md5($_POST['password']);
-$habitacion=$_POST['habitacion'];
-$piso=$_POST['piso'];
-$cama=$_POST['cama'];
-$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
-if($sql)
+	if(isset($_POST['submit']))
+		{	
+			$docid=$_SESSION['id'];
+			$patname=$_POST['patname'];
+		$patcontact=$_POST['patcontact'];
+		$patemail=$_POST['patemail'];
+		$gender=$_POST['gender'];
+		$pataddress=$_POST['pataddress'];
+		$patage=$_POST['patage'];
+		$medhis=$_POST['medhis'];
+		$password=md5($_POST['password']);
+
+		$habitacion=$_POST['habitacion'];
+		$piso=$_POST['piso'];
+		$cama=$_POST['cama'];
+		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
+		if($sql)
 {
-echo "<script>alert('Registrado exitosamente.');</script>";
-header('location:manage-patient.php');
+	echo "<script>alert('Registrado exitosamente.');</script>";
+	header('location:manage-patient.php');
 
-}
-}
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | AGREGAR PACIENTE</title>
+		<title>Doctor | Agregar Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -48,27 +49,34 @@ header('location:manage-patient.php');
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		<script type="text/javascript">
+		</script>
+
+		<script type="text/javascript">
 function valid()
 {
  if(document.registration.password.value!= document.registration.password_again.value)
 {
-alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
+alert("Contraseña no coinciden !!");
 document.registration.password_again.focus();
 return false;
 }
 return true;
 }
 </script>
+		
 
-	<script>
-function userAvailability() {
+		
+
+
+<script>
+function checkemailAvailability() {
 $("#loaderIcon").show();
 jQuery.ajax({
-url: "check_availability.php",
-data:'email='+$("#patemail").val(),
+url: "check_availabilityp.php",
+data:'emailid='+$("#PatientEmail").val(),
 type: "POST",
 success:function(data){
-$("#user-availability-status1").html(data);
+$("#email-availability-status").html(data);
 $("#loaderIcon").hide();
 },
 error:function (){}
@@ -76,107 +84,165 @@ error:function (){}
 }
 </script>
 
-	</head>
-	<body>
-		<div id="app">		
-<?php include('include/sidebar.php');?>
-<div class="app-content">
-<?php include('include/header.php');?>
+
+
+
+
+<script>
+function checkemailAvailability2() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityc.php",
+data:'patcontact='+$("#PatientContno").val(),
+type: "POST",
+success:function(data){
+$("#document-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
+</head>
+
+
+<body>
+
+<div id="app">		
+	<?php include('include/sidebar.php');?>
+
+	<div class="app-content">
+
+	<?php include('include/header.php');?>
 						
-<div class="main-content" >
-<div class="wrap-content container" id="container">
-						<!-- start: PAGE TITLE -->
-<section id="page-title">
-<div class="row">
-<div class="col-sm-8">
-<h1 class="mainTitle">Doctor | Agregar Paciente</h1>
-</div>
-<ol class="breadcrumb">
-<li>
-<span>Patiente</span>
-</li>
-<li class="active">
-<span>Agregar Paciente</span>
-</li>
-</ol>
-</div>
+
+	<div class="main-content" >
+	<div class="wrap-content container" id="container">
+
+
+	<!-- start: PAGE TITLE -->
+
+	<section id="page-title">
+
+	<div class="row">
+	<div class="col-sm-8">
+			<h1 class="mainTitle">Paciente | Agregar Paciente</h1>
+	</div>
+
+	<ol class="breadcrumb">
+	<li>
+	<span>Paciente</span>
+	</li>
+
+	<li class="active">
+	<span>Add Patient</span>
+	</li>
+	</ol>
+
+	</div>
+
 </section>
-<div class="container-fluid container-fullw bg-white">
-<div class="row">
-<div class="col-md-12">
-<div class="row margin-top-30">
-<div class="col-lg-8 col-md-12">
-<div class="panel panel-white">
-<div class="panel-heading">
-<h5 class="panel-title">Add Patient</h5>
+
+	<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+
+					<div class="copyright">
+						 <span class=""></span><span class=""> Ver Docuemtos registrados de pacientes
+						</span>. <span></span>
+						<i class="fa fa-lock"></i>
+									 </span>
+									 <a href="listaDoc.php">
+									ir a lista
+								</a>
+					</div>
+
+	<div class="col-md-12">
+	<div class="row margin-top-30">
+	<div class="col-lg-8 col-md-12">
+	<div class="panel panel-white">
+	<div class="panel-heading">
+	<h5 class="panel-title">Agregar Paciente</h5>
+	</div>
+	
+	<div class="panel-body">
+
+	<form role="form" name="" method="post">
+
+	<div class="form-group">
+	<label for="doctorname">
+
+		Nombre del paciente
+	</label>
+		<input type="text" id="patname" name="patname" class="form-control"  placeholder="Nombre" required="true">
+
+	</div>
+	<div class="form-group">
+									<label for="fess">
+																Numero de Documento del Paciente
+															</label>
+<input type="text" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
+<span id="document-availability-status"></span>
 </div>
-<div class="panel-body">
-<form role="form" name="" method="post">
+	
+<div class="form-group">
+									<label for="fess">
+																Correo del paciente
+															</label>
+<input type="email" id="PatientEmail" name="PatientEmail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
+<span id="email-availability-status"></span>
+</div>
+
+						
 
 <div class="form-group">
-<label for="doctorname">
-Nombre del Paciente
-</label>
-<input type="text" name="patname" class="form-control"  placeholder="Enter Patient Name" required="true">
-</div>
-<div class="form-group">
-<label for="fess">
- Contacto del Paciente no.
-</label>
-<input type="text" name="patcontact" class="form-control"  placeholder="Enter Patient Contact no" required="true" maxlength="10" pattern="[0-9]+">
-</div>
-<p>
-								Ingrese los detalles de su cuenta a continuación:
-							</p>
-							<div class="form-group">
-								<span class="input-icon">
-									<input type="email" class="form-control" name="patemail" id="patemail" onBlur="userAvailability()"  placeholder="Correo" required>
-									<i class="fa fa-envelope"></i> </span>
-									 <span id="user-availability-status1" style="font-size:12px;"></span>
-							</div>
-<div class="form-group">
 <label class="block">
-Género
+	Género
+
+
 </label>
-<div class="clip-radio radio-primary">
-<input type="radio" id="rg-female" name="gender" value="female" >
-<label for="rg-female">
-Femenino
+		<div class="clip-radio radio-primary">
+		<input type="radio" id="rg-female" name="gender" value="mujer" >
+		<label for="rg-female">	
+	Mujer 
+		</label>
+		<input type="radio" id="rg-male" name="gender" value="hombre">
+		<label for="rg-male">
+	hombre </label>
+		</div>
+		</div>
+
+		<div class="form-group">
+		<label for="address">
+	Dirección del Procedencia
 </label>
-<input type="radio" id="rg-male" name="gender" value="male">
-<label for="rg-male">
-Masculino
-</label>
+<textarea name="pataddress" class="form-control"  placeholder="Ingrese la dirección del paciente" required="true"></textarea>
 </div>
-</div>
-<div class="form-group">
-<label for="address">
-Dirección de Procedencia
-</label>
-<textarea name="pataddress" class="form-control"  placeholder="Dirección de Procedencia" required="true"></textarea>
-</div>
-<div class="form-group">
-<label for="fess">
- Edad del Paciente
-</label>
-<input type="text" name="patage" class="form-control"  placeholder="Edad del Paciente" required="true">
-</div>
+
 <div class="form-group">
 <label for="fess">
- Historial Médico
+	Edad del paciente
 </label>
-<textarea type="text" name="medhis" class="form-control"  placeholder="Historial Médico" required="true"></textarea>
+<input type="text" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
 </div>
-							<div class="form-group">
+
+<div class="form-group">
+<label for="fess">
+Historial médico
+</label>
+<textarea type="text" name="medhis" class="form-control"  placeholder="Ingrese el historial médico del paciente (si corresponde)" required="true"></textarea>
+</div>
+<div class="form-group">
 								<span class="input-icon">
-									<input type="contraseña" class="form-control" id="password" name="password" placeholder="contraseña" required>
+									<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
 									<i class="fa fa-lock"></i> </span>
 							</div>
 							<div class="form-group">
 								<span class="input-icon">
-									<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="Ingrese de nuevo la contraseña" required>
+									<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="Contraseña confirmar" required>
 									<i class="fa fa-lock"></i> </span>
 							</div>
+
 
 														<div class="form-group">
 															<label for="habitacion">
@@ -222,7 +288,7 @@ while($row=mysqli_fetch_array($ret))
 																Cama
 															</label>
 
-															<select name="cama" class="form-control" required="true">
+															<select name="cama" class="form-control" onBlur="checkemailAvailability3()" required="true">
 																<option value="">Seleccionar Cama</option>
 <?php $ret=mysqli_query($con,"select * from habitacion");
 while($row=mysqli_fetch_array($ret))
@@ -234,7 +300,12 @@ while($row=mysqli_fetch_array($ret))
 																<?php } ?>
 																
 															</select>
+															
+																
+															</span>
 														</div>
+
+
 <button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
 Agregar
 </button>

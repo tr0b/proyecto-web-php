@@ -35,18 +35,7 @@ echo "<script>window.location.href ='user-login.php'</script>";
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 
-				<script type="text/javascript">
-function valid()
-{
- if(document.passwordreset.password.value!= document.passwordreset.password_again.value)
-{
-alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
-document.passwordreset.password_again.focus();
-return false;
-}
-return true;
-}
-</script>
+				
 	</head>
 	<body class="login">
 		<div class="row">
@@ -73,12 +62,6 @@ return true;
 </div>
 	
 
-<div class="form-group">
-<span class="input-icon">
-<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="verificar contraseña" required>
-<i class="fa fa-lock"></i> </span>
-</div>
-							
 
 							<div class="form-actions">
 								

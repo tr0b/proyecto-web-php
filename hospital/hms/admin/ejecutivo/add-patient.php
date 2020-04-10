@@ -65,6 +65,8 @@ return true;
 </script>
 		
 
+		
+
 
 <script>
 function checkemailAvailability() {
@@ -90,11 +92,11 @@ error:function (){}
 function checkemailAvailability2() {
 $("#loaderIcon").show();
 jQuery.ajax({
-url: "check_availabilityp.php",
+url: "check_availabilityc.php",
 data:'patcontact='+$("#PatientContno").val(),
 type: "POST",
 success:function(data){
-$("#email-availability-status").html(data);
+$("#document-availability-status").html(data);
 $("#loaderIcon").hide();
 },
 error:function (){}
@@ -179,8 +181,8 @@ error:function (){}
 									<label for="fess">
 																Numero de Documento del Paciente
 															</label>
-<input type="email" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability2()">
-<span id="email-availability-status"></span>
+<input type="text" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
+<span id="document-availability-status"></span>
 </div>
 	
 <div class="form-group">
@@ -286,7 +288,7 @@ while($row=mysqli_fetch_array($ret))
 																Cama
 															</label>
 
-															<select name="cama" class="form-control" required="true">
+															<select name="cama" class="form-control" onBlur="checkemailAvailability3()" required="true">
 																<option value="">Seleccionar Cama</option>
 <?php $ret=mysqli_query($con,"select * from habitacion");
 while($row=mysqli_fetch_array($ret))
@@ -298,6 +300,9 @@ while($row=mysqli_fetch_array($ret))
 																<?php } ?>
 																
 															</select>
+															
+																
+															</span>
 														</div>
 
 

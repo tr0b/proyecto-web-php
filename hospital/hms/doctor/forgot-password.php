@@ -10,7 +10,7 @@ $query=mysqli_query($con,"select id from  doctors where contactno='$contactno' a
 $row=mysqli_num_rows($query);
 if($row>0){
 
-$_SESSION['cnumber']=$contactno;
+$_SESSION['contactno']=$contactno;
 $_SESSION['email']=$email;
 header('location:reset-password.php');
 } else {
