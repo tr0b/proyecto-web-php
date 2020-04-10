@@ -7,7 +7,7 @@ check_login();
 if(isset($_GET['cancel']))
 		  {
 mysqli_query($con,"update appointment set doctorStatus='0' where id ='".$_GET['id']."'");
-                  $_SESSION['msg']="Appointment canceled !!";
+                  $_SESSION['msg']="Cita cancelada !!";
 		  }
 ?>
 <!DOCTYPE html>

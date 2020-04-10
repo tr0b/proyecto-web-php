@@ -176,7 +176,7 @@ while($data=mysqli_fetch_array($sql))
 		
 			<!-- start: SETTINGS -->
 	<?php include('include/setting.php');?>
-			<>
+		
 			<!-- end: SETTINGS -->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->

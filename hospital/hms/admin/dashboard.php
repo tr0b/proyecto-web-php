@@ -105,7 +105,7 @@ $num_rows1 = mysqli_num_rows($result1);
 											<p class="links cl-effect-1">
 												<a href="book-appointment.php">
 													<a href="manage-patient.php">
-												<?php $sql= mysqli_query($con,"SELECT * FROM appointment");
+												<?php $sql= mysqli_query($con,"SELECT * FROM tblpatient");
 $num_rows2 = mysqli_num_rows($sql);
 {
 ?>
