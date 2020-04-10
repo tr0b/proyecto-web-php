@@ -14,7 +14,7 @@ $_SESSION['cnumber']=$contactno;
 $_SESSION['email']=$email;
 header('location:reset-password.php');
 } else {
-echo "<script>alert('Invalid details. Please try with valid details');</script>";
+echo "<script>alert('Detalles inválidos Por favor intente con detalles válidos');</script>";
 echo "<script>window.location.href ='forgot-password.php'</script>";
 
 
@@ -88,7 +88,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 					</form>
 
 					<div class="copyright">
-						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> HW</span>. <span>Todos los derechos son reservados</span>
+						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> HW</span>. <span></span>
 					</div>
 			
 				</div>

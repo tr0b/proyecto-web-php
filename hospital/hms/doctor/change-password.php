@@ -13,11 +13,11 @@ $num=mysqli_fetch_array($sql);
 if($num>0)
 {
  $con=mysqli_query($con,"update doctors set password='".md5($_POST['npass'])."', updationDate='$currentTime' where id='".$_SESSION['id']."'");
-$_SESSION['msg1']="Password Changed Successfully !!";
+$_SESSION['msg1']="Contraseña cambiada con éxito !!";
 }
 else
 {
-$_SESSION['msg1']="Old Password not match !!";
+$_SESSION['msg1']="¡La contraseña anterior no coincide!";
 }
 }
 ?>
@@ -45,25 +45,25 @@ function valid()
 {
 if(document.chngpwd.cpass.value=="")
 {
-alert("Current Password Filed is Empty !!");
+alert("¡La contraseña actual archivada está vacía!");
 document.chngpwd.cpass.focus();
 return false;
 }
 else if(document.chngpwd.npass.value=="")
 {
-alert("New Password Filed is Empty !!");
+alert("¡Nueva contraseña archivada está vacía!");
 document.chngpwd.npass.focus();
 return false;
 }
 else if(document.chngpwd.cfpass.value=="")
 {
-alert("Confirm Password Filed is Empty !!");
+alert("¡Confirme que la contraseña archivada esté vacía!");
 document.chngpwd.cfpass.focus();
 return false;
 }
 else if(document.chngpwd.npass.value!= document.chngpwd.cfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
 document.chngpwd.cfpass.focus();
 return false;
 }
@@ -168,7 +168,7 @@ return true;
 		
 			<!-- start: SETTINGS -->
 	<?php include('include/setting.php');?>
-			<>
+			
 			<!-- end: SETTINGS -->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->

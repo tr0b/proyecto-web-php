@@ -10,7 +10,7 @@ $email=$_SESSION['email'];
 $newpassword=md5($_POST['password']);
 $query=mysqli_query($con,"update doctors set password='$newpassword' where contactno='$cno' and docEmail='$email'");
 if ($query) {
-echo "<script>alert('Password successfully updated.');</script>";
+echo "<script>alert('Contraseña actualizada con éxito.');</script>";
 echo "<script>window.location.href ='index.php'</script>";
 }
 
@@ -41,7 +41,7 @@ function valid()
 {
  if(document.passwordreset.password.value!= document.passwordreset.password_again.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
 document.passwordreset.password_again.focus();
 return false;
 }

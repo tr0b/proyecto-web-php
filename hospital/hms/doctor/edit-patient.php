@@ -18,7 +18,7 @@ $medhis=$_POST['medhis'];
 $sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where id='$eid'");
 if($sql)
 {
-echo "<script>alert('Patient info updated Successfully');</script>";
+echo "<script>alert('Información del paciente actualizada con éxito');</script>";
 header('location:manage-patient.php');
 
 }

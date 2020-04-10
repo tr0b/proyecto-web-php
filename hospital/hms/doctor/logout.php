@@ -7,7 +7,7 @@ $ldate=date( 'd-m-Y h:i:s A', time () );
 mysqli_query($con,"UPDATE doctorslog  SET logout = '$ldate' WHERE uid = '".$_SESSION['ID']."' ORDER BY ID DESC LIMIT 1");
 session_unset();
 //session_destroy();
-$_SESSION['errmsg']="You have successfully logout";
+$_SESSION['errmsg']="Has cerrado la sesión correctamente";
 ?>
 <script language="javascript">
 document.location="../../index.html";

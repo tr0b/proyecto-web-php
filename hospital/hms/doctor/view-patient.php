@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
   }
   else
     {
-      echo '<script>alert("Something Went Wrong. Please try again")</script>';
+      echo '<script>alert("Algo salió mal. Inténtalo de nuevo")</script>';
     }
 
   
