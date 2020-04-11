@@ -31,6 +31,33 @@ if(isset($_POST['submit']))
 }
 
 ?>
+<?php
+
+if(isset($_GET['del']))
+      {
+              mysqli_query($con,"delete from tblmedicalhistory where  ID='".$_GET['ID']."'");
+                  $_SESSION['msg']="datos eliminados !!!";
+   header('location:manage-patient.php');
+
+
+      }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,6 +140,27 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientMedhis'];?></td>
      <th>Fecha de registro del paciente</th>
     <td><?php  echo $row['CreationDate'];?></td>
+
+  </tr>
+  <tr>
+    
+    <th>Habitacion  </th>
+    <td><?php  echo $row['habitacion'];?></td>
+        <th>Piso</th>
+      <td><?php  echo $row['piso'];?></td>
+      
+ 
+  </tr>
+  <tr>
+    
+    
+          <th>Cama</th>
+        <td><?php  echo $row['cama'];?> </td>
+                  <th></th>
+        <td><?php  echo $row[''];?> </td>
+   
+   
+ 
   </tr>
  
 <?php }?>
@@ -138,9 +186,13 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
 <th> Medico </th>
+<th> Accion</th>
+
+
 
 </tr>
 <?php  
+
 while ($row=mysqli_fetch_array($ret)) { 
   ?>
 <tr>
@@ -153,8 +205,41 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
+   <td >
+                <div class="visible-md visible-lg hidden-sm hidden-xs">
+              <a href="edithis.php?ID=<?php echo $row['ID'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>     
+                          
+  <a href="?ID=<?php echo $row['ID']?>&del=delete" onClick="return confirm('¿Estás seguro de que quieres eliminar?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+
+                        </div>
+                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                          <div class="btn-group" dropdown is-open="status.isopen">
+                            <button type="button" class="btn btn-primary btn-o btn-sm dropdown-toggle" dropdown-toggle>
+                              <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                              <li>
+                                <a href="#">
+                                  Editar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  Compartir
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  Remover
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div></td>
 </tr>
+
 <?php $cnt=$cnt+1;} ?>
+
 </table>
 
 <p align="center">                            

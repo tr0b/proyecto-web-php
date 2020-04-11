@@ -7,9 +7,8 @@ check_login();
 
 if(isset($_GET['del']))
 		  {
-		          mysqli_query($con,"delete from users where id = '".$_GET['id']."'");
-                  $_SESSION['msg']="datos eliminados !!!";
-		  }
+		  mysqli_query($con,"delete from tblpatient where id = '".$_GET['id']."'");
+                  $_SESSION['msg']="datos eliminados !!!";		  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

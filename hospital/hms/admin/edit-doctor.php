@@ -11,9 +11,9 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
+$contactno=$_POST['contactno'];
 $docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
+$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$contactno',docEmail='$docemail' where id='$did'");
 if($sql)
 {
 	echo "<script>window.location.href ='manage-doctors.php'</script>";
@@ -138,9 +138,9 @@ while($row=mysqli_fetch_array($ret))
 	
 <div class="form-group">
 									<label for="fess">
-															Contacto del Médico no.
+															Cedula del Medico no#
 															</label>
-					<input type="text" name="doccontact" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
+					<input type="text" name="contactno" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">

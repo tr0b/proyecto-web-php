@@ -11,11 +11,12 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
+$contactno=$_POST['contactno'];
 $docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
+$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$contactno',docEmail='$docemail' where id='$did'");
 if($sql)
 {
+	echo "<script>window.location.href ='manage-doctors.php'</script>";
 $msg="Detalles del doctor actualizados exitosamente";
 
 }
@@ -24,7 +25,7 @@ $msg="Detalles del doctor actualizados exitosamente";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Ejecutivo | Editar Detalles del Doctor</title>
+		<title>Admin | Editar Detalles del Doctor</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -58,14 +59,14 @@ $msg="Detalles del doctor actualizados exitosamente";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Ejecutivo | Editar Detalles del Doctor</h1>
+									<h1 class="mainTitle">ADMINISTRADOR | EDITAR DETALLES DEL MÉDICO</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Ejecutivo</span>
+										<span>Administración</span>
 									</li>
 									<li class="active">
-										<span>Editar Detalles del Doctor</span>
+										<span>Editar detalles del médico</span>
 									</li>
 								</ol>
 							</div>
@@ -88,7 +89,7 @@ $msg="Detalles del doctor actualizados exitosamente";
 while($data=mysqli_fetch_array($sql))
 {
 ?>
-<h4>Perfil del <?php echo htmlentities($data['doctorName']);?></h4>
+<h4>Perfil de <?php echo htmlentities($data['doctorName']);?></h4>
 <p><b>Perfil Reg. Fecha:  </b><?php echo htmlentities($data['creationDate']);?></p>
 <?php if($data['updationDate']){?>
 <p><b>Fecha de última actualización del perfil:</b><?php echo htmlentities($data['updationDate']);?></p>
@@ -116,7 +117,7 @@ while($row=mysqli_fetch_array($ret))
 
 <div class="form-group">
 															<label for="doctorname">
-															Nombre del Doctor
+															Nombre del doctor
 															</label>
 	<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['doctorName']);?>" >
 														</div>
@@ -124,37 +125,32 @@ while($row=mysqli_fetch_array($ret))
 
 <div class="form-group">
 															<label for="address">
-																Dirección de Procedencia
+																Dirección de la clínica del médico
 															</label>
 					<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">
-																Horarios de consultoría médica
+																Horarios de Consultoría Médica
 															</label>
 		<input type="text" name="docfees" class="form-control" required="required"  value="<?php echo htmlentities($data['docFees']);?>" >
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
-															Contacto médico n#
+															Cedula del Medico no#
 															</label>
-					<input type="text" name="doccontact" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
+					<input type="text" name="contactno" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																Email del doctor
+																Email del Doctor
 															</label>
 					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['docEmail']);?>">
-														</div>
-
-
-
+														</div>	
 														
 														<?php } ?>
-														
-														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
 														Actualizar
 														</button>
@@ -175,12 +171,7 @@ while($row=mysqli_fetch_array($ret))
 								</div>
 							</div>
 						</div>
-						<!-- end: BASIC EXAMPLE -->
-			
-					
-					
-						
-						
+						<!-- end: BASIC EXAMPLE -->		
 					
 						<!-- end: SELECT BOXES -->
 						

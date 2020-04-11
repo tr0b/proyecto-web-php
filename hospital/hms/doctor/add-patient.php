@@ -9,7 +9,7 @@
 		{	
 			$docid=$_SESSION['id'];
 			$patname=$_POST['patname'];
-		$patcontact=$_POST['patcontact'];
+		$PatientContno=$_POST['PatientContno'];
 		$patemail=$_POST['patemail'];
 		$gender=$_POST['gender'];
 		$pataddress=$_POST['pataddress'];
@@ -20,7 +20,7 @@
 		$habitacion=$_POST['habitacion'];
 		$piso=$_POST['piso'];
 		$cama=$_POST['cama'];
-		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
+		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$PatientContno','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
 		if($sql)
 {
 	echo "<script>alert('Registrado exitosamente.');</script>";

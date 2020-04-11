@@ -78,7 +78,7 @@ $sdata=$_POST['searchdata'];
 <tr>
 <th class="center">#</th>
 <th>Nombre del Paciente</th>
-<th>COntacto del Paciente no.</th>
+<th>Documento del paciente</th>
 <th>Género del Paciente </th>
 <th>Fecha de Creación</th>
 <th>Fecha de Actualización</th>

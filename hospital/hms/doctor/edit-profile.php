@@ -9,9 +9,9 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
+$contactno=$_POST['contactno'];
 $docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='".$_SESSION['id']."'");
+$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$contactno' where id='".$_SESSION['id']."'");
 if($sql)
 {
 echo "<script>alert('Detalles del doctor actualizados exitosamente   '');</script>";
@@ -52,7 +52,7 @@ echo "<script>alert('Detalles del doctor actualizados exitosamente   '');</scrip
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor | Editar Detalles del Doctor/h1>
+									<h1 class="mainTitle">Doctor | Editar Detalles del Doctor</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -130,9 +130,9 @@ while($row=mysqli_fetch_array($ret))
 	
 <div class="form-group">
 									<label for="fess">
-																 Contacto del Doctor no.
+																Cedula del medico
 															</label>
-					<input type="text" name="doccontact" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
+					<input type="text" name="contactno" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">

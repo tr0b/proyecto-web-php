@@ -96,9 +96,9 @@ Nombre del Paciente
 </div>
 <div class="form-group">
 <label for="fess">
- Contacto del Paicnete no.
+Documento del paciente
 </label>
-<input type="text" name="patcontact" class="form-control"  value="<?php  echo $row['PatientContno'];?>" required="true" maxlength="10" pattern="[0-9]+">
+<input type="text" name="patcontact" class="form-control" readonly='true' value="<?php  echo $row['PatientContno'];?>"  maxlength="10" pattern="[0-9]+">
 </div>
 <div class="form-group">
 <label for="fess">
@@ -145,7 +145,7 @@ Dirección de Procedencia del Paciente
 </div>
 <?php } ?>
 <button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-Aztualizacón
+Actualizacion
 </button>
 </form>
 </div>

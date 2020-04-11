@@ -10,13 +10,13 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
+$contactno=$_POST['	contactno'];
 $docemail=$_POST['docemail'];
 $password=md5($_POST['npass']);
-$sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
+$sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$contactno','$docemail','$password')");
 if($sql)
 {
-echo "<script>alert('Doctor Agregado Exitosamente');</script>";
+echo "<script>alert('Información del médico agregada con éxito');</script>";
 echo "<script>window.location.href ='manage-doctors.php'</script>";
 
 }
@@ -25,7 +25,7 @@ echo "<script>window.location.href ='manage-doctors.php'</script>";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Agregar Doctor</title>
+		<title>Ejecutivo | Agregar Doctor</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -46,7 +46,7 @@ function valid()
 {
  if(document.adddoc.npass.value!= document.adddoc.cfpass.value)
 {
-alert("La contraseña y el campo Confirmar contraseña no coinciden!");
+alert("Password and Confirm Password Field do not match  !!");
 document.adddoc.cfpass.focus();
 return false;
 }
@@ -85,14 +85,14 @@ error:function (){}
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | Agregar Doctor</h1>
+									<h1 class="mainTitle">Ejecutivo | Agregar Doctor</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Ejecutivo</span>
 									</li>
 									<li class="active">
-										<span>Agregar Doctor</span>
+										<span>Ejecutivo | Agregar Doctor</span>
 									</li>
 								</ol>
 							</div>
@@ -107,7 +107,7 @@ error:function (){}
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Agregar Doctor</h5>
+													<h5 class="panel-title">AGREGAR DOCTOR</h5>
 												</div>
 												<div class="panel-body">
 									
@@ -153,14 +153,14 @@ while($row=mysqli_fetch_array($ret))
 	
 <div class="form-group">
 									<label for="fess">
-														Cedula
+														Cedula Medica no#
 															</label>
-					<input type="text" name="doccontact" class="form-control"  placeholder="Cedula" required="true">
+					<input type="text" name="contactno" class="form-control"  placeholder="id" required="true">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																Email del Doctor
+																Email del doctor
 															</label>
 <input type="email" id="docemail" name="docemail" class="form-control"  placeholder=" Email" required="true" onBlur="checkemailAvailability()">
 <span id="email-availability-status"></span>
@@ -206,7 +206,12 @@ while($row=mysqli_fetch_array($ret))
 							</div>
 						</div>
 						<!-- end: BASIC EXAMPLE -->
-
+			
+					
+					
+						
+						
+					
 						<!-- end: SELECT BOXES -->
 						
 					</div>

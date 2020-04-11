@@ -10,14 +10,14 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
+$contactno=$_POST['	contactno'];
 $docemail=$_POST['docemail'];
 $password=md5($_POST['npass']);
-$sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
+$sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$contactno','$docemail','$password')");
 if($sql)
 {
-echo "<script>alert('Doctor info added Successfully');</script>";
-echo "<script>window.location.href ='index.php'</script>";
+echo "<script>alert('Información del médico agregada con éxito');</script>";
+echo "<script>window.location.href ='manage-doctors.php'</script>";
 
 }
 }
@@ -153,9 +153,9 @@ while($row=mysqli_fetch_array($ret))
 	
 <div class="form-group">
 									<label for="fess">
-														Cedula Medica no.
+														Cedula Medica no#
 															</label>
-					<input type="text" name="doccontact" class="form-control"  placeholder="id" required="true">
+					<input type="text" name="contactno" class="form-control"  placeholder="id" required="true">
 														</div>
 
 <div class="form-group">
