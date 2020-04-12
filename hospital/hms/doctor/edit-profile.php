@@ -92,8 +92,8 @@ while($data=mysqli_fetch_array($sql))
 															<label for="DoctorSpecialization">
 																Especialización del Doctor
 															</label>
-							<select name="Doctorspecialization" class="form-control" required="required">
-					<option value="<?php echo htmlentities($data['specilization']);?>">
+							<select  readonly="readonly" name="Doctorspecialization" class="form-control" required="required">
+					<option  readonly="readonly" value="<?php echo htmlentities($data['specilization']);?>">
 					<?php echo htmlentities($data['specilization']);?></option>
 <?php $ret=mysqli_query($con,"select * from doctorspecilization");
 while($row=mysqli_fetch_array($ret))
@@ -125,21 +125,21 @@ while($row=mysqli_fetch_array($ret))
 															<label for="fess">
 																 Horario de Consultoria
 															</label>
-		<input type="text" name="docfees" class="form-control" required="required"  value="<?php echo htmlentities($data['docFees']);?>" >
+		<input type="text" name="docfees" class="form-control" required="required"   readonly="readonly" value="<?php echo htmlentities($data['docFees']);?>" >
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
 																Cedula del medico
 															</label>
-					<input type="text" name="contactno" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
+					<input type="text" name="contactno"  readonly="readonly" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
 																 Email del Doctor
 															</label>
-					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['docEmail']);?>">
+					<input type="email" name="docemail" class="form-control"   value="<?php echo htmlentities($data['docEmail']);?>">
 														</div>
 
 

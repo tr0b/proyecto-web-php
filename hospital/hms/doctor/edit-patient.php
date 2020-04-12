@@ -18,12 +18,75 @@ $medhis=$_POST['medhis'];
 $sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where id='$eid'");
 if($sql)
 {
-echo "<script>alert('Información del paciente actualizada con éxito');</script>";
+echo "<script>alert('Patient info updated Successfully');</script>";
 header('location:manage-patient.php');
 
 }
 }
 ?>
+
+
+
+<script>
+function checkemailAvailability2() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityc.php",
+data:'patcontact='+$("#PatientContno").val(),
+type: "POST",
+success:function(data){
+$("#document-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
+
+
+
+<script>
+function checkemailAvailability() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityp.php",
+data:'emailid='+$("#PatientEmail").val(),
+type: "POST",
+success:function(data){
+$("#email-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -96,9 +159,9 @@ Nombre del Paciente
 </div>
 <div class="form-group">
 <label for="fess">
-Documento del paciente
+ Numero de expediente
 </label>
-<input type="text" name="patcontact" class="form-control" readonly='true' value="<?php  echo $row['PatientContno'];?>"  maxlength="10" pattern="[0-9]+">
+<input type="text" name="patcontact" class="form-control"  value="<?php  echo $row['PatientContno'];?>" required="true" maxlength="10" pattern="[0-9]+" readonly='true'>
 </div>
 <div class="form-group">
 <label for="fess">
@@ -110,12 +173,12 @@ Email del Paciente
 <div class="form-group">
               <label class="control-label">Género: </label>
               <?php  if($row['Gender']=="Female"){ ?>
-              <input type="radio" name="gender" id="gender" value="Female" checked="true">Femenino
-              <input type="radio" name="gender" id="gender" value="male">Masculino
+              <input type="radio" name="gender" id="gender" value="Masculino" checked="true" readonly='true'>Femenino
+              <input type="radio" name="gender" id="gender" value="Femenino" readonly='true'>Masculino
               <?php } else { ?>
               <label>
-              <input type="radio" name="gender" id="gender" value="Male" checked="true">Masculino
-              <input type="radio" name="gender" id="gender" value="Female">Femenino
+              <input type="radio" name="gender" id="gender" value="Masculino" checked="true" readonly='true'>Masculino
+              <input type="radio" name="gender" id="gender" value="Femenino" readonly='true'>Femenino
               </label>
              <?php } ?>
             </div>
@@ -145,7 +208,7 @@ Dirección de Procedencia del Paciente
 </div>
 <?php } ?>
 <button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-Actualizacion
+Aztualizacón
 </button>
 </form>
 </div>

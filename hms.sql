@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-04-2020 a las 22:11:42
+-- Tiempo de generación: 12-04-2020 a las 12:17:37
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.27
 
@@ -42,8 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `cedula`, `eje`, `username`, `password`, `updationDate`) VALUES
-(1, 1234, 0, 'Roberto administrador', '25f9e794323b453885f5181f1b624d0b', '07-04-2020 07:27:53 AM'),
-(7, 2019, 2020, 'Ejecutivo', 'fcea920f7412b5da7be0cf42b8c93759', '');
+(1, 1234, 0, 'Roberto administrador', 'e10adc3949ba59abbe56e057f20f883e', '07-04-2020 07:27:53 AM'),
+(7, 2019, 2020, 'Ejecutivo', 'e10adc3949ba59abbe56e057f20f883e', '');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(37, 'Dermatología', 'Roberto Carlos', 'ghgh', 'Lunes - Viernes (11:00am - 3:00pm)', 1001, 'r@hospital.com', '25f9e794323b453885f5181f1b624d0b', '2020-04-09 22:48:58', '2020-04-10 16:53:10');
+(40, 'Dermatología', 'Roberto Carlos', 'aasaasas', 'Lunes - Viernes (9:00am - 1:00pm)', 12, 'r@hospital.com', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-11 01:43:04', '2020-04-11 01:44:56');
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,16 @@ INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logou
 (214, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 03:19:22', NULL, 1),
 (215, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 16:48:36', NULL, 1),
 (216, NULL, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:09:02', NULL, 0),
-(217, NULL, 'r@hopital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:09:17', NULL, 0);
+(217, NULL, 'r@hopital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:09:17', NULL, 0),
+(218, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:34:05', NULL, 0),
+(219, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:34:22', NULL, 0),
+(220, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:33', NULL, 0),
+(221, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:40', NULL, 0),
+(222, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:48', NULL, 0),
+(223, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 21:20:55', NULL, 1),
+(224, 39, 'thomas@correo.com', 0x3a3a3100000000000000000000000000, '2020-04-11 01:38:33', NULL, 1),
+(225, 40, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-11 01:50:07', NULL, 1),
+(226, 40, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-12 10:10:10', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -137,7 +146,7 @@ CREATE TABLE `doctorspecilization` (
 --
 
 INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
-(33, 'Dermatología', '2020-04-09 22:44:44', '2020-04-09 22:46:52');
+(35, 'Dermatología', '2020-04-11 01:14:17', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +166,7 @@ CREATE TABLE `habitacion` (
 --
 
 INSERT INTO `habitacion` (`id`, `habitacion`, `piso`, `cama`) VALUES
-(88, '10', '2', 'a2');
+(94, '10', '2', 'a2');
 
 -- --------------------------------------------------------
 
@@ -191,6 +200,7 @@ CREATE TABLE `tblmedicalhistory` (
   `Weight` varchar(100) DEFAULT NULL,
   `Temperature` varchar(200) DEFAULT NULL,
   `MedicalPres` mediumtext DEFAULT NULL,
+  `estado` text NOT NULL,
   `CreationDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Medico` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -199,8 +209,8 @@ CREATE TABLE `tblmedicalhistory` (
 -- Volcado de datos para la tabla `tblmedicalhistory`
 --
 
-INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `CreationDate`, `Medico`) VALUES
-(31, 13, 'Ultimo registr', '$	BloodSugar', 'hj', 'hjhjh', 'ghh', '2020-04-10 16:49:28', 'Anthony');
+INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `estado`, `CreationDate`, `Medico`) VALUES
+(31, 13, 'Ultimo registr', '$	BloodSugar', 'hj', 'hjhjh', 'ghh', '', '2020-04-10 16:49:28', 'Anthony');
 
 -- --------------------------------------------------------
 
@@ -232,7 +242,7 @@ CREATE TABLE `tblpatient` (
 --
 
 INSERT INTO `tblpatient` (`id`, `Docid`, `PatientName`, `PatientContno`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `PatientMedhis`, `password`, `habitacion`, `piso`, `cama`, `CreationDate`, `regDate`, `UpdationDate`) VALUES
-(13, 1, 'Roberto Zuniga', 1, 'ro@gmail.com', 'Male', 'Casa azul', 22, 'hghgh', 'e10adc3949ba59abbe56e057f20f883e', '10', '2', 'a2', '2020-04-09 22:30:50', '2020-04-09 22:30:50', '2020-04-10 03:15:13');
+(24, 7, 'thomas ros', 1, 'r@hospital.com', 'Male', 'azul', 22, 'gfgfgf', 'e10adc3949ba59abbe56e057f20f883e', '10', '2', 'a2', '2020-04-11 01:26:03', '2020-04-11 01:26:03', '2020-04-11 01:53:28');
 
 -- --------------------------------------------------------
 
@@ -258,7 +268,8 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`,
 (116, 13, 'r@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-10 03:14:49', NULL, 1),
 (117, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 16:50:17', NULL, 1),
 (118, NULL, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 19:51:41', NULL, 0),
-(119, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 19:51:54', NULL, 1);
+(119, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 19:51:54', NULL, 1),
+(120, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 21:19:24', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -370,25 +381,25 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT de la tabla `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `habitacion`
 --
 ALTER TABLE `habitacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT de la tabla `tblcontactus`
@@ -400,19 +411,19 @@ ALTER TABLE `tblcontactus`
 -- AUTO_INCREMENT de la tabla `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpatient`
 --
 ALTER TABLE `tblpatient`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
   }
   else
     {
-      echo '<script>alert("Algo salió mal. Inténtalo de nuevo")</script>';
+      echo '<script>alert("Something Went Wrong. Please try again")</script>';
     }
 
   
@@ -123,7 +123,7 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Número de móvil del paciente</th>
+    <th scope>Docuento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
     <th>Dirección del paciente  </th>
     <td><?php  echo $row['PatientAdd'];?></td>
@@ -140,8 +140,9 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientMedhis'];?></td>
      <th>Fecha de registro del paciente</th>
     <td><?php  echo $row['CreationDate'];?></td>
+
   </tr>
- <tr>
+  <tr>
     
     <th>Habitacion  </th>
     <td><?php  echo $row['habitacion'];?></td>
@@ -161,6 +162,7 @@ while ($row=mysqli_fetch_array($ret)) {
    
  
   </tr>
+ 
 <?php }?>
 </table>
 <?php  

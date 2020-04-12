@@ -14,10 +14,11 @@ if(isset($_POST['submit']))
     $temp=$_POST['temp'];
    $pres=$_POST['pres'];
         $Medico=$_POST['Medico'];
+              $estado=$_POST['estado'];
            
     
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
     if ($query) {
     echo '<script>alert("Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -123,7 +124,7 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Número de móvil del paciente</th>
+    <th scope>Docuento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
     <th>Dirección del paciente  </th>
     <td><?php  echo $row['PatientAdd'];?></td>
@@ -186,6 +187,7 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
 <th> Medico </th>
+<th> estado del paciente</th>
 <th> Accion</th>
 
 

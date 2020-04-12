@@ -85,6 +85,22 @@ error:function (){}
 </script>
 
 
+<script>
+function checkemailAvailability4() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityh.php",
+data:'patcontac='+$("#cama").val(),
+type: "POST",
+success:function(data){
+$("#documentt-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
 
 
 
@@ -288,7 +304,8 @@ while($row=mysqli_fetch_array($ret))
 																Cama
 															</label>
 
-															<select name="cama" class="form-control" onBlur="checkemailAvailability3()" required="true">
+															<select  id="cama" name="cama" class="form-control" onBlur="checkemailAvailability4()" required="true">
+																
 																<option value="">Seleccionar Cama</option>
 <?php $ret=mysqli_query($con,"select * from habitacion");
 while($row=mysqli_fetch_array($ret))
@@ -298,10 +315,11 @@ while($row=mysqli_fetch_array($ret))
 																	<?php echo htmlentities($row['cama']);?>
 																</option>
 																<?php } ?>
+
 																
 															</select>
 															
-																
+																<span id="documentt-availability-status"></span>
 															</span>
 														</div>
 

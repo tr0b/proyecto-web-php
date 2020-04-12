@@ -14,10 +14,11 @@ if(isset($_POST['submit']))
     $temp=$_POST['temp'];
    $pres=$_POST['pres'];
         $Medico=$_POST['Medico'];
+              $estado=$_POST['estado'];
            
     
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
     if ($query) {
     echo '<script>alert("Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -123,7 +124,7 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Número de móvil del paciente</th>
+    <th scope>Docuento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
     <th>Dirección del paciente  </th>
     <td><?php  echo $row['PatientAdd'];?></td>
@@ -174,11 +175,10 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
  ?>
 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
   <tr align="center">
-   <th colspan="8" >Historial Médico</th> 
+   <th colspan="10" >Historial Médico</th> 
   </tr>
   <tr>
 <th>#</th>
-
 <th> Presión arterial </th>
 <th> Peso </th>
 <th> Azúcar en la sangre </th>
@@ -186,6 +186,7 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
 <th> Medico </th>
+<th> estado del paciente</th>
 <th> Accion</th>
 
 
@@ -205,6 +206,7 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
+     <td><?php  echo $row['estado'];?>
    <td >
                 <div class="visible-md visible-lg hidden-sm hidden-xs">
               <a href="edithis.php?ID=<?php echo $row['ID'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>     
@@ -266,6 +268,11 @@ while ($row=mysqli_fetch_array($ret)) {
     <td>
     <input name="Medico" placeholder="Médico" class="form-control wd-450" required="true"></td>
   </tr>  
+  <tr>
+    <th>Estado del paciente: </th>
+    <td>
+    <input name="estado" placeholder="estado" class="form-control wd-450" required="true"></td>
+  </tr> 
       <tr>
     <th>Presión Arterial: </th>
     <td>
