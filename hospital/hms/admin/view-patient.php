@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
  
       $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
     if ($query) {
-    echo '<script>alert("Añadido con exito")</script>';
+    echo '<script>alert("Historial medico Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
   }
   else
@@ -98,9 +98,11 @@ if(isset($_GET['del']))
 </li>
 <li class="active">
 <span>Administrar Pacientes</span>
+
 </li>
 </ol>
 </div>
+
 </section>
 <div class="container-fluid container-fullw bg-white">
 <div class="row">
@@ -181,7 +183,7 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th>#</th>
 <th> Presión arterial </th>
 <th> Peso </th>
-<th> Azúcar en la sangre </th>
+<th> Tipo de sangre:</th>
 <th> Temperatura corporal </th>
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
@@ -279,9 +281,9 @@ while ($row=mysqli_fetch_array($ret)) {
     <input name="bp" placeholder="Presión Arterial" class="form-control wd-450" required="true"></td>
   </tr>                          
      <tr>
-    <th>Azúcar en la Sangre: </th>
+    <th>Tipo de sangre: </th>
     <td>
-    <input name="bs" placeholder="Azúcar en la Sangre" class="form-control wd-450" required="true"></td>
+    <input name="bs" placeholder="Tipo de sangre" class="form-control wd-450" required="true"></td>
   </tr> 
   <tr>
     <th>Peso:</th>
@@ -295,9 +297,11 @@ while ($row=mysqli_fetch_array($ret)) {
   </tr>
                          
      <tr>
-    <th>Prescripcción :</th>
+    <th>
+diagnóstico:</th>
     <td>
-    <textarea name="pres" placeholder="Prescripcción Médica" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+    <textarea name="pres" placeholder="
+diagnóstico" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
   </tr>  
    
 </table>

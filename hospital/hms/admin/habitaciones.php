@@ -41,6 +41,41 @@ error:function (){}
 
 
 
+<script>
+function checkemailAvailability5() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityh.php",
+data:'patconta='+$("#habitacion").val(),
+type: "POST",
+success:function(data){
+$("#documentt-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
+
+
+
+<script>
+function checkemailAvailability6() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityh.php",
+data:'patcont='+$("#piso").val(),
+type: "POST",
+success:function(data){
+$("#documenttt-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
 
 
 
@@ -82,10 +117,7 @@ error:function (){}
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Administración </span>
-									</li>
-									<li class="active">
-										<span>Agregar Habitación</span>
+										<img width="600" height="600" src="assets/images/17.jpg" >
 									</li>
 								</ol>
 							</div>
@@ -100,7 +132,7 @@ error:function (){}
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Habitación</h5>
+													<h5 class="panel-title">Habitación (Siga el orden espesifico para agregar los datos)</h5>
 												</div>
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
@@ -110,7 +142,8 @@ error:function (){}
 															<label for="exampleInputEmail1">
 															Agregar Habitación
 															</label>
-							<input type="text" name="habitacion" class="form-control"  placeholder="Ingrese una habitacion ">
+							<input type="text" id="habitacion" name="habitacion" class="form-control"  placeholder="(H#) " onBlur="checkemailAvailability5()">
+							<span id="documentt-availability-status"></span>
 														</div>
 
 																				<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
@@ -120,14 +153,16 @@ error:function (){}
 															<label for="exampleInputEmail1">
 															Agregar Piso
 															</label>
-							<input type="text" name="piso" class="form-control"  placeholder="Ingrese un piso">
+							<input type="text" id="piso"name="piso" class="form-control"  placeholder="(P#)"  onBlur="checkemailAvailability6()">
+							<span id="documenttt-availability-status"></span>
 														</div>
+
 
 													<div class="form-group">
 									<label for="fess">
 																cama
 															</label>
-<input type="text" id="cama" name="cama" class="form-control"  placeholder="cama" required="true" onBlur="checkemailAvailability2()">
+<input type="text" id="cama" name="cama" class="form-control"  placeholder="(C#)-(H#)-(P#)" onBlur="checkemailAvailability2()">
 <span id="document-availability-status"></span>
 </div>
 

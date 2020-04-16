@@ -13,7 +13,7 @@ $Weight=$_POST['Weight'];
 $Temperature=$_POST['Temperature'];
 $MedicalPres=$_POST['MedicalPres'];
 $Medico=$_POST['Medico'];
-$sql=mysqli_query($con,"Update tblmedicalhistory set BloodPressure='$BloodPressure',BloodSugar='$	BloodSugar',Weight='$Weight',Temperature='$Temperature',MedicalPres='$MedicalPres',Medico='$Medico' where ID='$did'");
+$sql=mysqli_query($con,"Update tblmedicalhistory set BloodPressure='$BloodPressure',BloodSugar='$BloodSugar',Weight='$Weight',Temperature='$Temperature',MedicalPres='$MedicalPres',Medico='$Medico' where ID='$did'");
 if($sql)
 {
 	echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -106,14 +106,16 @@ while($data=mysqli_fetch_array($sql))
 															</label>
 	<input type="text" name="BloodPressure" class="form-control" value="<?php echo htmlentities($data['BloodPressure']);?>" >
 														</div>
-
-
-<div class="form-group">
-															<label for="address">
-															Azúcar en la sangre
+														<div class="form-group">
+															<label for="doctorname">
+															
+                                                        Azúcar en la sangre
 															</label>
-					<textarea name="BloodSugar" class="form-control"><?php echo htmlentities($data['BloodSugar']);?></textarea>
+	<input type="text" name="BloodSugar" class="form-control" value="<?php echo htmlentities($data['BloodSugar']);?>" >
 														</div>
+
+
+
 <div class="form-group">
 															<label for="fess">
 																Peso
@@ -174,7 +176,7 @@ while($data=mysqli_fetch_array($sql))
 		
 			<!-- start: SETTINGS -->
 	<?php include('include/setting.php');?>
-			<>
+		
 			<!-- end: SETTINGS -->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->

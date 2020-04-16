@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
-$contactno=$_POST['	contactno'];
+$contactno=$_POST['contactno'];
 $docemail=$_POST['docemail'];
 $password=md5($_POST['npass']);
 $sql=mysqli_query($con,"insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$contactno','$docemail','$password')");
@@ -25,7 +25,7 @@ echo "<script>window.location.href ='manage-doctors.php'</script>";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Ejecutivo | Agregar Doctor</title>
+		<title>Administrador | Agregar Doctor</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -46,7 +46,7 @@ function valid()
 {
  if(document.adddoc.npass.value!= document.adddoc.cfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
 document.adddoc.cfpass.focus();
 return false;
 }
@@ -70,6 +70,26 @@ error:function (){}
 });
 }
 </script>
+
+
+
+
+
+<script>
+function checkemailAvailability7() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availabilityh.php",
+data:'patcontacs='+$("#contactno").val(),
+type: "POST",
+success:function(data){
+$("#cedula-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
 	</head>
 	<body>
 		<div id="app">		
@@ -85,14 +105,11 @@ error:function (){}
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Ejecutivo | Agregar Doctor</h1>
+									<h1 class="mainTitle">Administrador| Agregar Doctor</h1>
 																	</div>
 								<ol class="breadcrumb">
-									<li>
-										<span>Ejecutivo</span>
-									</li>
-									<li class="active">
-										<span>Ejecutivo | Agregar Doctor</span>
+									
+										<img width="500" height="300" src="assets/images/11.jpg" >
 									</li>
 								</ol>
 							</div>
@@ -102,7 +119,7 @@ error:function (){}
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									
+								
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
@@ -155,7 +172,9 @@ while($row=mysqli_fetch_array($ret))
 									<label for="fess">
 														Cedula Medica no#
 															</label>
-					<input type="text" name="contactno" class="form-control"  placeholder="id" required="true">
+					<input type="number" id="contactno" name="contactno" class="form-control"  placeholder="id" required="true"
+					onBlur="checkemailAvailability7()">
+<span id="cedula-availability-status"></span>
 														</div>
 
 <div class="form-group">

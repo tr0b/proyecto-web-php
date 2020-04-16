@@ -5,7 +5,7 @@
 						
 						<!-- start: MAIN NAVIGATION MENU -->
 						<div class="navbar-title">
-							<span>NAVEGACIÓN PRINCIPAL</span>
+							<span><strong>NAVEGACIÓN PRINCIPAL</strong></span>
 						</div>
 						<ul class="main-navigation-menu">
 							<li>
@@ -15,7 +15,7 @@
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Tablero </span>
+											<span class="title"> <strong>Tablero</strong> </span>
 										</div>
 									</div>
 								</a>
@@ -28,7 +28,7 @@
 										</div>
 
 										<div class="item-inner">
-											<span class="title"> Doctores </span><i class="icon-arrow"></i>
+											<span class="title"> <strong>Doctores</strong> </span><i class="icon-arrow"></i>
 										</div>
 									</div>
 								</a>
@@ -40,12 +40,12 @@
 									</li>
 									<li>
 										<a href="add-doctor.php">
-											<span class="title"> Agregar Doctor</span>
+											<span class="title"> Agregar doctor</span>
 										</a>
 									</li>
 									<li>
 										<a href="Manage-doctors.php">
-											<span class="title"> Administrar Médicos </span>
+											<span class="title"> Administrar médicos </span>
 										</a>
 									</li>
 									
@@ -59,11 +59,12 @@
 											<i class="ti-user"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Pacientes</span><i class="icon-arrow"></i>
+											<span class="title"> <strong> Pacientes</strong></span><i class="icon-arrow"></i>
 										</div>
 									</div>
 								</a>
 								<ul class="sub-menu">
+									
 									<li>
 										<a href="manage-users.php">
 											<span class="title"> Eliminar paciente</span>
@@ -79,22 +80,16 @@
 											<span class="title"> Administrar Pacientes </span>
 										</a>
 									</li>
+									<li>
+										<a href="cotra.php">
+											<span class="title"> Registro de contraseña </span>
+										</a>
+									</li>
+									
+									
 								</ul>
 								</li>
-								<li>
-								<a href="javascript:void(0)">
-									<div class="item-content">
-										
-									</div>
-								</a>
-								<ul class="sub-menu">
-									
 								
-									
-								</ul>
-								</li>	
-
-
 
 
 
@@ -105,7 +100,7 @@
 											<i class="ti-files"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Habitación</span><i class="icon-arrow"></i>
+											<span class="title"><strong>Ubicacion</strong> </span><i class="icon-arrow"></i>
 										</div>
 									</div>
 								</a>
@@ -113,7 +108,7 @@
 									
 									<li>
 										<a href="habitaciones.php">
-											<span class="title">Agregar Habitación </span>
+											<span class="title">Añadir Habitaciones </span>
 										</a>
 									</li>
 
@@ -136,7 +131,7 @@
 											<i class="ti-file"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Registros de sesiones médicas</span>
+											<span class="title"><strong>Registros de sesiones médicas</strong>  </span>
 										</div>
 									</div>
 								</a>
@@ -151,7 +146,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Registros de sesiones de Pasiente</span>
+											<span class="title"> <strong>Registros de sesiones pacientes</strong></span>
 										</div>
 									</div>
 								</a>
@@ -163,7 +158,7 @@
 											<i class="ti-files"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Informes </span><i class="icon-arrow"></i>
+											<span class="title"> <strong>Informes </strong></span><i class="icon-arrow"></i>
 										</div>
 									</div>
 								</a>
@@ -171,7 +166,7 @@
 									
 									<li>
 										<a href="between-dates-reports.php">
-											<span class="title">Informes de fechas en blanco y negro </span>
+											<span class="title"><strong>Informes de fechas en blanco y negro  </strong></span>
 										</a>
 									</li>
 
@@ -185,7 +180,7 @@
 											<i class="ti-search"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Búsqueda de Pacientes </span>
+											<span class="title"> <strong>Búsqueda de pacientes</strong> </span>
 										</div>
 									</div>
 								</a>

@@ -42,14 +42,16 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | TABLERO</h1>
+								<h3><strong>ADMINSITRADOR | TABLERO</strong> </h3>	
+							
+								
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>ADMINISTRADOR</span>
+										<span>Administrador</span>
 									</li>
 									<li class="active">
-										<span>TABLERO</span>
+										<span>Tablero</span>
 									</li>
 								</ol>
 							</div>
@@ -61,7 +63,7 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<img src="assets/images/ico1.ico" >
+											<img width="310" height="310" src="assets/images/pa.jpg" >
 											<h2 class="StepTitle">Administrar Pacientes</h2>
 											
 											<p class="links cl-effect-1">
@@ -79,7 +81,8 @@ $num_rows = mysqli_num_rows($result);
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<img src="assets/images/ico2.ico" >
+											<img width="310" height="310"src="assets/images/6.jpg" >
+											
 											<h2 class="StepTitle">Administrar Médicos</h2>
 										
 											<p class="cl-effect-1">
@@ -98,9 +101,9 @@ $num_rows1 = mysqli_num_rows($result1);
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-										
-											<img src="assets/images/ico3.ico" >
+								<img width="310" height="310" src="assets/images/7.jpg" >
 											<h2 class="StepTitle"> Historial de Paciente</h2>
+											
 											
 											<p class="links cl-effect-1">
 												<a href="book-appointment.php">

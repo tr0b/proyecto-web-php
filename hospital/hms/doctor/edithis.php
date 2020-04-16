@@ -13,7 +13,7 @@ $Weight=$_POST['Weight'];
 $Temperature=$_POST['Temperature'];
 $MedicalPres=$_POST['MedicalPres'];
 $Medico=$_POST['Medico'];
-$sql=mysqli_query($con,"Update tblmedicalhistory set BloodPressure='$BloodPressure',BloodSugar='$	BloodSugar',Weight='$Weight',Temperature='$Temperature',MedicalPres='$MedicalPres',Medico='$Medico' where ID='$did'");
+$sql=mysqli_query($con,"Update tblmedicalhistory set BloodPressure='$BloodPressure',BloodSugar='$BloodSugar',Weight='$Weight',Temperature='$Temperature',MedicalPres='$MedicalPres',Medico='$Medico' where ID='$did'");
 if($sql)
 {
 	echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -89,7 +89,7 @@ $msg="Se actualizaron los datos medicos";
 while($data=mysqli_fetch_array($sql))
 {
 ?>
-<h4>Perfil de <?php echo htmlentities($data['PatientID']);?></h4>
+<h4>ID de historial del paciente <?php echo htmlentities($data['PatientID']);?></h4>
 <p><b>Perfil Reg. Fecha:  </b><?php echo htmlentities($data['creationDate']);?></p>
 <?php if($data['updationDate']){?>
 

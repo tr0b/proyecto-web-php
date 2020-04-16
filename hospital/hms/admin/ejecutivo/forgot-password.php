@@ -53,6 +53,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 							<legend>
 								Recuperación de contraseña del paciente
 							</legend>
+								<img width="300" height="300" src="im/1.jpg">
 							<p>
 								Ingrese su identificador y nombre ejecutivo para recuperar la contraseña<br />
 					

@@ -10,7 +10,7 @@ $eje=$_SESSION['eje'];
 $newpassword=md5($_POST['password']);
 $query=mysqli_query($con,"update admin set password='$newpassword' where username='$cno' and eje='$eje'");
 if ($query) {
-echo "<script>alert('Cambiada con exito la contraseña del Administrador.');</script>";
+echo "<script>alert('Cambiada con exito la contraseña del ejecutivo.');</script>";
 echo "<script>window.location.href ='index.php'</script>";
 }
 
@@ -51,6 +51,7 @@ echo "<script>window.location.href ='index.php'</script>";
 							<legend>
 							Recuperar Contraseña
 							</legend>
+								<img width="300" height="300" src="im/1.jpg">
 							<p>
 								Por favor ingrese su nueva contraseña<br />
 								<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>

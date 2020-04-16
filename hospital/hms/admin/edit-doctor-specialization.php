@@ -53,9 +53,9 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 									<li>
 										<span>Administrador</span>
 									</li>
-									<li class="active">
-										<span> EDITAR ESPECIALIZACIÓN MÉDICA</span>
-									</li>
+									
+											<img width="400" height="350" src="assets/images/10.jpg" >
+
 								</ol>
 							</div>
 						</section>

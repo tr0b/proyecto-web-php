@@ -63,13 +63,15 @@ echo "<script>alert('Detalles del doctor actualizados exitosamente   '');</scrip
 									</li>
 								</ol>
 							</div>
+
 						</section>
+
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									
+									<img width="330" height="300" src="ico/perfil.jpg">
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">

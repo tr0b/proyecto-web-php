@@ -9,7 +9,7 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Ejecutivo | Buscar Pacientes</title>
+		<title>Admin | Ver Pacientes</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -37,14 +37,14 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">ADMINISTRADOR | BUSCAR PACIENTES</h1>
+<h1 class="mainTitle">ADMINISTRADOR | VER PACIENTES</h1>
 </div>
 <ol class="breadcrumb">
 <li>
 <span>Administración </span>
 </li>
 <li class="active">
-<span>Ver pacientes</span>
+<span>Ver Pacientes</span>
 </li>
 </ol>
 </div>
@@ -53,10 +53,10 @@ check_login();
 <div class="row">
 <div class="col-md-12">
 	<form role="form" method="post" name="search">
- <img src="ico/ico11.ico">
+ <img width="300" height="300" src="assets/images/7.jpg" >
 <div class="form-group">
 <label for="doctorname">
-Buscar por nombre / Cedula no.
+Buscar por Nombre / no. Cedula
 </label>
 <input type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
 </div>
@@ -79,7 +79,7 @@ $sdata=$_POST['searchdata'];
 <tr>
 <th class="center">#</th>
 <th>	Nombre del paciente	</th>
-<th>Número de contacto del paciente</th>
+<th>Número de Docuemnto del paciente</th>
 <th>	Sexo del paciente </th>
 <th>	Fecha de creación</th>
 <th>	Fecha de actualización</th>

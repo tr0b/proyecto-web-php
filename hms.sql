@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2020 a las 12:17:37
+-- Tiempo de generación: 17-04-2020 a las 00:30:26
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.27
 
@@ -90,7 +90,8 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(40, 'Dermatología', 'Roberto Carlos', 'aasaasas', 'Lunes - Viernes (9:00am - 1:00pm)', 12, 'r@hospital.com', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-11 01:43:04', '2020-04-11 01:44:56');
+(42, 'Dermatología', 'Roberto Carlos', 'Heredia, calle 6 y 7, frente bar la cascada', 'Lunes - Viernes (1:00pm - 5:00pm)', 1001, 'robertoC@hospital.dc.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-13 06:07:43', '2020-04-13 06:14:16'),
+(43, 'Alergología', 'Bryan Mora R.', 'Bryan Ivan Mora  Reinhardt\r\n    \r\n\r\nDe la Casa Matute Gómez, 100 Este, 50 Sur, contiguo a CANARA en calle privada.\r\n\r\n?[0:08] Bryan Ivan Mora  Reinhardt\r\n    \r\n Del Antiguo Casa Matute Gómez 300 al Este, 75 al Norte frente a la Iglesia Sagrado Corazón.\r\n', 'Lunes - Viernes (12:00pm - 4:00pm)', 1002, 'bryanM@hospital.dc.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-13 06:09:23', '2020-04-13 06:14:02');
 
 -- --------------------------------------------------------
 
@@ -113,20 +114,19 @@ CREATE TABLE `doctorslog` (
 --
 
 INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
-(213, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 03:03:57', NULL, 1),
-(214, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 03:19:22', NULL, 1),
-(215, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 16:48:36', NULL, 1),
-(216, NULL, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:09:02', NULL, 0),
-(217, NULL, 'r@hopital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:09:17', NULL, 0),
-(218, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:34:05', NULL, 0),
-(219, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:34:22', NULL, 0),
-(220, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:33', NULL, 0),
-(221, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:40', NULL, 0),
-(222, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 20:44:48', NULL, 0),
-(223, 37, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-10 21:20:55', NULL, 1),
-(224, 39, 'thomas@correo.com', 0x3a3a3100000000000000000000000000, '2020-04-11 01:38:33', NULL, 1),
-(225, 40, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-11 01:50:07', NULL, 1),
-(226, 40, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-12 10:10:10', NULL, 1);
+(231, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:20:15', NULL, 1),
+(232, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:29:54', NULL, 1),
+(233, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:51:22', NULL, 1),
+(234, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 05:42:37', NULL, 1),
+(235, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 07:21:21', NULL, 1),
+(236, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 10:13:12', NULL, 1),
+(237, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 13:36:45', NULL, 1),
+(238, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 15:01:01', NULL, 1),
+(239, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 15:28:55', NULL, 1),
+(240, NULL, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:51', NULL, 0),
+(241, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:59', NULL, 1),
+(242, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 17:28:29', NULL, 1),
+(243, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-16 21:50:32', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -140,13 +140,6 @@ CREATE TABLE `doctorspecilization` (
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
   `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `doctorspecilization`
---
-
-INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
-(35, 'Dermatología', '2020-04-11 01:14:17', NULL);
 
 -- --------------------------------------------------------
 
@@ -166,7 +159,18 @@ CREATE TABLE `habitacion` (
 --
 
 INSERT INTO `habitacion` (`id`, `habitacion`, `piso`, `cama`) VALUES
-(94, '10', '2', 'a2');
+(117, 'H1', 'P1', 'C1-H1-P1'),
+(118, 'H1', 'P1', 'C2-H1-P1'),
+(120, 'H2', 'P1', 'C1-H2-P1'),
+(121, 'H2', 'P1', 'C2-H2-P1'),
+(123, 'H3', 'P1', 'C1-H3-P1'),
+(124, 'H3', 'P1', 'C2-H3-P1'),
+(126, 'H1', 'P2', 'C1-H1-P2'),
+(127, 'H1', 'P2', 'C2-H1-P2'),
+(129, 'H2', 'P2', 'C1-H2-P2'),
+(130, 'H2', 'P2', 'C2-H2-P2'),
+(131, 'H3', 'P2', 'C1-H3-P2'),
+(132, 'H3', 'P2', 'C2-H3-P2');
 
 -- --------------------------------------------------------
 
@@ -210,7 +214,7 @@ CREATE TABLE `tblmedicalhistory` (
 --
 
 INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `estado`, `CreationDate`, `Medico`) VALUES
-(31, 13, 'Ultimo registr', '$	BloodSugar', 'hj', 'hjhjh', 'ghh', '', '2020-04-10 16:49:28', 'Anthony');
+(44, 41, '78', '$	BloodSugar', '69', '34', 'Antiviotico', 'Estable', '2020-04-14 16:21:32', 'Anthony');
 
 -- --------------------------------------------------------
 
@@ -242,7 +246,8 @@ CREATE TABLE `tblpatient` (
 --
 
 INSERT INTO `tblpatient` (`id`, `Docid`, `PatientName`, `PatientContno`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `PatientMedhis`, `password`, `habitacion`, `piso`, `cama`, `CreationDate`, `regDate`, `UpdationDate`) VALUES
-(24, 7, 'thomas ros', 1, 'r@hospital.com', 'Male', 'azul', 22, 'gfgfgf', 'e10adc3949ba59abbe56e057f20f883e', '10', '2', 'a2', '2020-04-11 01:26:03', '2020-04-11 01:26:03', '2020-04-11 01:53:28');
+(42, 41, 'Mauricio', 2, 'mauricio@gmail.com', 'hombre', 'casa azul', 22, 'no', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C2-H1-P1', '2020-04-14 16:27:54', '2020-04-14 16:27:54', NULL),
+(44, 42, 'Hola', 3, 'hola@gmail.com', 'hombre', 'hola', 22, 'hola', 'fcea920f7412b5da7be0cf42b8c93759', 'H1', 'P1', 'C1-H1-P1', '2020-04-16 22:26:16', '2020-04-16 22:26:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -265,11 +270,24 @@ CREATE TABLE `userlog` (
 --
 
 INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
-(116, 13, 'r@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-10 03:14:49', NULL, 1),
-(117, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 16:50:17', NULL, 1),
-(118, NULL, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 19:51:41', NULL, 0),
-(119, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 19:51:54', NULL, 1),
-(120, 13, 'ro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-10 21:19:24', NULL, 1);
+(123, 30, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 04:18:09', NULL, 1),
+(124, NULL, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:16:15', NULL, 0),
+(125, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:16:26', NULL, 1),
+(126, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:44:30', NULL, 0),
+(127, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:44:35', NULL, 1),
+(128, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 07:04:18', NULL, 1),
+(129, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-14 08:31:51', NULL, 0),
+(130, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 08:32:06', NULL, 1),
+(131, NULL, 'paulmora@hospital.ps.com', 0x3a3a3100000000000000000000000000, '2020-04-14 10:11:39', NULL, 0),
+(132, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 10:11:49', NULL, 1),
+(133, 35, 'r@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-14 13:37:17', NULL, 1),
+(134, 38, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 14:59:16', NULL, 1),
+(135, 41, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 16:25:45', NULL, 1),
+(136, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 16:29:23', NULL, 1),
+(137, NULL, 'mauricio@gmail.cojm', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:41', NULL, 0),
+(138, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:51', NULL, 1),
+(139, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:02:33', NULL, 1),
+(140, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:49:50', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -369,7 +387,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `appointment`
@@ -381,25 +399,25 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT de la tabla `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `habitacion`
 --
 ALTER TABLE `habitacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT de la tabla `tblcontactus`
@@ -411,19 +429,19 @@ ALTER TABLE `tblcontactus`
 -- AUTO_INCREMENT de la tabla `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpatient`
 --
 ALTER TABLE `tblpatient`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

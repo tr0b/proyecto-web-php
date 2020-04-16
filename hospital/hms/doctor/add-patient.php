@@ -143,19 +143,13 @@ error:function (){}
 
 	<div class="row">
 	<div class="col-sm-8">
-			<h1 class="mainTitle">Paciente | Agregar Paciente</h1>
+				<h3><strong>Doctor | Agregar paciente</strong> </h3>	
 	</div>
 
 	<ol class="breadcrumb">
-	<li>
-	<span>Paciente</span>
-	</li>
-
-	<li class="active">
-	<span>Add Patient</span>
-	</li>
+	
 	</ol>
-
+<img width="300" height="300" src="ico/6.jpg">
 	</div>
 
 </section>
@@ -164,7 +158,7 @@ error:function (){}
 	<div class="row">
 
 					<div class="copyright">
-						 <span class=""></span><span class=""> Ver Docuemtos registrados de pacientes
+						 <span class=""><strong>	Ver Docuemtos registrados de pacientes</strong></span><span class=""> 
 						</span>. <span></span>
 						<i class="fa fa-lock"></i>
 									 </span>
@@ -197,7 +191,7 @@ error:function (){}
 									<label for="fess">
 																Numero de Documento del Paciente
 															</label>
-<input type="text" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
+<input type="number" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
 <span id="document-availability-status"></span>
 </div>
 	
@@ -205,7 +199,7 @@ error:function (){}
 									<label for="fess">
 																Correo del paciente
 															</label>
-<input type="email" id="PatientEmail" name="PatientEmail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
+<input type="email" id="PatientEmail" name="patemail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
 <span id="email-availability-status"></span>
 </div>
 
@@ -239,7 +233,7 @@ error:function (){}
 <label for="fess">
 	Edad del paciente
 </label>
-<input type="text" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
+<input type="number" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
 </div>
 
 <div class="form-group">
@@ -266,7 +260,7 @@ Historial médico
 															</label>
 							<select name="habitacion" class="form-control" required="true">
 																<option value="">Seleccionar Habitación</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT habitacion from habitacion ");
 while($row=mysqli_fetch_array($ret))
 {
 ?>
@@ -286,7 +280,7 @@ while($row=mysqli_fetch_array($ret))
 
 	<select name="piso" class="form-control" required="true">
 																<option value="">Seleccionar Piso</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT piso from habitacion");
 while($row=mysqli_fetch_array($ret))
 {
 ?>
@@ -307,7 +301,7 @@ while($row=mysqli_fetch_array($ret))
 															<select  id="cama" name="cama" class="form-control" onBlur="checkemailAvailability4()" required="true">
 																
 																<option value="">Seleccionar Cama</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT cama from habitacion");
 while($row=mysqli_fetch_array($ret))
 {
 ?>

@@ -7,13 +7,14 @@ check_login();
 
 if(isset($_GET['del']))
 		  {
-		  mysqli_query($con,"delete from tblpatient where id = '".$_GET['id']."'");
-                  $_SESSION['msg']="datos eliminados !!!";		  }
+		          mysqli_query($con,"delete from tblpatient where id = '".$_GET['id']."'");
+                  $_SESSION['msg']="datos eliminados !!!";
+		  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Ejecutivo | Paciente</title>
+		<title>Admin | Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -44,15 +45,12 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Ejecutivo| ADMINISTRAR PACIENTES</h1>
+									<h1 class="mainTitle">ADMINISTRADOR | ADMINISTRAR PACIENTES</h1>
 																	</div>
 								<ol class="breadcrumb">
-									<img src="ico/ico4.ico">
+									
 									<li>
-										<span>Administrador</span>
-									</li>
-									<li class="active">
-										<span>Paciente</span>
+										<img width="400" height="300" src="assets/images/13.jpg" >
 									</li>
 								</ol>
 							</div>
@@ -60,11 +58,16 @@ if(isset($_GET['del']))
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
-						
-
+						<button onclick="location.href='pdf1/utilizar/index.php'" type="button" class="btn btn-secondary" data-dismiss="modal">Imprimir lista de Pacientes registrados</button>
+                             <br>
+                             <br>
 									<div class="row">
 								<div class="col-md-12">
 									<h5 class="over-title margin-bottom-15">Administrar <span class="text-bold"> Paciente</span></h5>
+									 <br>
+                             <br>
+                              <br>
+                             <br>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
 									<table class="table table-hover" id="sample-table-1">
@@ -72,7 +75,8 @@ if(isset($_GET['del']))
 											<tr>
 												<th class="center">#</th>
 												<th>Nombre completo</th>
-												<th class="hidden-xs">dirección</th>
+												<th>Numero de Documento</th>
+												<th class="hidden-xs">Dirección</th>
 												<th>edad</th>
 												<th>Género</th>
 												<th>Email </th>
@@ -93,6 +97,7 @@ while($row=mysqli_fetch_array($sql))
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['PatientName'];?></td>
+													<td><?php echo $row['PatientContno'];?></td>
 												<td><?php echo $row['PatientAdd'];?></td>
 												<td><?php echo $row['PatientAge'];?>
 												</td>

@@ -13,7 +13,7 @@ $password=md5($_POST['npass']);
 $sql=mysqli_query($con,"insert into Admin(cedula,username,password) values('$cedula','$username','$password')");
 if($sql)
 {
-echo "<script>alert('Doctor info added Successfully');</script>";
+echo "<script>alert('Administrador añadido/script>";
 echo "<script>window.location.href ='dashboard.php'</script>";
 
 }
@@ -43,7 +43,7 @@ function valid()
 {
  if(document.adddoc.npass.value!= document.adddoc.cfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
 document.adddoc.cfpass.focus();
 return false;
 }
@@ -115,7 +115,7 @@ error:function (){}
 									<label for="fess">
 																Cedula
 															</label>
-					<input type="text" name="cedula" class="form-control"  placeholder="Cedula" required="true">
+					<input type="number" name="cedula" class="form-control"  placeholder="Cedula" required="true">
 														</div>
 
 <div class="form-group">
@@ -147,7 +147,7 @@ error:function (){}
 														
 														
 														<button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-															Submit
+															Añadir
 														</button>
 													</form>
 												</div>

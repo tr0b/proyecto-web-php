@@ -7,7 +7,7 @@ check_login();
 if(isset($_POST['submit']))
 {
 $sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
-$_SESSION['msg']="¡Especialización en Doctor añadida con éxito!";
+$_SESSION['msg']="¡Especialización  añadida con éxito!";
 }
 
 if(isset($_GET['del']))
@@ -56,24 +56,28 @@ if(isset($_GET['del']))
 									<li>
 										<span>Administración </span>
 									</li>
-									<li class="active">
-										<span>Agregar Especialización Médica</span>
-									</li>
+									
+									<img width="500" height="400" src="assets/images/14.jpg" >
 								</ol>
+
 							</div>
+
 						</section>
+
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									
+						
 									<div class="row margin-top-30">
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
+
 													<h5 class="panel-title">Especializacion del Doctor</h5>
 												</div>
+
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
@@ -105,6 +109,9 @@ if(isset($_GET['del']))
 									</div>
 
 									<div class="row">
+										<button onclick="location.href='pdf3/utilizar/index.php'" type="button" class="btn btn-secondary" data-dismiss="modal">Imprimir lista </button>
+										<br>
+										<br>
 								<div class="col-md-12">
 									<h5 class="over-title margin-bottom-15">Administrar  <span class="text-bold">Especializacion del Doctor</span></h5>
 									

@@ -7,7 +7,7 @@ check_login();
 if(isset($_POST['submit']))
 {
 $sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
-$_SESSION['msg']="¡Especialización en Doctor añadida con éxito!";
+$_SESSION['msg']="¡Especialización  añadida con éxito!";
 }
 
 if(isset($_GET['del']))
@@ -19,7 +19,7 @@ if(isset($_GET['del']))
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Ejecutivo | Especialización del Doctor</title>
+		<title>Admin | Especializacion del Doctor</title>
 	
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -50,43 +50,44 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Ejecutivo | Especialización del Doctor</h1>
+									<h1 class="mainTitle">ADMINISTRADOR | Agregar Especializacion del Doctor</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Ejectivo</span>
+										<span>Administración </span>
 									</li>
-									<li class="active">
-										<span>Agregar Especialización Médica</span>
-									</li>
+									
+									<img width="500" height="400" src="assets/images/14.jpg" >
 								</ol>
+
 							</div>
+
 						</section>
+
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									
+						
 									<div class="row margin-top-30">
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Especialización del Doctor</h5>
+
+													<h5 class="panel-title">Especializacion del Doctor</h5>
 												</div>
+
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
 													<form role="form" name="dcotorspcl" method="post" >
 														<div class="form-group">
 															<label for="exampleInputEmail1">
-																Especialización del Doctor 
+															Especializacion del Doctor
 															</label>
-							<input type="text" name="doctorspecilization" class="form-control"  placeholder="Ingrese un doctor ">
-														</div>
-												
-														
-														
+							<input type="text" name="doctorspecilization" class="form-control"  placeholder="Ingrese una especializacion ">
+														</div>	
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
 														Enviar
@@ -108,8 +109,11 @@ if(isset($_GET['del']))
 									</div>
 
 									<div class="row">
+										<button onclick="location.href='pdf3/utilizar/index.php'" type="button" class="btn btn-secondary" data-dismiss="modal">Imprimir lista </button>
+										<br>
+										<br>
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Administrar  <span class="text-bold">especialización del Doctor</span></h5>
+									<h5 class="over-title margin-bottom-15">Administrar  <span class="text-bold">Especializacion del Doctor</span></h5>
 									
 									<table class="table table-hover" id="sample-table-1">
 										<thead>
@@ -141,7 +145,7 @@ while($row=mysqli_fetch_array($sql))
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							<a href="edit-doctor-specialization.php?id=<?php echo $row['id'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 													
-	<a href="doctor-specilization.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+	<a href="doctor-specilization.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('¿Estás seguro de que quieres eliminar?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">
@@ -151,17 +155,17 @@ while($row=mysqli_fetch_array($sql))
 														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 															<li>
 																<a href="#">
-																	Edit
+																	Editar
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Share
+																	Compartir
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Remove
+																	Remover
 																</a>
 															</li>
 														</ul>

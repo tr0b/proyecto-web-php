@@ -32,7 +32,7 @@ exit();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Registros-Admin</title>
+		<title>Registros-EJ</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,6 +63,10 @@ exit();
 							<legend>
 				Solo inicio ejecuitvo
 							</legend>
+							<button  onclick="location.href='../index.php'" type="button" class="btn btn-primary pull-right" name="submit">
+									Volver <i class="fa fa-arrow-circle-right"></i>
+								</button>
+							<img width="300" height="300" src="im/1.jpg">
 							<p>
 								Ingrese su identificador y contraseña para iniciar sesión.<br />
 								<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
@@ -93,9 +97,7 @@ exit();
 								</a>
 							</div>
 						</fieldset>
-							<button  onclick="location.href='../index.php'" type="button" class="btn btn-primary pull-right" name="submit">
-									Volver <i class="fa fa-arrow-circle-right"></i>
-								</button>
+							
 					</form>
 
 					<div class="copyright">

@@ -37,14 +37,15 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Doctor | Administrar Pacientes</h1>
+<h1 class="mainTitle">Doctor | Buscar Pacientes</h1>
 </div>
 <ol class="breadcrumb">
 <li>
 <span>Doctor</span>
 </li>
 <li class="active">
-<span>Administrar Pacientes</span>
+<span>Buscar Pacientes</span>
+
 </li>
 </ol>
 </div>
@@ -53,7 +54,7 @@ check_login();
 <div class="row">
 <div class="col-md-12">
 	<form role="form" method="post" name="search">
-
+<img width="400" height="300" src="ico/7.jpg">
 <div class="form-group">
 <label for="doctorname">
 Buscar Por Nombre / Cedula no.
@@ -68,6 +69,7 @@ Buscar
 <?php
 if(isset($_POST['search']))
 { 
+
 
 $sdata=$_POST['searchdata'];
   ?>

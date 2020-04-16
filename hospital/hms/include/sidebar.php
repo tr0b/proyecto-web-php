@@ -15,7 +15,7 @@
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Tablero </span>
+											<span class="title"> <strong>Tablero</strong> </span>
 										</div>
 									</div>
 								</a>
@@ -29,7 +29,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Mi Perfil</span>
+											<span class="title"><strong>Mi Perfil</strong> </span>
 										</div>
 									</div>
 								</a>
@@ -44,7 +44,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title">  Historial médico </span>
+											<span class="title"> <strong>Historial médico</strong>   </span>
 										</div>
 									</div>
 								</a>

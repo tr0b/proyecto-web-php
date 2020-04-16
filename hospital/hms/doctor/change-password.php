@@ -98,6 +98,7 @@ return true;
 								</ol>
 							</div>
 						</section>
+						<img width="200" height="200" src="ico/contrase.png">
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">

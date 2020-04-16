@@ -50,9 +50,11 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 				<div class="box-login">
 					<form class="form-login" method="post">
 						<fieldset>
+							<img width="200" height="200" src="ico/contrasena.png">
 							<legend>
 								Recuperación de contraseña del paciente
 							</legend>
+						
 							<p>
 								Ingrese su correo electrónico y contraseña para recuperar su contraseña.<br />
 					
@@ -60,7 +62,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 
 							<div class="form-group form-actions">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="PatientContno" placeholder="Nmbre Completo Registrado">
+									<input type="text" class="form-control" name="PatientContno" placeholder="Numero de Registro">
 									<i class="fa fa-lock"></i>
 									 </span>
 							</div>

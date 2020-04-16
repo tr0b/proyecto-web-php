@@ -49,7 +49,7 @@ if(isset($_GET['del']))
 									<h1 class="mainTitle">ADMINISTRADOR | ADMINISTRAR MÉDICOS</h1>
 																	</div>
 								<ol class="breadcrumb">
-									<img src="ico/ico3.ico">
+									<img width="500" height="300" src="assets/images/12.jpg" >
 									<li>
 										<span>Administración</span>
 									</li>
@@ -62,7 +62,14 @@ if(isset($_GET['del']))
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
-						
+						<button onclick="location.href='pdf2/utilizar/index.php'" type="button" class="btn btn-secondary" data-dismiss="modal">Imprimir lista de Medicos</button>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+
 
 									<div class="row">
 								<div class="col-md-12">

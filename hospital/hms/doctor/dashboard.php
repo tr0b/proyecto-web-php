@@ -25,7 +25,16 @@ check_login();
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
-
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'c19c691c5ab004275692d5a1330a3c5769d5dd61';
+window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
 
 	</head>
 	<body>
@@ -42,11 +51,12 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor | Tablero</h1>
+										<h3><strong>Doctor | Tablero</strong> </h3>	
+								
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Paciente</span>
+										<span>Doctor</span>
 									</li>
 									<li class="active">
 										<span>Tablero</span>
@@ -61,7 +71,8 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+											<img width="300" height="300" src="ico/1.jpg
+											">
 											<h2 class="StepTitle">Mi Perfil</h2>
 											
 											<p class="links cl-effect-1">
@@ -75,7 +86,8 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+											<img width="300" height="300" src="ico/3.jpg
+											">
 											<h2 class="StepTitle">Ver Pacientes</h2>
 										
 											<p class="cl-effect-1">

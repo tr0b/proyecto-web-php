@@ -44,7 +44,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 		<div class="row">
 			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 				<div class="logo margin-top-30">
-				<a href="../../index.html"><h2> HW | Recuperación Contraseña</h2></a>
+				<a ><h2> HW | Recuperación Contraseña</h2></a>
 				</div>
 
 				<div class="box-login">
@@ -53,14 +53,16 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 							<legend>
 								Recuperación Contraseña del Doctor
 							</legend>
+									<img width="200" height="200" src="ico/contrase.png">
 							<p>
-								Por favor ingrese su Contacto y Email para recuperar su contraseña.<br />
+
+								Por favor ingrese su Cedula y Email para recuperar su contraseña.<br />
 					
 							</p>
 
 							<div class="form-group form-actions">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="contactno" placeholder="Contacto Registrado">
+									<input type="text" class="form-control" name="contactno" placeholder="Cedula Registrado">
 									<i class="fa fa-lock"></i>
 									 </span>
 							</div>

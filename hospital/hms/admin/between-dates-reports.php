@@ -46,10 +46,7 @@ check_login();
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Entre fechas </span>
-									</li>
-									<li class="active">
-										<span>Informes</span>
+												<img width="400" height="400" src="assets/images/18.jpg" >
 									</li>
 								</ol>
 							</div>
@@ -63,7 +60,7 @@ check_login();
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
-												<img src="ico/ico10.ico">
+												
 												<div class="panel-heading">
 													<h5 class="panel-title">Informes entre fechas</h5>
 												</div>

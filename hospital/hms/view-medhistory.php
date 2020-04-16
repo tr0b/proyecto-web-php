@@ -14,27 +14,55 @@ if(isset($_POST['submit']))
     $temp=$_POST['temp'];
    $pres=$_POST['pres'];
         $Medico=$_POST['Medico'];
+              $estado=$_POST['estado'];
            
     
  
-      $query.=mysqli_query($con, "insert tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
     if ($query) {
     echo '<script>alert("Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
   }
   else
     {
-      echo '<script>alert("Algo salió mal. Inténtalo de nuevo")</script>';
+      echo '<script>alert("Something Went Wrong. Please try again")</script>';
     }
 
   
 }
 
 ?>
+<?php
+
+if(isset($_GET['del']))
+      {
+              mysqli_query($con,"delete from tblmedicalhistory where  ID='".$_GET['ID']."'");
+                  $_SESSION['msg']="datos eliminados !!!";
+   header('location:manage-patient.php');
+
+
+      }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Paciente| ADMINISTRAR PACIENTES</title>
+    <title>HISTORIAL | Administar Pacientes</title>
     
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -62,22 +90,31 @@ if(isset($_POST['submit']))
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Paciente | Administrar Pacientes</h1>
+<h1 class="mainTitle"><strong>Historial | Pacientes</strong></h1>
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Paciente</span>
+
 </li>
+<img width="200" height="200" src="ico/historia-clinica.png">
+<br>
+<br>
+<br>
+<br>
+
 <li class="active">
-<span>Administrar Pacientes</span>
+
 </li>
 </ol>
 </div>
+
 </section>
 <div class="container-fluid container-fullw bg-white">
 <div class="row">
 <div class="col-md-12">
-<h5 class="over-title margin-bottom-15">Administrar<span class="text-bold">Patientes</span></h5>
+
+<h5 class="over-title margin-bottom-15">Historial<span class="text-bold"> Pacientes</span></h5>
+
 <?php
                                $vid=$_GET['viewid'];
                                $ret=mysqli_query($con,"select * from tblpatient where id='$vid'");
@@ -96,15 +133,15 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Número móvil del paciente</th>
+    <th scope>Docuento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
     <th>Dirección del paciente  </th>
     <td><?php  echo $row['PatientAdd'];?></td>
   </tr>
     <tr>
-    <th>Sexo del Paciente</th>
+    <th>Genero</th>
     <td><?php  echo $row['PatientGender'];?></td>
-    <th>  Edad del Paciente</th>
+    <th>  Edad del paciente</th>
     <td><?php  echo $row['PatientAge'];?></td>
   </tr>
   <tr>
@@ -113,8 +150,9 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['PatientMedhis'];?></td>
      <th>Fecha de registro del paciente</th>
     <td><?php  echo $row['CreationDate'];?></td>
+
   </tr>
- <tr>
+  <tr>
     
     <th>Habitacion  </th>
     <td><?php  echo $row['habitacion'];?></td>
@@ -134,6 +172,7 @@ while ($row=mysqli_fetch_array($ret)) {
    
  
   </tr>
+ 
 <?php }?>
 </table>
 <?php  
@@ -145,21 +184,25 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
  ?>
 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
   <tr align="center">
-   <th colspan="8" >Historial Médico</th> 
+   <th colspan="9" >Historial Médico</th> 
   </tr>
   <tr>
 <th>#</th>
+<th> Presión arterial </th>
+<th> Peso </th>
+<th> Tipo de sangre </th>
+<th> Temperatura corporal </th>
+<th> Prescripción médica </th>
+<th> Fecha de visita </th>
+<th> Medico </th>
+<th> estado del paciente</th>
 
-<th>Presión Sanguínea</th>
-<th>Peso</th>
-<th>Azucar en Sangre</th>
-<th>Temperatura Corporal</th>
-<th>Predescripción Médica</th>
-<th>Fecha de Visita</th>
-<th>Médico</th>
+
+
 
 </tr>
 <?php  
+
 while ($row=mysqli_fetch_array($ret)) { 
   ?>
 <tr>
@@ -172,13 +215,25 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
-</tr>
+     <td><?php  echo $row['estado'];?>
+   <td >
+                
+
+                     
+
 <?php $cnt=$cnt+1;} ?>
-</table>
 
 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
       <!-- start: FOOTER -->
-
+  <?php include('include/footer.php');?>
       <!-- end: FOOTER -->
     
       <!-- start: SETTINGS -->

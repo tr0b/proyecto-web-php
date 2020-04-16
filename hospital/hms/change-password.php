@@ -86,15 +86,13 @@ return true;
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Paciente | Cambio de Contraseña</h1>
+									<h2 class="mainTitle"><strong>Paciente | Cambio de Contraseña</strong></h2>
 																	</div>
 								<ol class="breadcrumb">
-									<li>
-										<span>Usuario</span>
-									</li>
-									<li class="active">
-										<span>Cambio de Contraseña</span>
-									</li>
+							
+											<img width="200" height="200" src="ico/sesion.png">
+									
+								
 								</ol>
 							</div>
 						</section>
@@ -108,7 +106,7 @@ return true;
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Cambia la contraseña</h5>
+													<h5 class="panel-title">Cambiar la contraseña</h5>
 												</div>
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']);?>

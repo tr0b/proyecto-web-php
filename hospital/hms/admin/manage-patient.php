@@ -41,11 +41,7 @@ check_login();
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Administración </span>
-</li>
-
-<li class="active">
-<span>Ver pacientes	</span>
+		<img width="400" height="400" src="assets/images/16.jpg" >
 </li>
 </ol>
 
@@ -54,8 +50,22 @@ check_login();
 <div class="container-fluid container-fullw bg-white">
 <div class="row">
 <div class="col-md-12">
-<h5 class="over-title margin-bottom-15">Ver<span class="text-bold"> Pacientes</span></h5><img src="ico/ico5.ico">
+<h5 class="over-title margin-bottom-15">Ver<span class="text-bold"> Pacientes</span>
+	<br>
+	<br>
 	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 <table class="table table-hover" id="sample-table-1">
 <thead>
 <tr>

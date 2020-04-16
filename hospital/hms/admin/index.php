@@ -63,6 +63,10 @@ exit();
 							<legend>
 				Iniciar sesión en su cuenta
 							</legend>
+							<img width="300" height="300" src="ico/3.jpg">
+							<button  onclick="location.href='../../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
+									Salir <i class="fa fa-arrow-circle-right"></i>
+								</button>
 							<p>
 								Ingrese su cedula y contraseña para iniciar sesión.<br />
 								<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
@@ -93,9 +97,7 @@ exit();
 								</a>
 							</div>
 						</fieldset>
-							<button  onclick="location.href='../../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
-									Salir <i class="fa fa-arrow-circle-right"></i>
-								</button>
+							
 					</form>
 
 					<div class="copyright">

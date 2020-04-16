@@ -27,7 +27,7 @@ $_SESSION['login']=$_POST['username'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=0;
 mysqli_query($con,"insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
-$_SESSION['errmsg']="usuario o contraseña invalido";
+$_SESSION['errmsg']="Usuario o Contraseña invalido";
 $extra="user-login.php";
 $host  = $_SERVER['HTTP_HOST'];
 $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
@@ -64,6 +64,10 @@ exit();
 				<div class="box-login">
 					<form class="form-login" method="post">
 						<fieldset>
+							<img width="200" height="200" src="ico/login.png">
+							<button   onclick="location.href='../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
+							Salir <i class="fa fa-arrow-circle-right"></i>
+								</button>
 							<legend>
 								Iniciar sesión en su cuenta
 
@@ -90,18 +94,19 @@ exit();
 								<button type="submit" class="btn btn-primary pull-right" name="submit">
 									Iniciar Sesión<i class="fa fa-arrow-circle-right"></i>
 								</button>
-							</div>
-							</div>
 
-								<button   onclick="location.href='../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
-							Salir <i class="fa fa-arrow-circle-right"></i>
-								</button>
-						</fieldset>
-					</form>
-
-					<div class="copyright">
+							</div>
+<div class="copyright">
 						 <span class="current-year"></span><span class="text-bold text-uppercase"> HW</span>. <span>PAGINA WEB</span>
 					</div>
+							</div>
+
+								
+						</fieldset>
+
+					</form>
+
+					
 			
 				</div>
 

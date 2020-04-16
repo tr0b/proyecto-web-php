@@ -62,12 +62,7 @@ $msg="Detalles del doctor actualizados exitosamente";
 									<h1 class="mainTitle">ADMINISTRADOR | EDITAR DETALLES DEL MÉDICO</h1>
 																	</div>
 								<ol class="breadcrumb">
-									<li>
-										<span>Administración</span>
-									</li>
-									<li class="active">
-										<span>Editar detalles del médico</span>
-									</li>
+									<img width="400" height="300" src="assets/images/12.jpg" >
 								</ol>
 							</div>
 						</section>
@@ -147,7 +142,7 @@ while($row=mysqli_fetch_array($ret))
 									<label for="fess">
 																Email del Doctor
 															</label>
-					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['docEmail']);?>">
+					<input type="email" name="docemail" class="form-control"    value="<?php echo htmlentities($data['docEmail']);?>">
 														</div>	
 														
 														<?php } ?>

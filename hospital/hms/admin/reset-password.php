@@ -53,7 +53,7 @@ return true;
 		<div class="row">
 			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 				<div class="logo margin-top-30">
-				<a href="../index.html"><h2> HW | Recuperar Contraseña Administrativa</h2></a>
+				<a ><h2> HW | Recuperar Contraseña Administrativa</h2></a>
 				</div>
 
 				<div class="box-login">
@@ -62,6 +62,7 @@ return true;
 							<legend>
 							Recuperar Contraseña del Paciente
 							</legend>
+									<img width="400" height="300" src="ico/5.jpg">
 							<p>
 								Por favor ingrese su nueva contraseña<br />
 								<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
@@ -74,12 +75,7 @@ return true;
 </div>
 	
 
-<div class="form-group">
-<span class="input-icon">
-<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="Confirmar Contraseña" required>
-<i class="fa fa-lock"></i> </span>
-</div>
-							
+				
 
 							<div class="form-actions">
 								

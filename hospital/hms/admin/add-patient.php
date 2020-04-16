@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | Agregar Paciente</title>
+		<title>admin| Agregar Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -148,11 +148,7 @@ error:function (){}
 
 	<ol class="breadcrumb">
 	<li>
-	<span>Paciente</span>
-	</li>
-
-	<li class="active">
-	<span>Add Patient</span>
+	<img width="500" height="500" src="assets/images/15.jpg" >
 	</li>
 	</ol>
 
@@ -197,7 +193,7 @@ error:function (){}
 									<label for="fess">
 																Numero de Documento del Paciente
 															</label>
-<input type="text" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
+<input type="number" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
 <span id="document-availability-status"></span>
 </div>
 	
@@ -205,7 +201,7 @@ error:function (){}
 									<label for="fess">
 																Correo del paciente
 															</label>
-<input type="email" id="PatientEmail" name="PatientEmail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
+<input type="email" id="PatientEmail" name="patemail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
 <span id="email-availability-status"></span>
 </div>
 
@@ -239,7 +235,7 @@ error:function (){}
 <label for="fess">
 	Edad del paciente
 </label>
-<input type="text" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
+<input type="number"name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
 </div>
 
 <div class="form-group">
@@ -266,7 +262,7 @@ Historial médico
 															</label>
 							<select name="habitacion" class="form-control" required="true">
 																<option value="">Seleccionar Habitación</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT habitacion from habitacion ");
 while($row=mysqli_fetch_array($ret))
 {
 ?>
@@ -286,7 +282,7 @@ while($row=mysqli_fetch_array($ret))
 
 	<select name="piso" class="form-control" required="true">
 																<option value="">Seleccionar Piso</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT piso from habitacion");
 while($row=mysqli_fetch_array($ret))
 {
 ?>
@@ -307,7 +303,7 @@ while($row=mysqli_fetch_array($ret))
 															<select  id="cama" name="cama" class="form-control" onBlur="checkemailAvailability4()" required="true">
 																
 																<option value="">Seleccionar Cama</option>
-<?php $ret=mysqli_query($con,"select * from habitacion");
+<?php $ret=mysqli_query($con,"select DISTINCT cama from habitacion");
 while($row=mysqli_fetch_array($ret))
 {
 ?>

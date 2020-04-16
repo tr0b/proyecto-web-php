@@ -53,7 +53,7 @@ check_login();
 <div class="row">
 <div class="col-md-12">
 	<form role="form" method="post" name="search">
- <img src="ico/ico11.ico">
+ <img width="300" height="300" src="assets/images/7.jpg" >
 <div class="form-group">
 <label for="doctorname">
 Buscar por Nombre / no. Cedula

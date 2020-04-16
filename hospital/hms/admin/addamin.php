@@ -115,7 +115,7 @@ error:function (){}
 									<label for="fess">
 																Cedula
 															</label>
-					<input type="text" name="cedula" class="form-control"  placeholder="Cedula" required="true">
+					<input type="number"name="cedula" class="form-control"  placeholder="Cedula" required="true">
 														</div>
 
 <div class="form-group">

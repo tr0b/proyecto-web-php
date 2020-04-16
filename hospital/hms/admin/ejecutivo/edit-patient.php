@@ -15,7 +15,7 @@ $gender=$_POST['gender'];
 $pataddress=$_POST['pataddress'];
 $patage=$_POST['patage'];
 $medhis=$_POST['medhis'];
-$sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where id='$eid'");
+$sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where ID='$eid'");
 if($sql)
 {
 echo "<script>alert('Patient info updated Successfully');</script>";
@@ -24,73 +24,10 @@ header('location:manage-patient.php');
 }
 }
 ?>
-
-
-
-<script>
-function checkemailAvailability2() {
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check_availabilityc.php",
-data:'patcontact='+$("#PatientContno").val(),
-type: "POST",
-success:function(data){
-$("#document-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function (){}
-});
-}
-</script>
-
-
-
-
-<script>
-function checkemailAvailability() {
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check_availabilityp.php",
-data:'emailid='+$("#PatientEmail").val(),
-type: "POST",
-success:function(data){
-$("#email-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function (){}
-});
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | Agregar Paciente</title>
+		<title>PACIENTE | AÑADIR PACIENTE</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -121,14 +58,14 @@ error:function (){}
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Doctor | Agregar Paciente</h1>
+<h1 class="mainTitle">PACIENTE | AÑADIR PACIENTE</h1>
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Patiente</span>
+<span>Patient</span>
 </li>
 <li class="active">
-<span>Agregar Paciente</span>
+<span>Add Patient</span>
 </li>
 </ol>
 </div>
@@ -140,32 +77,32 @@ error:function (){}
 <div class="col-lg-8 col-md-12">
 <div class="panel panel-white">
 <div class="panel-heading">
-<h5 class="panel-title">Agregar Paciente</h5>
+<h5 class="panel-title">Añadir paciente</h5>
 </div>
 <div class="panel-body">
 <form role="form" name="" method="post">
 <?php
  $eid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from tblpatient where id='$eid'");
+$ret=mysqli_query($con,"select * from tblpatient where ID='$eid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
 <div class="form-group">
 <label for="doctorname">
-Nombre del Paciente
+Nombre del paciente
 </label>
 <input type="text" name="patname" class="form-control"  value="<?php  echo $row['PatientName'];?>" required="true">
 </div>
 <div class="form-group">
 <label for="fess">
- Numero de expediente
+ Documento de regsitro
 </label>
-<input type="text" name="patcontact" class="form-control"  value="<?php  echo $row['PatientContno'];?>" required="true" maxlength="10" pattern="[0-9]+" readonly='true'>
+<input type="number" name="patcontact" class="form-control"  value="<?php  echo $row['PatientContno'];?>" required="true" maxlength="10" pattern="[0-9]+" >
 </div>
 <div class="form-group">
 <label for="fess">
-Email del Paciente
+Email del paciente
 </label>
 <input type="email" id="patemail" name="patemail" class="form-control"  value="<?php  echo $row['PatientEmail'];?>" >
 <span id="email-availability-status"></span>
@@ -173,42 +110,42 @@ Email del Paciente
 <div class="form-group">
               <label class="control-label">Género: </label>
               <?php  if($row['Gender']=="Female"){ ?>
-              <input type="radio" name="gender" id="gender" value="Masculino" checked="true" readonly='true'>Femenino
-              <input type="radio" name="gender" id="gender" value="Femenino" readonly='true'>Masculino
+              <input type="radio" name="gender" id="gender" value="Masculino" checked="true">Masculino
+              <input type="radio" name="gender" id="gender" value="">Masculino
               <?php } else { ?>
               <label>
-              <input type="radio" name="gender" id="gender" value="Masculino" checked="true" readonly='true'>Masculino
-              <input type="radio" name="gender" id="gender" value="Femenino" readonly='true'>Femenino
+              <input type="radio" name="gender" id="gender" value="Male" checked="true">Hembra
+              <input type="radio" name="gender" id="gender" value="Female">Masculino
               </label>
              <?php } ?>
             </div>
 <div class="form-group">
 <label for="address">
-Dirección de Procedencia del Paciente
+Dirección del paciente
 </label>
 <textarea name="pataddress" class="form-control" required="true"><?php  echo $row['PatientAdd'];?></textarea>
 </div>
 <div class="form-group">
 <label for="fess">
- Edad del Paciente
+ Edad del paciente
 </label>
 <input type="text" name="patage" class="form-control"  value="<?php  echo $row['PatientAge'];?>" required="true">
 </div>
 <div class="form-group">
 <label for="fess">
- Historal Médico
+Historial médico
 </label>
 <textarea type="text" name="medhis" class="form-control"  placeholder="Enter Patient Medical History(if any)" required="true"><?php  echo $row['PatientMedhis'];?></textarea>
 </div>	
 <div class="form-group">
 <label for="fess">
- Fecha de Creación
+Fecha de creación
 </label>
 <input type="text" class="form-control"  value="<?php  echo $row['CreationDate'];?>" readonly='true'>
 </div>
 <?php } ?>
 <button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-Aztualizacón
+Actulizar
 </button>
 </form>
 </div>

@@ -21,14 +21,14 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-right">
 							<!-- start: MESSAGES DROPDOWN -->
-								<li  style="padding-top:2% ">
-								<h2>Sistema de Gestión</h2>
+								<li  style="padding-top:8% ">
+								<h5 >Sistema de Gestión</h5>
 							</li>
 						
 						
 							<li class="dropdown current-user">
 								<a href class="dropdown-toggle" data-toggle="dropdown">
-									<img src="assets/images/images1.png" > <span class="username">
+									<img width="50" height="50" src="assets/images/8.jpg" > <span class="username">
 
 
 

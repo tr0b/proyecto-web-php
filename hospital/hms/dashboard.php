@@ -25,6 +25,7 @@ check_login();
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+<!-- Smartsupp Live Chat script -->
 
 
 	</head>
@@ -42,15 +43,11 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Paciente  | Tablero</h1>
+										<h3><strong>Paciente  | Tablero</strong> </h3>	
+									<h1 class="mainTitle"></h1>
 																	</div>
 								<ol class="breadcrumb">
-									<li>
-										<span>Paciente</span>
-									</li>
-									<li class="active">
-										<span>Tablero</span>
-									</li>
+									
 								</ol>
 							</div>
 						</section>
@@ -61,7 +58,7 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+											 <img width="200" height="200" src="ico/usuario.png">
 											<h2 class="StepTitle">Mi perfil</h2>
 											
 											<p class="links cl-effect-1">
@@ -75,7 +72,7 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+										 <img width="200" height="200" src="ico/tos.png">
 											<h2 class="StepTitle">Historial Medico</h2>
 										
 											<p class="cl-effect-1">

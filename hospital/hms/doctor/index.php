@@ -65,8 +65,12 @@ exit();
 							<legend>
 							Iniciar sesión en su cuenta
 							</legend>
+							<img width="200" height="200" src="ico/doctor.png">
+							<button  onclick="location.href='../../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
+									Salir <i class="fa fa-arrow-circle-right"></i>
+								</button>
 							<p>
-								Por favor, introduzca su nombre y contraseña para iniciar sesión. <br />
+								Por favor, introduzca su correo y contraseña para iniciar sesión. <br />
 								<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
 							</p>
 							<div class="form-group">
@@ -92,9 +96,7 @@ exit();
 							
 						
 						</fieldset>
-						<button  onclick="location.href='../../../inicioAPP/index.html'" type="button" class="btn btn-primary pull-right" name="submit">
-									Salir <i class="fa fa-arrow-circle-right"></i>
-								</button>
+						
 					</form>
 
 					

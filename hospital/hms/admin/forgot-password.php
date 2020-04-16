@@ -44,7 +44,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 		<div class="row">
 			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 				<div class="logo margin-top-30">
-				<a href="user-login.php"><h2> HW | Recuperación de contraseña del paciente</h2></a>
+				<a ><h2> HW | Recuperación de contraseña del paciente</h2></a>
 				</div>
 
 				<div class="box-login">
@@ -53,6 +53,7 @@ echo "<script>window.location.href ='forgot-password.php'</script>";
 							<legend>
 								Recuperación de contraseña del paciente
 							</legend>
+									<img width="400" height="300" src="ico/4.jpg">
 							<p>
 								Ingrese su correo electrónico y contraseña para recuperar su contraseña.<br />
 					

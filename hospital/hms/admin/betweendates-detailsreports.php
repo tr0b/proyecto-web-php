@@ -9,7 +9,7 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | View Patients</title>
+		<title>ADMINISTRADOR | VER PACIENTES</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -37,14 +37,11 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Admin | View Patients</h1>
+<h1 class="mainTitle">ADMINISTRADOR | VER PACIENTES</h1>
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Admin</span>
-</li>
-<li class="active">
-<span>View Patients</span>
+<img width="400" height="400" src="assets/images/18.jpg" >
 </li>
 </ol>
 </div>
@@ -52,24 +49,38 @@ check_login();
 <div class="container-fluid container-fullw bg-white">
 <div class="row">
 <div class="col-md-12">
-<h4 class="tittle-w3-agileits mb-4">Between dates reports</h4>
+<h4 class="tittle-w3-agileits mb-4">Informes entre fechas</h4>
 <?php
 $fdate=$_POST['fromdate'];
 $tdate=$_POST['todate'];
 
 ?>
-<h5 align="center" style="color:blue">Report from <?php echo $fdate?> to <?php echo $tdate?></h5>
+<br>
+<br>
+<h5 align="center" style="color:blue">Informe del  <?php echo $fdate?> al<?php echo $tdate?></h5>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 	
 <table class="table table-hover" id="sample-table-1">
 <thead>
 <tr>
 <th class="center">#</th>
-<th>Patient Name</th>
-<th>Patient Contact Number</th>
-<th>Patient Gender </th>
-<th>Creation Date </th>
-<th>Updation Date </th>
-<th>Action</th>
+<th>Nombre del paciente</th>
+<th>Número de contacto del paciente</th>
+<th>Sexo del paciente </th>
+<th>	Fecha de creaciónCreation Date </th>
+<th>	Fecha de actualización </th>
+<th>Acción</th>
 </tr>
 </thead>
 <tbody>

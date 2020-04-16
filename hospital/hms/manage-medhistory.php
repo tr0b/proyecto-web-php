@@ -31,20 +31,26 @@ check_login();
 <?php include('include/sidebar.php');?>
 <div class="app-content">
 <?php include('include/header.php');?>
+
+
 <div class="main-content" >
 <div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
 <section id="page-title">
+
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Paciente | HISTORIAL MÉDICO</h1>
+<h1 class="mainTitle"><h3><strong>Paciente | Historial Médico</strong> </h3>	</h1>
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Pacientes</span>
+
+
 </li>
+	<img width="200" height="200" src="ico/portapapeles.png">
+
 <li class="active">
-<span>Ver Historial Médico</span>
+
 </li>
 </ol>
 </div>
@@ -57,9 +63,11 @@ check_login();
 <table class="table table-hover" id="sample-table-1">
 <thead>
 <tr>
+	<br>
+<br>
 <th class="center">#</th>
-<th>Nombre del pacientee</th>
-<th>Número de contacto del paciente</th>
+<th>Nombre del paciente</th>
+<th>Número de Documento del paciente</th>
 <th>Sexo del paciente </th>
 <th>Fecha de creación</th>
 <th>Fecha de actualización </th>
@@ -81,7 +89,9 @@ while($row=mysqli_fetch_array($sql))
 <td><?php echo $row['PatientGender'];?></td>
 <td><?php echo $row['CreationDate'];?></td>
 <td><?php echo $row['UpdationDate'];?>
+
 </td>
+
 <td>
 
 <a href="view-medhistory.php?viewid=<?php echo $row['id'];?>"><i class="fa fa-eye"></i></a>
@@ -100,6 +110,7 @@ $cnt=$cnt+1;
 </div>
 </div>
 </div>
+
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->

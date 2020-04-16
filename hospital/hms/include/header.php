@@ -6,7 +6,7 @@
 							<i class="ti-align-justify"></i>
 						</a>
 						<a class="navbar-brand" href="#">
-							<h2 style="padding-top:20% ">HW</h2>
+							<h2 style="padding-top:20% ">H.WEB</h2>
 						</a>
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>
@@ -21,14 +21,14 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-right">
 							<!-- start: MESSAGES DROPDOWN -->
-								<li  style="padding-top:2% ">
-								<h2>Sistema de Gestión </h2>
+								<li  style="padding-top:10% ">
+									<h5 >Sistema de Gestión</h5>
 							</li>
 						
 						
 							<li class="dropdown current-user">
 								<a href class="dropdown-toggle" data-toggle="dropdown">
-									<img src="assets/images/images.jpg"> <span class="username">
+									<img width="90" height="50" src="assets/images/usuario2.png"> <span class="username">
 
 
 

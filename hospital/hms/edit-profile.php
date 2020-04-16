@@ -55,22 +55,19 @@ Su perfil actualizado con éxito";
 				
 						<?php include('include/header.php');?>
 						
-				<!-- end: TOP NAVBAR -->
+
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Paciente | Editar Perfil</h1>
+									<h1 class="mainTitle"><strong>Paciente | Editar Perfil</strong></h1>
 																	</div>
+																	
 								<ol class="breadcrumb">
-									<li>
-										<span>Paciente</span>
-									</li>
-									<li class="active">
-										<span>Editar Perfil</span>
-									</li>
+									<img width="180" height="180" src="ico/prueba.png">
+
 								</ol>
 							</div>
 						</section>
@@ -93,6 +90,8 @@ $sql=mysqli_query($con,"select * from tblpatient where id='".$_SESSION['id']."'"
 while($data=mysqli_fetch_array($sql))
 {
 ?>
+
+
 <h4>Perfil de <?php echo htmlentities($data['PatientName']);?></h4>
 <p><b>Fecha de Creación: </b><?php echo htmlentities($data['regDate']);?></p>
 <?php if($data['updationDate']){?>
@@ -118,7 +117,7 @@ while($data=mysqli_fetch_array($sql))
 															<label for="Docid">
 																Numero de Documento registrado
 															</label>
-		<input type="text" name="Docid" class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['Docid']);?>" >
+		<input type="text" name="PatientContn" class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['PatientContno']);?>" >
 														</div>
 	
 <div class="form-group">                                        Género

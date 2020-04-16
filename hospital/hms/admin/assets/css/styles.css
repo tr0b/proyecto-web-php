@@ -1967,7 +1967,7 @@ ul.sub-menu li ul.sub-menu li ul.sub-menu li a {
 }
 
 #off-sidebar .media-list .media {
-  border-bottom: 1px solid #c8c7cc;
+  border-bottom: 4px solid #c8c7cc;
   margin: 0;
 }
 
@@ -3599,7 +3599,7 @@ a.text-light:hover {
   opacity: 0.8;
 }
 .core-box .content {
-  line-height: 20px;
+  line-height: 40px;
   margin-bottom: 15px;
   position: relative;
   padding-left: 60px;

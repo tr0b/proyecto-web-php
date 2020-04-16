@@ -61,7 +61,7 @@ check_login();
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<img src="assets/images/ico1.ico" >
+											<img width="310" height="310" src="assets/images/pa.jpg" >
 											<h2 class="StepTitle">Administrar Pacientes</h2>
 											
 											<p class="links cl-effect-1">
@@ -70,7 +70,7 @@ check_login();
 $num_rows = mysqli_num_rows($result);
 {
 ?>
-											Total de Pacientes :<?php echo htmlentities($num_rows);  } ?>		
+											Total de Pacientes:<?php echo htmlentities($num_rows);  } ?>		
 												</a>
 											</p>
 										</div>
@@ -79,8 +79,9 @@ $num_rows = mysqli_num_rows($result);
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<img src="assets/images/ico2.ico" >
-											<h2 class="StepTitle">Administrar médicos</h2>
+											<img width="310" height="310"src="assets/images/6.jpg" >
+											
+											<h2 class="StepTitle">Administrar Médicos</h2>
 										
 											<p class="cl-effect-1">
 												<a href="manage-doctors.php">
@@ -98,9 +99,9 @@ $num_rows1 = mysqli_num_rows($result1);
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-										
-											<img src="assets/images/ico3.ico" >
+								<img width="310" height="310" src="assets/images/7.jpg" >
 											<h2 class="StepTitle"> Historial de Paciente</h2>
+											
 											
 											<p class="links cl-effect-1">
 												<a href="book-appointment.php">
@@ -109,7 +110,7 @@ $num_rows1 = mysqli_num_rows($result1);
 $num_rows2 = mysqli_num_rows($sql);
 {
 ?>
-											Administrar pacientes :<?php echo htmlentities($num_rows2);  } ?>	
+											Administrar Pacientes :<?php echo htmlentities($num_rows2);  } ?>	
 												</a>
 												</a>
 											</p>
@@ -117,14 +118,6 @@ $num_rows2 = mysqli_num_rows($sql);
 									</div>
 								</div>
 
-
-
-
-			
-					
-					
-						
-						
 					
 						<!-- end: SELECT BOXES -->
 						

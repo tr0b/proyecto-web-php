@@ -48,12 +48,9 @@ if(isset($_GET['del']))
 									<h1 class="mainTitle">ADMINISTRADOR | ADMINISTRAR PACIENTES</h1>
 																	</div>
 								<ol class="breadcrumb">
-									<img src="ico/ico4.ico">
+									
 									<li>
-										<span>Administrador</span>
-									</li>
-									<li class="active">
-										<span>Paciente</span>
+										<img width="400" height="300" src="assets/images/13.jpg" >
 									</li>
 								</ol>
 							</div>
@@ -61,11 +58,16 @@ if(isset($_GET['del']))
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
-						
-
+						<button onclick="location.href='pdf1/utilizar/index.php'" type="button" class="btn btn-secondary" data-dismiss="modal">Imprimir lista de Pacientes registrados</button>
+                             <br>
+                             <br>
 									<div class="row">
 								<div class="col-md-12">
 									<h5 class="over-title margin-bottom-15">Administrar <span class="text-bold"> Paciente</span></h5>
+									 <br>
+                             <br>
+                              <br>
+                             <br>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
 									<table class="table table-hover" id="sample-table-1">
