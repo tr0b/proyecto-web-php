@@ -145,7 +145,7 @@ Fecha de creación
 </div>
 <?php } ?>
 <button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-Actulizar
+Actualizar
 </button>
 </form>
 </div>

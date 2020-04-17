@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>admin| Agregar Paciente</title>
+		<title>EJECUTIVO | Agregar Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -160,7 +160,7 @@ error:function (){}
 	<div class="row">
 
 					<div class="copyright">
-						 <span class=""></span><span class=""> Ver Docuemtos registrados de pacientes
+						 <span class=""></span><span class=""> Ver Documentos registrados de pacientes
 						</span>. <span></span>
 						<i class="fa fa-lock"></i>
 									 </span>
@@ -226,7 +226,7 @@ error:function (){}
 
 		<div class="form-group">
 		<label for="address">
-	Dirección del Procedencia
+	Dirección de Procedencia
 </label>
 <textarea name="pataddress" class="form-control"  placeholder="Ingrese la dirección del paciente" required="true"></textarea>
 </div>
@@ -242,19 +242,13 @@ error:function (){}
 <label for="fess">
 Historial médico
 </label>
-<textarea type="text" name="medhis" class="form-control"  placeholder="Ingreshttp://localhost/Proyecto%20Web%20fucional/hospital/hms/admin/user-logs.phpe el historial médico del paciente (si corresponde)" required="true"></textarea>
+<textarea type="text" name="medhis" class="form-control"  placeholder="Ingrese el historial médico del paciente (si corresponde)" required="true"></textarea>
 </div>
 <div class="form-group">
 								<span class="input-icon">
 									<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
 									<i class="fa fa-lock"></i> </span>
 							</div>
-							<div class="form-group">
-								<span class="input-icon">
-									<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="Contraseña confirmar" required>
-									<i class="fa fa-lock"></i> </span>
-							</div>
-
 
 														<div class="form-group">
 															<label for="habitacion">

@@ -195,12 +195,6 @@ while($row=mysqli_fetch_array($ret))
 					<input type="password" name="npass" class="form-control"  placeholder="Contraseña" required="required">
 														</div>
 														
-<div class="form-group">
-															<label for="exampleInputPassword2">
-																Confirmar contraseña
-															</label>
-									<input type="password" name="cfpass" class="form-control"  placeholder="Confirmar contraseña" required="required">
-														</div>
 														
 														
 														

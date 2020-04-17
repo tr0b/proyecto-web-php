@@ -8,7 +8,7 @@ $id=intval($_GET['id']);// get value
 if(isset($_POST['submit']))
 {
 $docspecialization=$_POST['doctorspecilization'];
-$sql=mysqli_query($con,"update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
+$sql=mysqli_query($con,"update  doctorspecilization set specilization='$docspecialization' where id='$id'");
 $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 } 
 
@@ -83,7 +83,7 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 	<?php 
 
 $id=intval($_GET['id']);
-	$sql=mysqli_query($con,"select * from doctorSpecilization where id='$id'");
+	$sql=mysqli_query($con,"select * from doctorspecilization where id='$id'");
 while($row=mysqli_fetch_array($sql))
 {														
 	?>		<input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization'];?>" >

@@ -46,7 +46,7 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | ADMINISTRAR MÉDICOS</h1>
+									<h1 class="mainTitle">EJECUTIVO | ADMINISTRAR MÉDICOS</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<img width="500" height="300" src="assets/images/12.jpg" >

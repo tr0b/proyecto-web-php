@@ -6,20 +6,20 @@ include('include/checklogin.php');
 check_login();
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
+$sql=mysqli_query($con,"insert into doctorspecilization(specilization) values('".$_POST['doctorspecilization']."')");
 $_SESSION['msg']="¡Especialización  añadida con éxito!";
 }
 
 if(isset($_GET['del']))
 		  {
-		          mysqli_query($con,"delete from doctorSpecilization where id = '".$_GET['id']."'");
+		          mysqli_query($con,"delete from doctorspecilization where id = '".$_GET['id']."'");
                   $_SESSION['msg']="datos eliminados !!";
 		  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Especializacion del Doctor</title>
+		<title>Ejecutivo | Especializacion del Doctor</title>
 	
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -50,7 +50,7 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | Agregar Especializacion del Doctor</h1>
+									<h1 class="mainTitle">EJECUTIVO | Agregar Especializacion del Doctor</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -128,7 +128,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from doctorSpecilization");
+$sql=mysqli_query($con,"select * from doctorspecilization");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {

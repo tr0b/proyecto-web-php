@@ -13,12 +13,13 @@ if(isset($_POST['submit']))
     $weight=$_POST['weight'];
     $temp=$_POST['temp'];
    $pres=$_POST['pres'];
-        $Medico=$_POST['Medico'];
-              $estado=$_POST['estado'];
+   $Medico=$_POST['Medico'];
+    $estado=$_POST['estado'];
+    $id=$_SESSION['id'];
            
     
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$id','$estado')");
     if ($query) {
     echo '<script>alert("Historial medico Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";

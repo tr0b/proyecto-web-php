@@ -8,15 +8,16 @@ $id=intval($_GET['id']);// get value
 if(isset($_POST['submit']))
 {
 $docspecialization=$_POST['doctorspecilization'];
-$sql=mysqli_query($con,"update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
+$sql=mysqli_query($con,"update  doctorspecilization set specilization='$docspecialization' where id='$id'");
 $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
+header('location:doctor-specilization.php');
 } 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Editar Especialización del Doctor</title>
+		<title>Editar Especializacion del Doctor</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -47,15 +48,15 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">EJECUTIVO | EDITAR ESPECIALIZACIÓN MÉDICA</h1>
+									<h1 class="mainTitle">ADMINISTRADOR | EDITAR ESPECIALIZACIÓN MÉDICA</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Ejecutivo</span>
+										<span>Administrador</span>
 									</li>
-									<li class="active">
-										<span> EDITAR ESPECIALIZACIÓN MÉDICA</span>
-									</li>
+									
+											<img width="400" height="350" src="assets/images/10.jpg" >
+
 								</ol>
 							</div>
 						</section>
@@ -83,7 +84,7 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 	<?php 
 
 $id=intval($_GET['id']);
-	$sql=mysqli_query($con,"select * from doctorSpecilization where id='$id'");
+	$sql=mysqli_query($con,"select * from doctorspecilization where id='$id'");
 while($row=mysqli_fetch_array($sql))
 {														
 	?>		<input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization'];?>" >

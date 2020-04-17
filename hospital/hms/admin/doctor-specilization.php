@@ -6,13 +6,13 @@ include('include/checklogin.php');
 check_login();
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
+$sql=mysqli_query($con,"insert into doctorspecilization(specilization) values('".$_POST['doctorspecilization']."')");
 $_SESSION['msg']="¡Especialización  añadida con éxito!";
 }
 
 if(isset($_GET['del']))
 		  {
-		          mysqli_query($con,"delete from doctorSpecilization where id = '".$_GET['id']."'");
+		          mysqli_query($con,"delete from doctorspecilization where id = '".$_GET['id']."'");
                   $_SESSION['msg']="datos eliminados !!";
 		  }
 ?>
@@ -128,7 +128,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from doctorSpecilization");
+$sql=mysqli_query($con,"select * from doctorspecilization");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
