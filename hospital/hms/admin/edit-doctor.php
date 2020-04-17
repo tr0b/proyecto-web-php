@@ -59,7 +59,7 @@ $msg="Detalles del doctor actualizados exitosamente";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | EDITAR DETALLES DEL MÉDICO</h1>
+								<h3><strong>ADMINISTRADOR | EDITAR DOCTOR</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<img width="400" height="300" src="assets/images/12.jpg" >

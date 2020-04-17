@@ -13,13 +13,13 @@ if(isset($_POST['submit']))
     $weight=$_POST['weight'];
     $temp=$_POST['temp'];
    $pres=$_POST['pres'];
-   $Medico=$_POST['Medico'];
-    $estado=$_POST['estado'];
-    $id=$_SESSION['id'];
+        $Medico=$_POST['Medico'];
+              $estado=$_POST['estado'];
+              $contactno=$_POST['contactno'];
            
     
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$id','$estado')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado,contactno)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado','$contactno')");
     if ($query) {
     echo '<script>alert("Historial medico Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -44,22 +44,6 @@ if(isset($_GET['del']))
 
       }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -210,6 +194,7 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
      <td><?php  echo $row['estado'];?>
+     
    <td >
                 <div class="visible-md visible-lg hidden-sm hidden-xs">
               <a href="edithis.php?ID=<?php echo $row['ID'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>     
@@ -265,12 +250,38 @@ while ($row=mysqli_fetch_array($ret)) {
 
                                  <form method="post" name="submit">
 
-    
+   <!--                   ----------------------------------------------------------------                        -->
+
+						<!-- end: PAGE TITLE -->
+						<!-- start: BASIC EXAMPLE -->
+									<?php $sql=mysqli_query($con,"select * from doctors where docEmail='".$_SESSION['dlogin']."'");
+while($data=mysqli_fetch_array($sql))
+{
+?>
+
+<?php {?>
+
+<?php } ?>
+
+													
+<?php $ret=mysqli_query($con,"select * from doctorspecilization");
+while($row=mysqli_fetch_array($ret))
+{
+?>
+<?php } ?>
+															
+
 <tr>
     <th>Médico: </th>
     <td>
-    <input name="Medico" placeholder="Médico" class="form-control wd-450" required="true"></td>
+    <input name="Medico" placeholder="Médico" readonly="readonly" class="form-control wd-450" required="required" value="<?php echo htmlentities($data['doctorName']);?>"></td>
   </tr>  
+  <th>Cédula: </th>
+    <td>
+    <input name="contactno" readonly="readonly" placeholder="Cedula" class="form-control wd-450" required="true" value="<?php echo htmlentities($data['contactno']);?>"></td>
+  </tr>  							
+  <?php } ?>
+
   <tr>
     <th>Estado del paciente: </th>
     <td>
@@ -296,6 +307,8 @@ while ($row=mysqli_fetch_array($ret)) {
     <td>
     <input name="temp" placeholder="Temperatura Corporal" class="form-control wd-450" required="true"></td>
   </tr>
+
+  
                          
      <tr>
     <th>

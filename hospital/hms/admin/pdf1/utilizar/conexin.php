@@ -1,6 +1,6 @@
 <?php
 
-$mysqli=new mysqli("localhost","root","","hms");
+$mysqli=new mysqli("localhost:3307","root","","hms");
 
 
 ?>

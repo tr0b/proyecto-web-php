@@ -6,13 +6,13 @@ include('include/checklogin.php');
 check_login();
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"insert into doctorspecilization(specilization) values('".$_POST['doctorspecilization']."')");
+$sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
 $_SESSION['msg']="¡Especialización  añadida con éxito!";
 }
 
 if(isset($_GET['del']))
 		  {
-		          mysqli_query($con,"delete from doctorspecilization where id = '".$_GET['id']."'");
+		          mysqli_query($con,"delete from doctorSpecilization where id = '".$_GET['id']."'");
                   $_SESSION['msg']="datos eliminados !!";
 		  }
 ?>
@@ -50,14 +50,14 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | Agregar Especializacion del Doctor</h1>
+								<h3><strong>ADMINISTRADOR | AGREGAR ESPECIALIZACIÓN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Administración </span>
+										
 									</li>
 									
-									<img width="500" height="400" src="assets/images/14.jpg" >
+									<img width="350" height="250" src="assets/images/14.jpg" >
 								</ol>
 
 							</div>
@@ -128,7 +128,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from doctorspecilization");
+$sql=mysqli_query($con,"select * from doctorSpecilization");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {

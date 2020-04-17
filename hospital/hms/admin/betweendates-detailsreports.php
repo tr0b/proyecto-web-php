@@ -37,11 +37,11 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">ADMINISTRADOR | VER PACIENTES</h1>
+<h3><strong>ADMINISTRADOR | VER PACIENTES</strong> </h3>	
 </div>
 <ol class="breadcrumb">
 <li>
-<img width="400" height="400" src="assets/images/18.jpg" >
+<img width="300" height="200" src="assets/images/18.jpg" >
 </li>
 </ol>
 </div>
@@ -57,7 +57,7 @@ $tdate=$_POST['todate'];
 ?>
 <br>
 <br>
-<h5 align="center" style="color:blue">Informe del  <?php echo $fdate?> al<?php echo $tdate?></h5>
+<h5 align="center" style="color:blue">Informe del  <?php echo $fdate?> al <?php echo $tdate?></h5>
 <br>
 <br>
 <br>

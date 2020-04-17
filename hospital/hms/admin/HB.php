@@ -46,16 +46,11 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | VER HABITACIONES</h1>
+								<h3><strong>ADMINISTRADOR | VER HABITACIÓN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<img src="ico/ico3.ico">
-									<li>
-										<span>Administración</span>
-									</li>
-									<li class="active">
-										<span>Administrar Habitaciones</span>
-									</li>
+								
 								</ol>
 							</div>
 						</section>

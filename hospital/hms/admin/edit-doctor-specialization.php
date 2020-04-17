@@ -8,7 +8,7 @@ $id=intval($_GET['id']);// get value
 if(isset($_POST['submit']))
 {
 $docspecialization=$_POST['doctorspecilization'];
-$sql=mysqli_query($con,"update  doctorspecilization set specilization='$docspecialization' where id='$id'");
+$sql=mysqli_query($con,"update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
 $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 } 
 
@@ -47,14 +47,12 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | EDITAR ESPECIALIZACIÓN MÉDICA</h1>
+								<h3><strong>ADMINISTRADOR | EDITAR ESPECIALIZACIÓN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
-									<li>
-										<span>Administrador</span>
-									</li>
 									
-											<img width="400" height="350" src="assets/images/10.jpg" >
+									
+											<img width="300" height="200" src="assets/images/10.jpg" >
 
 								</ol>
 							</div>
@@ -83,7 +81,7 @@ $_SESSION['msg']="Doctor Especialización actualizado con éxito !!";
 	<?php 
 
 $id=intval($_GET['id']);
-	$sql=mysqli_query($con,"select * from doctorspecilization where id='$id'");
+	$sql=mysqli_query($con,"select * from doctorSpecilization where id='$id'");
 while($row=mysqli_fetch_array($sql))
 {														
 	?>		<input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization'];?>" >

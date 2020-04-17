@@ -58,14 +58,14 @@ header('location:manage-patient.php');
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">PACIENTE | AÑADIR PACIENTE</h1>
+<h3><strong>ADMINISTRADOR | AÑADIR PACIENTE</strong> </h3>	
 </div>
 <ol class="breadcrumb">
 <li>
-<span>Patient</span>
+<span>Paciente</span>
 </li>
 <li class="active">
-<span>Add Patient</span>
+<span>Agregar paciente</span>
 </li>
 </ol>
 </div>

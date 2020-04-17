@@ -2,10 +2,10 @@
 -- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2020 a las 00:30:26
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.27
+-- Host: localhost:3307
+-- Generation Time: Apr 17, 2020 at 04:11 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `hms`
+-- Database: `hms`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `cedula`, `eje`, `username`, `password`, `updationDate`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`id`, `cedula`, `eje`, `username`, `password`, `updationDat
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `appointment`
+-- Table structure for table `appointment`
 --
 
 CREATE TABLE `appointment` (
@@ -69,7 +69,7 @@ CREATE TABLE `appointment` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `doctors`
+-- Table structure for table `doctors`
 --
 
 CREATE TABLE `doctors` (
@@ -86,17 +86,17 @@ CREATE TABLE `doctors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `doctors`
+-- Dumping data for table `doctors`
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
 (42, 'Dermatología', 'Roberto Carlos', 'Heredia, calle 6 y 7, frente bar la cascada', 'Lunes - Viernes (1:00pm - 5:00pm)', 1001, 'robertoC@hospital.dc.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-13 06:07:43', '2020-04-13 06:14:16'),
-(43, 'Alergología', 'Bryan Mora R.', 'Bryan Ivan Mora  Reinhardt\r\n    \r\n\r\nDe la Casa Matute Gómez, 100 Este, 50 Sur, contiguo a CANARA en calle privada.\r\n\r\n?[0:08] Bryan Ivan Mora  Reinhardt\r\n    \r\n Del Antiguo Casa Matute Gómez 300 al Este, 75 al Norte frente a la Iglesia Sagrado Corazón.\r\n', 'Lunes - Viernes (12:00pm - 4:00pm)', 1002, 'bryanM@hospital.dc.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-13 06:09:23', '2020-04-13 06:14:02');
+(52, 'Alergología', 'Bryan', 'San José ', 'Lunes - VIernes(1pm-5:00pm)', 117450654, 'bryanmora66@doctor.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-16 22:55:02', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `doctorslog`
+-- Table structure for table `doctorslog`
 --
 
 CREATE TABLE `doctorslog` (
@@ -110,7 +110,7 @@ CREATE TABLE `doctorslog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `doctorslog`
+-- Dumping data for table `doctorslog`
 --
 
 INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
@@ -126,12 +126,13 @@ INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logou
 (240, NULL, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:51', NULL, 0),
 (241, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:59', NULL, 1),
 (242, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 17:28:29', NULL, 1),
-(243, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-16 21:50:32', NULL, 1);
+(243, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-16 21:50:32', NULL, 1),
+(244, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-17 01:06:44', NULL, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `doctorspecilization`
+-- Table structure for table `doctorspecilization`
 --
 
 CREATE TABLE `doctorspecilization` (
@@ -141,10 +142,17 @@ CREATE TABLE `doctorspecilization` (
   `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `doctorspecilization`
+--
+
+INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
+(51, 'Alergología', '2020-04-16 22:53:34', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `habitacion`
+-- Table structure for table `habitacion`
 --
 
 CREATE TABLE `habitacion` (
@@ -155,7 +163,7 @@ CREATE TABLE `habitacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `habitacion`
+-- Dumping data for table `habitacion`
 --
 
 INSERT INTO `habitacion` (`id`, `habitacion`, `piso`, `cama`) VALUES
@@ -170,12 +178,13 @@ INSERT INTO `habitacion` (`id`, `habitacion`, `piso`, `cama`) VALUES
 (129, 'H2', 'P2', 'C1-H2-P2'),
 (130, 'H2', 'P2', 'C2-H2-P2'),
 (131, 'H3', 'P2', 'C1-H3-P2'),
-(132, 'H3', 'P2', 'C2-H3-P2');
+(132, 'H3', 'P2', 'C2-H3-P2'),
+(133, 'H6', 'P6', '(C6)(P6)(H6)');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tblcontactus`
+-- Table structure for table `tblcontactus`
 --
 
 CREATE TABLE `tblcontactus` (
@@ -193,7 +202,7 @@ CREATE TABLE `tblcontactus` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tblmedicalhistory`
+-- Table structure for table `tblmedicalhistory`
 --
 
 CREATE TABLE `tblmedicalhistory` (
@@ -206,20 +215,21 @@ CREATE TABLE `tblmedicalhistory` (
   `MedicalPres` mediumtext DEFAULT NULL,
   `estado` text NOT NULL,
   `CreationDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `Medico` text NOT NULL
+  `Medico` text NOT NULL,
+  `contactno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tblmedicalhistory`
+-- Dumping data for table `tblmedicalhistory`
 --
 
-INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `estado`, `CreationDate`, `Medico`) VALUES
-(44, 41, '78', '$	BloodSugar', '69', '34', 'Antiviotico', 'Estable', '2020-04-14 16:21:32', 'Anthony');
+INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `estado`, `CreationDate`, `Medico`, `contactno`) VALUES
+(52, 45, '20', 'O+', '50', '35', 'X', 'Estable', '2020-04-17 02:01:46', 'Roberto Carlos', 1001);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tblpatient`
+-- Table structure for table `tblpatient`
 --
 
 CREATE TABLE `tblpatient` (
@@ -242,17 +252,17 @@ CREATE TABLE `tblpatient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tblpatient`
+-- Dumping data for table `tblpatient`
 --
 
 INSERT INTO `tblpatient` (`id`, `Docid`, `PatientName`, `PatientContno`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `PatientMedhis`, `password`, `habitacion`, `piso`, `cama`, `CreationDate`, `regDate`, `UpdationDate`) VALUES
 (42, 41, 'Mauricio', 2, 'mauricio@gmail.com', 'hombre', 'casa azul', 22, 'no', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C2-H1-P1', '2020-04-14 16:27:54', '2020-04-14 16:27:54', NULL),
-(44, 42, 'Hola', 3, 'hola@gmail.com', 'hombre', 'hola', 22, 'hola', 'fcea920f7412b5da7be0cf42b8c93759', 'H1', 'P1', 'C1-H1-P1', '2020-04-16 22:26:16', '2020-04-16 22:26:16', NULL);
+(45, 1, 'Bryan', 4, 'paciente04@paciente.cr', 'hombre', 'San josé', 20, 'Ex-paciente Ortopedía', 'e10adc3949ba59abbe56e057f20f883e', 'H6', 'P6', '(C6)(P6)(H6)', '2020-04-16 23:08:43', '2020-04-16 23:08:43', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `userlog`
+-- Table structure for table `userlog`
 --
 
 CREATE TABLE `userlog` (
@@ -266,7 +276,7 @@ CREATE TABLE `userlog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `userlog`
+-- Dumping data for table `userlog`
 --
 
 INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
@@ -287,12 +297,20 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`,
 (137, NULL, 'mauricio@gmail.cojm', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:41', NULL, 0),
 (138, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:51', NULL, 1),
 (139, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:02:33', NULL, 1),
-(140, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:49:50', NULL, 1);
+(140, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:49:50', NULL, 1),
+(141, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:48:55', NULL, 0),
+(142, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:17', NULL, 0),
+(143, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:25', NULL, 0),
+(144, NULL, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:51', NULL, 0),
+(145, 44, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:59', NULL, 1),
+(146, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:50:31', NULL, 0),
+(147, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:50:40', NULL, 0),
+(148, 44, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:52:24', NULL, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -308,143 +326,143 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `appointment`
+-- Indexes for table `appointment`
 --
 ALTER TABLE `appointment`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `doctors`
+-- Indexes for table `doctors`
 --
 ALTER TABLE `doctors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `doctorslog`
+-- Indexes for table `doctorslog`
 --
 ALTER TABLE `doctorslog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `doctorspecilization`
+-- Indexes for table `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `habitacion`
+-- Indexes for table `habitacion`
 --
 ALTER TABLE `habitacion`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tblcontactus`
+-- Indexes for table `tblcontactus`
 --
 ALTER TABLE `tblcontactus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tblmedicalhistory`
+-- Indexes for table `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `tblpatient`
+-- Indexes for table `tblpatient`
 --
 ALTER TABLE `tblpatient`
   ADD PRIMARY KEY (`id`),
   ADD KEY `PatientEmail` (`PatientEmail`);
 
 --
--- Indices de la tabla `userlog`
+-- Indexes for table `userlog`
 --
 ALTER TABLE `userlog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `appointment`
+-- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `doctors`
+-- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
+--
+-- AUTO_INCREMENT for table `doctorslog`
+--
+ALTER TABLE `doctorslog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
+
+--
+-- AUTO_INCREMENT for table `doctorspecilization`
+--
+ALTER TABLE `doctorspecilization`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT de la tabla `doctorslog`
---
-ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
-
---
--- AUTO_INCREMENT de la tabla `doctorspecilization`
---
-ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
---
--- AUTO_INCREMENT de la tabla `habitacion`
+-- AUTO_INCREMENT for table `habitacion`
 --
 ALTER TABLE `habitacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
--- AUTO_INCREMENT de la tabla `tblcontactus`
+-- AUTO_INCREMENT for table `tblcontactus`
 --
 ALTER TABLE `tblcontactus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `tblmedicalhistory`
+-- AUTO_INCREMENT for table `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT de la tabla `tblpatient`
+-- AUTO_INCREMENT for table `tblpatient`
 --
 ALTER TABLE `tblpatient`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT de la tabla `userlog`
+-- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

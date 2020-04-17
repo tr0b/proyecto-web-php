@@ -52,7 +52,7 @@ echo "<script>window.location.href ='read-query.php'</script>";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Detalles de Consultas</h1>
+								<h3><strong>ADMINISTRADOR | DETALLES DE CONSULTAS</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>

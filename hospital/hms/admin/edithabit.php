@@ -55,14 +55,14 @@ echo "<script>window.location.href ='HB.php'</script>";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | EDITAR ESPECIALIZACIÓN MÉDICA</h1>
+								<h3><strong>ADMINISTRADOR | EDITAR ESPECIALIZACIÓN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>
 										<span>Administrador</span>
 									</li>
 									<li class="active">
-										<span> EDITAR ESPECIALIZACIÓN MÉDICA</span>
+										<span> Editar Habitación</span>
 									</li>
 								</ol>
 							</div>

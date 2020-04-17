@@ -113,11 +113,11 @@ error:function (){}
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR |Agregar Habitación</h1>
+								<h3><strong>ADMINISTRADOR | AGREGAR HABITACIÓN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<img width="600" height="600" src="assets/images/17.jpg" >
+										<img width="350" height="250" src="assets/images/17.jpg" >
 									</li>
 								</ol>
 							</div>

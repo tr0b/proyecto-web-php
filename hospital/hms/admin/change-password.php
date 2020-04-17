@@ -92,7 +92,7 @@ return true;
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | CAMBIAR LA CONTRASEÑA</h1>
+								<h3><strong>ADMINISTRADOR | CAMBIAR CONTRASEÑA</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>

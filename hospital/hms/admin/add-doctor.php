@@ -105,11 +105,11 @@ error:function (){}
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Administrador| Agregar Doctor</h1>
+								<h3><strong>ADMINISTRADOR | AGREGAR DOCTOR</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									
-										<img width="500" height="300" src="assets/images/11.jpg" >
+										<img width="350" height="250" src="assets/images/11.jpg" >
 									</li>
 								</ol>
 							</div>

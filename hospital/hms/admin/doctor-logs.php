@@ -39,7 +39,7 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR | REGISTROS DE SESIONES MÉDICAS</h1>
+								<h3><strong>ADMINISTRADOR | REGISTRO DE SESIONES MÉDICAS</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>

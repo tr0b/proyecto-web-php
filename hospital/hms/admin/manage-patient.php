@@ -37,11 +37,11 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">ADMINISTRADOR | VER PACIENTES</h1>
+<h3><strong>ADMINISTRADOR | VER PACIENTES</strong> </h3>	
 </div>
 <ol class="breadcrumb">
 <li>
-		<img width="400" height="400" src="assets/images/16.jpg" >
+		<img width="250" height="350" src="assets/images/16.jpg" >
 </li>
 </ol>
 

@@ -39,7 +39,7 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">PACIENTES | HISTORIAL DE CITAS</h1>
+									<h3><strong>ADMINISTRADOR | TABLERO</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>

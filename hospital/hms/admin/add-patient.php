@@ -143,12 +143,12 @@ error:function (){}
 
 	<div class="row">
 	<div class="col-sm-8">
-			<h1 class="mainTitle">Paciente | Agregar Paciente</h1>
+	<h3><strong>ADMINISTRADOR | AGREGAR PACIENTE</strong> </h3>	
 	</div>
 
 	<ol class="breadcrumb">
 	<li>
-	<img width="500" height="500" src="assets/images/15.jpg" >
+	<img width="350" height="250" src="assets/images/15.jpg" >
 	</li>
 	</ol>
 

@@ -90,7 +90,7 @@ if(isset($_GET['del']))
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Doctor | Administrar Pacientes</h1>
+<h3><strong>ADMINISTRADOR | ADMINISTRAR PACIENTES</strong> </h3>	
 </div>
 <ol class="breadcrumb">
 <li>
@@ -188,6 +188,7 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
 <th> Medico </th>
+<th> Cédula Médica </th>
 <th> estado del paciente</th>
 <th> Accion</th>
 
@@ -208,6 +209,7 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
+   <td><?php  echo $row['contactno'];?>
      <td><?php  echo $row['estado'];?>
    <td >
                 <div class="visible-md visible-lg hidden-sm hidden-xs">

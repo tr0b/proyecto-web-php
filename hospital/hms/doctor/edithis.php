@@ -140,7 +140,7 @@ while($data=mysqli_fetch_array($sql))
 									<label for="fess">
 																Medico
 															</label>
-					<input type="text" name="Medico" class="form-control" required="required"  value="<?php echo htmlentities($data['Medico']);?>">
+					<input type="text" name="Medico" class="form-control" required="required"  readonly="readonly" value="<?php echo htmlentities($data['Medico']);?>">
 														</div>
 														<?php } ?>
 														<button type="submit" name="submit" class="btn btn-o btn-primary">

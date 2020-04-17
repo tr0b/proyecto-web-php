@@ -82,7 +82,7 @@ error:function (){}
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Agregar Administrador</h1>
+								<h3><strong>ADMINISTRADOR | AGREGAR ADMIN</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									<li>

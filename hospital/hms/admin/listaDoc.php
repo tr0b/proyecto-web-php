@@ -45,12 +45,12 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">ADMINISTRADOR |LISTA DE REGISTRO DE DOCUMENTOS</h1>
+								<h3><strong>ADMINISTRADOR | LISTA DE REGISTRO DE MÉDICOS</strong> </h3>	
 																	</div>
 								<ol class="breadcrumb">
 									
 									<li>
-									<img width="500" height="500" src="assets/images/16.jpg" >
+									<img width="350" height="250" src="assets/images/16.jpg" >
 									</li>
 								</ol>
 							</div>
