@@ -1,4 +1,4 @@
-require_once("include/config.php");
+
 <?php 
 require_once("include/config.php");
 if(!empty($_POST["patcontact"])) {

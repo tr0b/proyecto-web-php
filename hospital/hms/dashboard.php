@@ -59,7 +59,7 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											 <img width="200" height="200" src="ico/usuario.png">
-											<h2 class="StepTitle">Mi perfil</h2>
+											<h2 class="StepTitle">Mi Perfil</h2>
 											
 											<p class="links cl-effect-1">
 												<a href="edit-profile.php">
@@ -73,11 +73,11 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 										 <img width="200" height="200" src="ico/tos.png">
-											<h2 class="StepTitle">Historial Medico</h2>
+											<h2 class="StepTitle">Historial Médico</h2>
 										
 											<p class="cl-effect-1">
 												<a href="manage-medhistory.php">
-													 Ver Historial del Internado
+													 Ver historial del internado
 												</a>
 											</p>
 										</div>

@@ -15,10 +15,11 @@ if(isset($_POST['submit']))
    $pres=$_POST['pres'];
         $Medico=$_POST['Medico'];
               $estado=$_POST['estado'];
+              $contactno=$_POST['contactno'];
            
     
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado')");
+      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Medico,estado,contactno)value('$vid','$bp','$bs','$weight','$temp','$pres','$Medico','$estado','$contactno')");
     if ($query) {
     echo '<script>alert("Historial medico Añadido con exito")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -43,22 +44,6 @@ if(isset($_GET['del']))
 
       }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,7 +75,7 @@ if(isset($_GET['del']))
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Doctor | Administrar Pacientes</h1>
+<h3><strong>DOCTOR | ADMINISTRAR PACIENTES</strong> </h3>  
 </div>
 <ol class="breadcrumb">
 <li>
@@ -159,8 +144,8 @@ while ($row=mysqli_fetch_array($ret)) {
     
           <th>Cama</th>
         <td><?php  echo $row['cama'];?> </td>
-                  <th></th>
-        <td><?php  echo $row[''];?> </td>
+                  <th>Motivo de ingreso</th>
+        <td><?php  echo $row['ingreso'];?> </td>
    
    
  
@@ -183,11 +168,12 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
 <th>#</th>
 <th> Presión arterial </th>
 <th> Peso </th>
-<th> Tipo de sangre:</th>
+<th> Tipo de sangre</th>
 <th> Temperatura corporal </th>
 <th> Prescripción médica </th>
 <th> Fecha de visita </th>
 <th> Medico </th>
+<th> cedula</th>
 <th> estado del paciente</th>
 <th> Accion</th>
 
@@ -208,7 +194,9 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
    <td><?php  echo $row['Medico'];?>
+      <td><?php  echo $row['contactno'];?>
      <td><?php  echo $row['estado'];?>
+     
    <td >
                 <div class="visible-md visible-lg hidden-sm hidden-xs">
               <a href="edithis.php?ID=<?php echo $row['ID'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>     
@@ -264,12 +252,38 @@ while ($row=mysqli_fetch_array($ret)) {
 
                                  <form method="post" name="submit">
 
-    
+   <!--                   ----------------------------------------------------------------                        -->
+
+            <!-- end: PAGE TITLE -->
+            <!-- start: BASIC EXAMPLE -->
+                  <?php $sql=mysqli_query($con,"select * from admin where eje='".$_SESSION['login']."'");
+while($data=mysqli_fetch_array($sql))
+{
+?>
+
+<?php {?>
+
+<?php } ?>
+
+                          
+<?php $ret=mysqli_query($con,"select * from cedula");
+while($row=mysqli_fetch_array($ret))
+{
+?>
+<?php } ?>
+                              
+
 <tr>
-    <th>Médico: </th>
+    <th>Admin: </th>
     <td>
-    <input name="Medico" placeholder="Médico" class="form-control wd-450" required="true"></td>
+    <input name="Medico" placeholder="Médico" readonly="readonly" class="form-control wd-450" required="required" value="<?php echo htmlentities($data['username']);?>"></td>
   </tr>  
+  <th>Cédula: </th>
+    <td>
+    <input name="contactno" readonly="readonly" placeholder="Cedula" class="form-control wd-450" required="true" value="<?php echo htmlentities($data['eje']);?>"></td>
+  </tr>               
+  <?php } ?>
+
   <tr>
     <th>Estado del paciente: </th>
     <td>
@@ -295,6 +309,8 @@ while ($row=mysqli_fetch_array($ret)) {
     <td>
     <input name="temp" placeholder="Temperatura Corporal" class="form-control wd-450" required="true"></td>
   </tr>
+
+  
                          
      <tr>
     <th>

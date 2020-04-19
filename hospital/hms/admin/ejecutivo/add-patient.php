@@ -20,7 +20,8 @@
 		$habitacion=$_POST['habitacion'];
 		$piso=$_POST['piso'];
 		$cama=$_POST['cama'];
-		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$PatientContno','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
+				$ingreso=$_POST['ingreso'];
+		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama,ingreso) values('$docid','$patname','$PatientContno','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama','$ingreso')");
 		if($sql)
 {
 	echo "<script>alert('Registrado exitosamente.');</script>";
@@ -32,7 +33,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>EJECUTIVO | Agregar Paciente</title>
+		<title>Doctor | Agregar Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -143,13 +144,11 @@ error:function (){}
 
 	<div class="row">
 	<div class="col-sm-8">
-			<h1 class="mainTitle">Paciente | Agregar Paciente</h1>
+				<h3><strong>Doctor | Agregar paciente</strong> </h3>	
 	</div>
 
 	<ol class="breadcrumb">
-	<li>
-	<img width="500" height="500" src="assets/images/15.jpg" >
-	</li>
+	
 	</ol>
 
 	</div>
@@ -160,7 +159,7 @@ error:function (){}
 	<div class="row">
 
 					<div class="copyright">
-						 <span class=""></span><span class=""> Ver Documentos registrados de pacientes
+						 <span class=""><strong>	Ver Docuemtos registrados de pacientes</strong></span><span class=""> 
 						</span>. <span></span>
 						<i class="fa fa-lock"></i>
 									 </span>
@@ -226,16 +225,22 @@ error:function (){}
 
 		<div class="form-group">
 		<label for="address">
-	Dirección de Procedencia
+	Dirección del Procedencia
 </label>
 <textarea name="pataddress" class="form-control"  placeholder="Ingrese la dirección del paciente" required="true"></textarea>
+</div>
+<div class="form-group">
+		<label for="address">
+Motivo de ingreso
+</label>
+<textarea name="ingreso" class="form-control"  placeholder="moitvo de ingreso" required="true"></textarea>
 </div>
 
 <div class="form-group">
 <label for="fess">
 	Edad del paciente
 </label>
-<input type="text" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
+<input type="number" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
 </div>
 
 <div class="form-group">
@@ -249,6 +254,8 @@ Historial médico
 									<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
 									<i class="fa fa-lock"></i> </span>
 							</div>
+							
+
 
 														<div class="form-group">
 															<label for="habitacion">

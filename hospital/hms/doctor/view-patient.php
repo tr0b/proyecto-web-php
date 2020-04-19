@@ -105,19 +105,19 @@ while ($row=mysqli_fetch_array($ret)) {
  Detalles del paciente</td></tr>
 
     <tr>
-    <th scope>Nombre del paciente</th>
+    <th scope>Nombre completo del paciente</th>
     <td><?php  echo $row['PatientName'];?></td>
-    <th scope>  Email del paciente</th>
+    <th scope>  Correo del paciente</th>
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Docuento de registro</th>
+    <th scope>Documento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
-    <th>Dirección del paciente  </th>
-    <td><?php  echo $row['PatientAdd'];?></td>
+    <th>Cédula</th>
+    <td><?php  echo $row['cedula'];?></td>
   </tr>
     <tr>
-    <th>Sexo del paciente</th>
+    <th>Genero</th>
     <td><?php  echo $row['PatientGender'];?></td>
     <th>  Edad del paciente</th>
     <td><?php  echo $row['PatientAge'];?></td>
@@ -126,28 +126,43 @@ while ($row=mysqli_fetch_array($ret)) {
     
     <th>Historial médico del paciente (si lo hay)</th>
     <td><?php  echo $row['PatientMedhis'];?></td>
-     <th>Fecha de registro del paciente</th>
-    <td><?php  echo $row['CreationDate'];?></td>
+    <th>Fecha de nacimiento</th>
+    <td><?php  echo $row['fnacimiento'];?></td>
+    
 
   </tr>
   <tr>
     
-    <th>Habitacion  </th>
+    <th>Habitación  </th>
     <td><?php  echo $row['habitacion'];?></td>
-        <th>Piso</th>
-      <td><?php  echo $row['piso'];?></td>
+      <th>Fecha de registro del paciente</th>
+    <td><?php  echo $row['CreationDate'];?></td>
+   
       
  
   </tr>
+ 
+  
   <tr>
     
     
           <th>Cama</th>
         <td><?php  echo $row['cama'];?> </td>
-                  <th></th>
-        <td><?php  echo $row[''];?> </td>
+             <th>Motivo de ingreso</th>
+
+        <td><?php  echo $row['ingreso'];?> </td>
    
    
+ 
+  </tr>
+   <tr>  
+    <th>Piso  </th>
+       <td><?php  echo $row['piso'];?></td>
+   
+    
+         <th>Dirección del paciente </th>
+         <td><?php  echo $row['PatientAdd'];?></td>
+      
  
   </tr>
  

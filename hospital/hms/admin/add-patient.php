@@ -10,17 +10,20 @@
 			$docid=$_SESSION['id'];
 			$patname=$_POST['patname'];
 		$PatientContno=$_POST['PatientContno'];
+			$cedula=$_POST['cedula'];
 		$patemail=$_POST['patemail'];
 		$gender=$_POST['gender'];
 		$pataddress=$_POST['pataddress'];
 		$patage=$_POST['patage'];
+		$fnacimiento=$_POST['fnacimiento'];
 		$medhis=$_POST['medhis'];
 		$password=md5($_POST['password']);
-
+        
 		$habitacion=$_POST['habitacion'];
 		$piso=$_POST['piso'];
 		$cama=$_POST['cama'];
-		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis,password,habitacion,piso,cama) values('$docid','$patname','$PatientContno','$patemail','$gender','$pataddress','$patage','$medhis','$password','$habitacion','$piso','$cama')");
+				$ingreso=$_POST['ingreso'];
+		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,cedula,PatientEmail,PatientGender,PatientAdd,PatientAge,fnacimiento,PatientMedhis,password,habitacion,piso,cama,ingreso) values('$docid','$patname','$PatientContno','$cedula','$patemail','$gender','$pataddress','$patage','$fnacimiento','$medhis','$password','$habitacion','$piso','$cama','$ingreso')");
 		if($sql)
 {
 	echo "<script>alert('Registrado exitosamente.');</script>";
@@ -32,7 +35,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>admin| Agregar Paciente</title>
+		<title>adm| Agregar Paciente</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -65,7 +68,22 @@ return true;
 </script>
 		
 
-		
+	
+<script>
+function checkemailAvailability22() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availability.php",
+data:'emailic='+$("#cedula").val(),
+type: "POST",
+success:function(data){
+$("#emailc-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>	
 
 
 <script>
@@ -143,13 +161,11 @@ error:function (){}
 
 	<div class="row">
 	<div class="col-sm-8">
-	<h3><strong>ADMINISTRADOR | AGREGAR PACIENTE</strong> </h3>	
+				<h3><strong>Administrador | Agregar paciente</strong> </h3>	
 	</div>
 
 	<ol class="breadcrumb">
-	<li>
-	<img width="350" height="250" src="assets/images/15.jpg" >
-	</li>
+	
 	</ol>
 
 	</div>
@@ -160,7 +176,7 @@ error:function (){}
 	<div class="row">
 
 					<div class="copyright">
-						 <span class=""></span><span class=""> Ver Docuemtos registrados de pacientes
+						 <span class=""><strong>	Ver Docuemtos registrados de pacientes</strong></span><span class=""> 
 						</span>. <span></span>
 						<i class="fa fa-lock"></i>
 									 </span>
@@ -196,6 +212,20 @@ error:function (){}
 <input type="number" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
 <span id="document-availability-status"></span>
 </div>
+
+<div class="form-group">
+									<label for="fess">
+																Cedula del paciente
+															</label>
+<input type="number" id="cedula" name="cedula" class="form-control"  placeholder="cedula" required="true" onBlur="checkemailAvailability22()">
+<span id="emailc-availability-status"></span>
+</div>
+
+
+
+
+
+
 	
 <div class="form-group">
 									<label for="fess">
@@ -230,13 +260,32 @@ error:function (){}
 </label>
 <textarea name="pataddress" class="form-control"  placeholder="Ingrese la dirección del paciente" required="true"></textarea>
 </div>
+<div class="form-group">
+		<label for="address">
+Motivo de ingreso
+</label>
+<textarea name="ingreso" class="form-control"  placeholder="moitvo de ingreso" required="true"></textarea>
+</div>
 
 <div class="form-group">
 <label for="fess">
 	Edad del paciente
 </label>
-<input type="number"name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
+<input type="number" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
 </div>
+
+<div class="form-group">
+<label for="fnacimiento">
+Fecha dnacimintp
+</label>
+	<input type="date" name="fnacimiento" step="1" min="1800-01-01" max="2037-12-31" value="2020-01-01" class="form-control"  required="true">
+
+
+</div>
+
+
+
+
 
 <div class="form-group">
 <label for="fess">
@@ -249,11 +298,7 @@ Historial médico
 									<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
 									<i class="fa fa-lock"></i> </span>
 							</div>
-							<div class="form-group">
-								<span class="input-icon">
-									<input type="password" class="form-control"  id="password_again" name="password_again" placeholder="Contraseña confirmar" required>
-									<i class="fa fa-lock"></i> </span>
-							</div>
+							
 
 
 														<div class="form-group">

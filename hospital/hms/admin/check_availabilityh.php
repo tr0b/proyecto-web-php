@@ -107,3 +107,27 @@ echo "<span style='color:red'>Cedula de medico ya existe.</span>";
 
 
 ?>
+
+
+
+<?php 
+require_once("include/config.php");
+if(!empty($_POST["pats"])) {
+	$pats= $_POST["pats"];
+	
+		$result =mysqli_query($con,"SELECT cedula FROM tblpatient WHERE cedula='$pats'");
+		$count=mysqli_num_rows($result);
+if($count>0)
+{
+echo "<span style='color:red'>Cedula actualmente registrada en un paciente</span>";
+ echo "<script>$('#submit').prop('disabled',true);</script>";
+} else{
+	
+	echo "<span style='color:green'> disponible para registrar en un paciente</span>";
+ echo "<script>$('#submit').prop('disabled',false);</script>";
+}
+}
+
+
+?>
+

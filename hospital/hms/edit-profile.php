@@ -4,22 +4,26 @@ session_start();
 include('include/config.php');
 include('include/checklogin.php');
 check_login();
+date_default_timezone_set('America/Costa_Rica');// change according timezone
+$currentTime = date( 'd-m-Y h:i:s A', time () );
 if(isset($_POST['submit']))
 {
 $PatientName=$_POST['PatientName'];
-
 $PatientContno=$_POST['PatientContno'];
-$Docid=$_POST['Docid'];
+
+$cedula=$_POST['cedula'];
+$fnacimiento=$_POST['fnacimiento'];
+$PatientAge=$_POST['PatientAge'];	
 $PatientGender=$_POST['PatientGender'];
 $PatientEmail=$_POST['PatientEmail'];
 
 
 
-$sql=mysqli_query($con,"Update tblpatient set PatientName='$PatientName',PatientContno='$PatientContno',Docid='$Docid',PatientGender='$PatientGender',PatientEmail='$PatientEmail' where id='".$_SESSION['id']."'");
+$sql=mysqli_query($con,"Update tblpatient set PatientName='$PatientName',PatientContno='$PatientContno',cedula='$cedula',fnacimiento='$fnacimiento',PatientAge='$PatientAge',PatientGender='$PatientGender',PatientEmail='$PatientEmail' where id='".$_SESSION['id']."'");
 if($sql)
 {
 $msg="
-Su perfil actualizado con éxito";
+perfil actualizado con éxito";
 
 
 }
@@ -62,7 +66,7 @@ Su perfil actualizado con éxito";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle"><strong>Paciente | Editar Perfil</strong></h1>
+									<h1 class="mainTitle"><h3><strong>Paciente | Editar perfil</strong> </h3>	</h1>
 																	</div>
 																	
 								<ol class="breadcrumb">
@@ -92,7 +96,7 @@ while($data=mysqli_fetch_array($sql))
 ?>
 
 
-<h4>Perfil de <?php echo htmlentities($data['PatientName']);?></h4>
+<h4>Perfil de: <?php echo htmlentities($data['PatientName']);?></h4>
 <p><b>Fecha de Creación: </b><?php echo htmlentities($data['regDate']);?></p>
 <?php if($data['updationDate']){?>
 <p><b>Ultima Actualización del Perfil: </b><?php echo htmlentities($data['updationDate']);?></p>
@@ -102,7 +106,7 @@ while($data=mysqli_fetch_array($sql))
 
 <div class="form-group">
 															<label for="PatientName">
-																Nombre del Paciente
+																Nombre completo del paciente
 															</label>
 	<input type="text" name="PatientName" class="form-control" value="<?php echo htmlentities($data['PatientName']);?>" >
 														</div>
@@ -114,32 +118,54 @@ while($data=mysqli_fetch_array($sql))
 					<textarea name="PatientAdd" class="form-control"><?php echo htmlentities($data['PatientAdd']);?></textarea>
 														</div>
 <div class="form-group">
-															<label for="Docid">
-																Numero de Documento registrado
+															<label for="PatientContno">
+															Número de documento
 															</label>
-		<input type="text" name="PatientContn" class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['PatientContno']);?>" >
+		<input type="text" name="PatientContno" class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['PatientContno']);?>" >
 														</div>
 	
 <div class="form-group">                                        Género
-									<label for="gender">
+									<label for="PatientGender">
 																
 															</label>
 
-<select name="gender" class="form-control" required="required" >
+<select name="PatientGender" readonly="readonly" class="form-control" required="required" >
 <option value="<?php echo htmlentities($data['PatientGender']);?>"><?php echo htmlentities($data['PatientGender']);?></option>
-<option value="male">Hombre</option>	
-<option value="female">Mujer</option>	
-<option value="other">Otro</option>	
+
 </select>
 
 														</div>
 
+														<div class="form-group">
+															<label for="cedula">
+															Cédula
+															</label>
+		<input type="text" name="cedula" readonly="readonly"  class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['cedula']);?>" >
+														</div>
+														
+
+														<div class="form-group">
+															<label for="PatientAge">
+														Edad
+															</label>
+		<input type="text" name="PatientAge" readonly="readonly"  class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['PatientAge']);?>" >
+														</div>
+
+														
+
+														<div class="form-group">
+															<label for="fnacimiento">
+															Fecha de nacimiento
+															</label>
+		<input type="text" name="fnacimiento" readonly="readonly"  class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['fnacimiento']);?>" >
+														</div>
+
 <div class="form-group">
 									<label for="fess">
-																 Email del Paciente
+																 Email del paciente
 															</label>
 					<input type="email" name="PatientEmail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['PatientEmail']);?>">
-					<a href="change-emaild.php">Actualiza tu ID del Correo Electrónico</a>
+					<a href="change-emaild.php">Actualizar correo electrónico</a>
 														</div>
 
 

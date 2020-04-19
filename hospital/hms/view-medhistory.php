@@ -90,7 +90,7 @@ if(isset($_GET['del']))
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle"><strong>Historial | Pacientes</strong></h1>
+<h1 class="mainTitle"><h3><strong>Paciente | Historial Médico</strong> </h3>  </h1>
 </div>
 <ol class="breadcrumb">
 <li>
@@ -113,7 +113,7 @@ if(isset($_GET['del']))
 <div class="row">
 <div class="col-md-12">
 
-<h5 class="over-title margin-bottom-15">Historial<span class="text-bold"> Pacientes</span></h5>
+<h5 class="over-title margin-bottom-15"><h5><strong>Historial</strong> Paciente</span></h5>
 
 <?php
                                $vid=$_GET['viewid'];
@@ -127,19 +127,19 @@ while ($row=mysqli_fetch_array($ret)) {
  Detalles del paciente</td></tr>
 
     <tr>
-    <th scope>Nombre del paciente</th>
+    <th scope>Nombre completo del paciente</th>
     <td><?php  echo $row['PatientName'];?></td>
-    <th scope>  Email del paciente</th>
+    <th scope>  Correo del paciente</th>
     <td><?php  echo $row['PatientEmail'];?></td>
   </tr>
   <tr>
-    <th scope>Docuento de registro</th>
+    <th scope>Documento de registro</th>
     <td><?php  echo $row['PatientContno'];?></td>
-    <th>Dirección del paciente  </th>
-    <td><?php  echo $row['PatientAdd'];?></td>
+    <th>Cédula</th>
+    <td><?php  echo $row['cedula'];?></td>
   </tr>
     <tr>
-    <th>Genero</th>
+    <th>Género</th>
     <td><?php  echo $row['PatientGender'];?></td>
     <th>  Edad del paciente</th>
     <td><?php  echo $row['PatientAge'];?></td>
@@ -148,28 +148,43 @@ while ($row=mysqli_fetch_array($ret)) {
     
     <th>Historial médico del paciente (si lo hay)</th>
     <td><?php  echo $row['PatientMedhis'];?></td>
-     <th>Fecha de registro del paciente</th>
-    <td><?php  echo $row['CreationDate'];?></td>
+    <th>Fecha de nacimiento</th>
+    <td><?php  echo $row['fnacimiento'];?></td>
+    
 
   </tr>
   <tr>
     
-    <th>Habitacion  </th>
+    <th>Habitación  </th>
     <td><?php  echo $row['habitacion'];?></td>
-        <th>Piso</th>
-      <td><?php  echo $row['piso'];?></td>
+      <th>Fecha de registro del paciente</th>
+    <td><?php  echo $row['CreationDate'];?></td>
+   
       
  
   </tr>
+ 
+  
   <tr>
     
     
           <th>Cama</th>
         <td><?php  echo $row['cama'];?> </td>
-                  <th></th>
-        <td><?php  echo $row[''];?> </td>
+             <th>Motivo de ingreso</th>
+
+        <td><?php  echo $row['ingreso'];?> </td>
    
    
+ 
+  </tr>
+   <tr>  
+    <th>Piso  </th>
+       <td><?php  echo $row['piso'];?></td>
+   
+    
+         <th>Dirección del paciente </th>
+         <td><?php  echo $row['PatientAdd'];?></td>
+      
  
   </tr>
  
@@ -184,18 +199,20 @@ $ret=mysqli_query($con,"select * from tblmedicalhistory  where PatientID='$vid'"
  ?>
 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
   <tr align="center">
-   <th colspan="9" >Historial Médico</th> 
+   <th colspan="10" >Historial Médico</th> 
   </tr>
   <tr>
 <th>#</th>
-<th> Presión arterial </th>
-<th> Peso </th>
-<th> Tipo de sangre </th>
-<th> Temperatura corporal </th>
+<th> Presión arterial</th>
+<th> Peso</th>
+<th> Tipo de sangre</th>
+<th> Temperatura corporal</th>
 <th> Prescripción médica </th>
-<th> Fecha de visita </th>
-<th> Medico </th>
-<th> estado del paciente</th>
+<th> Fecha de visita</th>
+<th> Médico </th>
+<th> Estado del paciente</th>
+<th> </th>
+
 
 
 
@@ -214,8 +231,8 @@ while ($row=mysqli_fetch_array($ret)) {
   <td><?php  echo $row['Temperature'];?></td>
   <td><?php  echo $row['MedicalPres'];?></td>
   <td><?php  echo $row['CreationDate'];?></td> 
-   <td><?php  echo $row['Medico'];?>
-     <td><?php  echo $row['estado'];?>
+  <td><?php  echo $row['Medico'];?>
+  <td><?php  echo $row['estado'];?>
    <td >
                 
 
