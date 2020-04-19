@@ -120,7 +120,11 @@ while ($row=mysqli_fetch_array($ret)) {
     <th>Genero</th>
     <td><?php  echo $row['PatientGender'];?></td>
     <th>  Edad del paciente</th>
-    <td><?php  echo $row['PatientAge'];?></td>
+    <td><?php 
+	$birth= new DateTime($row['fnacimiento']);
+	$today = new DateTime('today');
+	echo $birth->diff($today)->y;
+	?></td>
   </tr>
   <tr>
     
