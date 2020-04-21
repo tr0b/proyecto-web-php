@@ -99,19 +99,41 @@ window.smartsupp||(function(d) {
 									</div>
 								</div>
 								
-							</div>
-						</div>
-			
-					
-					
+
+								<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<img width="300" height="300" src="ico/1.jpg
+											">
+											<h2 class="StepTitle">Ver Asignaciones</h2>
+											
+											<p class="links cl-effect-1">
+												<a href="appointment-history.php">
+												Ver Asignacion medica
+												</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							
 						
-						
+
+
+
+
+
+
+
+
+
+
+
+
+
 					
-						<!-- end: SELECT BOXES -->
-						
-					</div>
-				</div>
-			</div>
+				
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->

@@ -54,7 +54,7 @@ check_login();
 <div class="container-fluid container-fullw bg-white">
 <div class="row">
 <div class="col-md-12">
-<h5 class="over-title margin-bottom-15">Ver<span class="text-bold"> Pacientes</span></h5>
+<h5 class="over-title margin-bottom-15"><h5><strong>Ver</strong> Pacientes</span></h5>
 <img width="450" height="300" src="ico/5.jpg">
 	
 <table class="table table-hover" id="sample-table-1">
@@ -62,11 +62,10 @@ check_login();
 <tr>
 <th class="center">#</th>
 <th>	Nombre del paciente</th>
-<th>Número de Documento del paciente</th>
-<th>Sexo del paciente</th>
+<th>Número de documento del paciente</th>
+<th>Cedula del paciente</th>
 <th>Fecha de creación</th>
 <th>Fecha de actualización</th>
-<th>Piso</th>
 
 <th>Acción</th>
 </tr>
@@ -83,10 +82,10 @@ while($row=mysqli_fetch_array($sql))
 <td class="center"><?php echo $cnt;?>.</td>
 <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 <td><?php echo $row['PatientContno'];?></td>
-<td><?php echo $row['PatientGender'];?></td>
+<td><?php echo $row['cedula'];?></td>
 <td><?php echo $row['CreationDate'];?></td>
 <td><?php echo $row['UpdationDate'];?>
-<td><?php echo $row['piso'];?>
+
 </td>
 <td>
 

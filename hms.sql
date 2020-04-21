@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2020 a las 01:01:14
+-- Tiempo de generación: 21-04-2020 a las 18:12:23
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -54,25 +54,23 @@ CREATE TABLE `appointment` (
   `id` int(11) NOT NULL,
   `doctorSpecialization` varchar(255) DEFAULT NULL,
   `doctorId` int(11) DEFAULT NULL,
-  `userId` int(11) DEFAULT NULL,
   `patname` text NOT NULL,
   `cedula` text NOT NULL,
   `consultancyFees` int(11) DEFAULT NULL,
   `appointmentDate` varchar(255) DEFAULT NULL,
   `appointmentTime` varchar(255) DEFAULT NULL,
   `postingDate` timestamp NULL DEFAULT current_timestamp(),
-  `userStatus` int(11) DEFAULT NULL,
-  `doctorStatus` int(11) DEFAULT NULL,
-  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `habitacion` int(133) NOT NULL
+  `estado` text DEFAULT NULL,
+  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `appointment`
 --
 
-INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `patname`, `cedula`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`, `habitacion`) VALUES
-(6, 'Alergología', 52, 52, '', '', 0, '2020-04-27', '5:00 PM', '2020-04-19 22:58:13', 1, 1, NULL, 0);
+INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `patname`, `cedula`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `estado`, `updationDate`) VALUES
+(41, 'Neurocirugía', 58, 'Mauricio Hernadez Ruiz', '70123', 0, '2020-04-21', '9:00 PM', '2020-04-21 13:46:48', 'COMPLETO', '2020-04-21 15:14:22'),
+(42, 'Neurocirugía', 61, 'Mauricio Hernadez Ruiz', '70123', 0, '2020-04-23', '9:00 AM', '2020-04-21 14:58:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -98,8 +96,8 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(42, 'Dermatología', 'Roberto Carlos', 'Heredia, calle 6 y 7, frente bar la cascada', 'Lunes - Viernes (1:00pm - 5:00pm)', 1001, 'robertoC@hospital.dc.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-13 06:07:43', '2020-04-13 06:14:16'),
-(52, 'Alergología', 'Bryan', 'San José ', 'Lunes - VIernes(1pm-5:00pm)', 117450654, 'bryanmora66@doctor.cr', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-16 22:55:02', NULL);
+(61, 'Neurocirugía', 'Pedro Paulo', 'Pavas', 'Lunes - Jueves (7:30am–17:00pm)', 99999999, 'pedro@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-21 14:57:12', NULL),
+(62, 'Oftalmología', 'José Martinez Nuñez', 'hol', 'Lunes - martes (7:10am–17:20pm)', 70001, 'robertog@hweb.com', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-21 15:13:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -124,24 +122,11 @@ CREATE TABLE `doctorslog` (
 INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (231, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:20:15', NULL, 1),
 (232, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:29:54', NULL, 1),
-(233, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 04:51:22', NULL, 1),
-(234, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 05:42:37', NULL, 1),
-(235, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 07:21:21', NULL, 1),
-(236, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 10:13:12', NULL, 1),
-(237, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 13:36:45', NULL, 1),
-(238, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 15:01:01', NULL, 1),
-(239, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 15:28:55', NULL, 1),
 (240, NULL, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:51', NULL, 0),
-(241, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 16:18:59', NULL, 1),
-(242, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-14 17:28:29', NULL, 1),
-(243, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-16 21:50:32', NULL, 1),
-(244, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-17 01:06:44', NULL, 1),
-(245, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 16:35:20', NULL, 1),
-(246, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 16:47:51', NULL, 1),
-(247, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 17:13:58', NULL, 1),
-(248, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 19:55:48', NULL, 1),
-(249, 42, 'robertoC@hospital.dc.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 21:35:04', NULL, 1),
-(250, 52, 'bryanmora66@doctor.cr', 0x3a3a3100000000000000000000000000, '2020-04-19 22:10:41', NULL, 1);
+(254, NULL, 'bryan@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-20 01:41:43', NULL, 0),
+(272, 58, 'joseMartinez@hweb.com', 0x3a3a3100000000000000000000000000, '2020-04-21 14:00:57', NULL, 1),
+(273, 58, 'joseMartinez@hweb.com', 0x3a3a3100000000000000000000000000, '2020-04-21 14:24:08', NULL, 1),
+(274, 61, 'pedro@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-21 15:05:16', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -161,7 +146,12 @@ CREATE TABLE `doctorspecilization` (
 --
 
 INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
-(51, 'Alergología', '2020-04-16 22:53:34', NULL);
+(53, 'Neurocirugía', '2020-04-21 01:49:36', NULL),
+(54, 'Oftalmología', '2020-04-21 01:49:44', NULL),
+(55, 'Quirúrgica', '2020-04-21 01:49:53', NULL),
+(56, 'Pediatría', '2020-04-21 01:50:03', NULL),
+(57, 'Psicología ', '2020-04-21 01:50:17', NULL),
+(58, 'Endocrinología ', '2020-04-21 01:50:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -192,8 +182,7 @@ INSERT INTO `habitacion` (`id`, `habitacion`, `piso`, `cama`) VALUES
 (129, 'H2', 'P2', 'C1-H2-P2'),
 (130, 'H2', 'P2', 'C2-H2-P2'),
 (131, 'H3', 'P2', 'C1-H3-P2'),
-(132, 'H3', 'P2', 'C2-H3-P2'),
-(133, 'H6', 'P6', '(C6)(P6)(H6)');
+(132, 'H3', 'P2', 'C2-H3-P2');
 
 -- --------------------------------------------------------
 
@@ -240,7 +229,10 @@ CREATE TABLE `tblmedicalhistory` (
 INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `estado`, `CreationDate`, `Medico`, `contactno`) VALUES
 (52, 45, '20', 'O+', '50', '35', 'X', 'Estable', '2020-04-17 02:01:46', 'Roberto Carlos', 1001),
 (53, 42, '78', 'O+', '65', '34', 'ghghghgh', 'Estable', '2020-04-19 16:51:44', 'Roberto administrador', 1234),
-(54, 49, '78', 'O+', '65', '34', 'HOLA', 'Estable', '2020-04-19 19:38:02', 'Roberto administrador', 1234);
+(54, 49, '78', 'O+', '65', '34', 'HOLA', 'Estable', '2020-04-19 19:38:02', 'Roberto administrador', 1234),
+(56, 57, '78', '0+', '76', '34', 'hola', 'etable', '2020-04-21 02:17:35', 'José Martinez Nuñez', 70001),
+(57, 56, '78=98', '0+', '76', '34', 'jola', 'etable', '2020-04-21 15:00:24', 'Roberto administrador', 1234),
+(58, 56, '78=98', '0+', '76', '34', 'hla', 'etable', '2020-04-21 15:06:12', 'Pedro Paulo', 99999999);
 
 -- --------------------------------------------------------
 
@@ -259,6 +251,7 @@ CREATE TABLE `tblpatient` (
   `PatientAdd` mediumtext DEFAULT NULL,
   `PatientAge` int(10) DEFAULT NULL,
   `fnacimiento` date NOT NULL,
+  `fsalida` date NOT NULL,
   `PatientMedhis` mediumtext DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `habitacion` text DEFAULT NULL,
@@ -275,10 +268,9 @@ CREATE TABLE `tblpatient` (
 -- Volcado de datos para la tabla `tblpatient`
 --
 
-INSERT INTO `tblpatient` (`id`, `Docid`, `PatientName`, `PatientContno`, `cedula`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `fnacimiento`, `PatientMedhis`, `password`, `habitacion`, `piso`, `cama`, `ingreso`, `CreationDate`, `regDate`, `UpdationDate`, `datesalida`) VALUES
-(42, 41, 'Mauricio', 2, 0, 'mauricio@gmail.com', 'hombre', 'casa azul', 22, '0000-00-00', 'no', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C2-H1-P1', '', '2020-04-14 16:27:54', '2020-04-14 16:27:54', NULL, '0000-00-00'),
-(45, 1, 'Bryan', 4, 0, 'paciente04@paciente.cr', 'hombre', 'San josé', 20, '0000-00-00', 'Ex-paciente Ortopedía', 'e10adc3949ba59abbe56e057f20f883e', 'H6', 'P6', '(C6)(P6)(H6)', '', '2020-04-16 23:08:43', '2020-04-16 23:08:43', NULL, '0000-00-00'),
-(51, 49, 'Mauricio', 1, 701920234, 'mau@gmail.com', 'hombre', 'hola', 22, '2020-01-01', 'll;', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C1-H1-P1', 'we', '2020-04-19 21:40:18', '2020-04-19 21:40:18', '2020-04-19 21:42:47', '2020-04-19');
+INSERT INTO `tblpatient` (`id`, `Docid`, `PatientName`, `PatientContno`, `cedula`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `fnacimiento`, `fsalida`, `PatientMedhis`, `password`, `habitacion`, `piso`, `cama`, `ingreso`, `CreationDate`, `regDate`, `UpdationDate`, `datesalida`) VALUES
+(56, 1, 'Mauricio Hernadez Ruiz', 1001, 70123, 'mau@hweb.com', 'Mujer', 'Heredia frente ferreteria brenez', NULL, '2015-02-06', '2020-04-21', 'modifico', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C1-H1-P1', 'Accidente de rancito, daño en brazo izquierdo', '2020-04-21 02:12:47', '2020-04-21 02:12:47', '2020-04-21 13:44:25', '0000-00-00'),
+(58, 1, 'Mauricio Hernadez Ruiz', 1, 1234, 'ma@hweb.com', 'hombre', 'hoola', NULL, '1995-08-23', '2020-04-21', 'hola', 'e10adc3949ba59abbe56e057f20f883e', 'H1', 'P1', 'C2-H1-P1', 'delicado', '2020-04-21 15:11:27', '2020-04-21 15:11:27', '2020-04-21 15:12:18', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -303,39 +295,8 @@ CREATE TABLE `userlog` (
 INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (123, 30, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 04:18:09', NULL, 1),
 (124, NULL, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:16:15', NULL, 0),
-(125, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:16:26', NULL, 1),
-(126, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:44:30', NULL, 0),
-(127, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 05:44:35', NULL, 1),
-(128, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 07:04:18', NULL, 1),
-(129, NULL, 'r@hospital.com', 0x3a3a3100000000000000000000000000, '2020-04-14 08:31:51', NULL, 0),
-(130, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 08:32:06', NULL, 1),
-(131, NULL, 'paulmora@hospital.ps.com', 0x3a3a3100000000000000000000000000, '2020-04-14 10:11:39', NULL, 0),
-(132, 34, 'prueba@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 10:11:49', NULL, 1),
-(133, 35, 'r@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-14 13:37:17', NULL, 1),
-(134, 38, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 14:59:16', NULL, 1),
-(135, 41, 'r@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 16:25:45', NULL, 1),
-(136, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-14 16:29:23', NULL, 1),
-(137, NULL, 'mauricio@gmail.cojm', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:41', NULL, 0),
-(138, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-15 17:08:51', NULL, 1),
-(139, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:02:33', NULL, 1),
-(140, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 21:49:50', NULL, 1),
-(141, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:48:55', NULL, 0),
-(142, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:17', NULL, 0),
-(143, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:25', NULL, 0),
-(144, NULL, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:51', NULL, 0),
-(145, 44, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:49:59', NULL, 1),
-(146, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:50:31', NULL, 0),
-(147, NULL, 'mauricio@gmail.co', 0x3a3a3100000000000000000000000000, '2020-04-16 22:50:40', NULL, 0),
-(148, 44, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-16 22:52:24', NULL, 1),
-(149, 42, 'mauricio@gmail.coM', 0x3a3a3100000000000000000000000000, '2020-04-19 16:25:32', NULL, 1),
-(150, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 17:03:40', NULL, 1),
-(151, NULL, 'hila@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-19 17:11:21', NULL, 0),
-(152, 47, 'hola@gmail.comm', 0x3a3a3100000000000000000000000000, '2020-04-19 17:11:35', NULL, 1),
-(153, 48, 'hola@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 17:13:20', NULL, 1),
-(154, 42, 'mauricio@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 17:59:37', NULL, 1),
-(155, 49, 'mau@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 19:44:47', NULL, 1),
-(156, 49, 'mau@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 21:37:33', NULL, 1),
-(157, 51, 'mau@gmail.com', 0x3a3a3100000000000000000000000000, '2020-04-19 21:40:30', NULL, 1);
+(165, 56, 'mau@hweb.com', 0x3a3a3100000000000000000000000000, '2020-04-21 15:08:29', NULL, 1),
+(166, 58, 'ma@hweb.com', 0x3a3a3100000000000000000000000000, '2020-04-21 15:11:53', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -441,25 +402,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=275;
 
 --
 -- AUTO_INCREMENT de la tabla `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `habitacion`
@@ -477,19 +438,19 @@ ALTER TABLE `tblcontactus`
 -- AUTO_INCREMENT de la tabla `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpatient`
 --
 ALTER TABLE `tblpatient`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

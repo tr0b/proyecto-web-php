@@ -149,7 +149,7 @@ while($row=mysqli_fetch_array($ret))
 
 <div class="form-group">
 															<label for="doctorname">
-																 Nombre del Doctor
+																 Nombre completo del doctor
 															</label>
 					<input type="text" name="docname" class="form-control"  placeholder="Nombre" required="true">
 														</div>
@@ -170,9 +170,9 @@ while($row=mysqli_fetch_array($ret))
 	
 <div class="form-group">
 									<label for="fess">
-														Cedula Medica no#
+														Número de cédula
 															</label>
-					<input type="number" id="contactno" name="contactno" class="form-control"  placeholder="id" required="true"
+					<input type="number" id="contactno" name="contactno" class="form-control"  placeholder="cédula" required="true"
 					onBlur="checkemailAvailability7()">
 <span id="cedula-availability-status"></span>
 														</div>

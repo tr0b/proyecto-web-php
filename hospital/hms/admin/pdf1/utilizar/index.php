@@ -21,7 +21,7 @@ function Header()
     $this->Cell(50,8,'Nombre',1,0,'C',0);
     $this->Cell(20,8,'# Documento',1,0,'C',0);
     $this->Cell(50,8,'Email',1,0,'C',0);
-    $this->Cell(20,8,'Edad',1,0,'C',0);
+    $this->Cell(20,8,'Cedula',1,0,'C',0);
 
      $this->Cell(33,8,'Fecha de registro',1,1,'C',0);
 
@@ -63,7 +63,7 @@ while ($row=$resultado->fetch_assoc()) {
 
     $pdf->Cell(20,10,$row['PatientContno'],1,0,'C',0);
     $pdf->Cell(50,10,$row['PatientEmail'],1,0,'C',0);
-    $pdf->Cell(20,10,$row['PatientAge'],1,0,'C',0);
+    $pdf->Cell(20,10,$row['cedula'],1,0,'C',0);
   
     $pdf->Cell(33,10,$row['regDate'],1,1,'C',0);
 

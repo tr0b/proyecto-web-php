@@ -126,6 +126,11 @@ $num_rows2 = mysqli_num_rows($sql);
 					</div>
 				</div>
 			</div>
+
+
+
+
+			
 			<!-- start: FOOTER -->
 	
 			<!-- end: FOOTER -->

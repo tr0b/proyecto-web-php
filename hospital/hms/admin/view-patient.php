@@ -171,7 +171,15 @@ while ($row=mysqli_fetch_array($ret)) {
       
  
   </tr>
+ <th>Fecha de salida</th>
+       <td><?php  echo $row['fsalida'];?></td>
+   
+    
+         <th> </th>
+         <td><?php  echo $row[''];?></td>
+      
  
+  </tr>
 <?php }?>
 </table>
 <?php  

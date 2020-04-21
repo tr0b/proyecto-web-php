@@ -4,11 +4,24 @@ error_reporting(0);
 include('include/config.php');
 include('include/checklogin.php');
 check_login();
+if(isset($_GET['cancel']))
+		  {
+mysqli_query($con,"update appointment set doctorStatus='0' where id ='".$_GET['id']."'");
+                  $_SESSION['msg']="Cita cancelada !!";
+		  }
+
+if(isset($_GET['del']))
+		  {
+		          mysqli_query($con,"delete from appointment where id = '".$_GET['id']."'");
+                  $_SESSION['msg']="datos eliminados !!";
+		  }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Patients | Appointment History</title>
+		<title>Doctor | Asignaciones medicas</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -39,14 +52,14 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h3><strong>ADMINISTRADOR | TABLERO</strong> </h3>	
+									<h1 class="mainTitle">Doctor  | Asignaciones medicas</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Pacientes </span>
+										<span>Doctor </span>
 									</li>
 									<li class="active">
-										<span>Historial de citass</span>
+										<span>Asignaciones medicas</span>
 									</li>
 								</ol>
 							</div>
@@ -63,24 +76,32 @@ check_login();
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
 									<table class="table table-hover" id="sample-table-1">
 										<thead>
-											<img src="ico/ico6.ico">
 											<tr>
 												<th class="center">#</th>
-												<th class="hidden-xs">Nombre del doctor</th>
-												<th>Nombre del paciente</th>
-												<th>	Especialización</th>
-												<th>Cuota de consultoría</th>
-												<th>Fecha / hora de cita</th>
-												<th> cita	Fecha de creación de la cita</th>
-												<th>Estado actual</th>
-												<th>	Acción
-</th>
+												<th class="hidden-xs">Nombre del Paciente</th>
+												<th class="hidden-xs">Doctor id </th>
+													<th> Cedula del paciente </th>
+												<th class="hidden-xs">Especializacion </th>
+												
+									
+										
+											
+												<th> Fecha / hora del Internado </th>
+												<th> Fecha de creación del Internado </th>
+													<th> estado</th>
+										
+										
+													<th> Accion </th>
+										
+												
 												
 											</tr>
+											<div class="visible-md visible-lg hidden-sm hidden-xs">
+             
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select doctors.doctorName as docname,tblpatient.PatientName	 as pname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId join tblpatient on tblpatient.id=appointment.userId ");
+$sql=mysqli_query($con,"select * from appointment");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
@@ -88,70 +109,32 @@ while($row=mysqli_fetch_array($sql))
 
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
-												<td class="hidden-xs"><?php echo $row['docname'];?></td>
-												<td class="hidden-xs"><?php echo $row['pname'];?></td>
-												<td><?php echo $row['doctorSpecialization'];?></td>
-												<td><?php echo $row['consultancyFees'];?></td>
-												<td><?php echo $row['appointmentDate'];?> / <?php echo
-												 $row['appointmentTime'];?>
+												<td class="hidden-xs"><?php echo $row['patname'];?>
+												<td class="hidden-xs"><?php echo $row['doctorId'];?></td>
+												
+												
+												
+												<td><?php echo $row['cedula'];?></td>
+	<td><?php echo $row['doctorSpecialization'];?></td>
+												
+												<td><?php echo$row['appointmentTime'];?>
 												</td>
 												<td><?php echo $row['postingDate'];?></td>
-												<td>
-<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
-{
-	echo "Active";
-}
-if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
-{
-	echo "Cancelar por paciente";
-}
 
-if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
-{
-	echo "Cancelar por la doctora";
-}
-
-
-
-												?></td>
+												<td><?php echo $row['estado'];?></td>
+</td>
+			</td>
 												<td >
+
+
+
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
-							<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
-{ 
-
-													
-echo "Aún no hay acción";
-	 } else {
-
-		echo "Cancelado";
-		} ?>
-												</div>
-												<div class="visible-xs visible-sm hidden-md hidden-lg">
-													<div class="btn-group" dropdown is-open="status.isopen">
-														<button type="button" class="btn btn-primary btn-o btn-sm dropdown-toggle" dropdown-toggle>
-															<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
-														</button>
-														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
-															<li>
-																<a href="#">
-																	Edit
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	Share
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	Remove
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div></td>
+			
+						<a href="appointment-history.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('¿Estás seguro de que quieres eliminar?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>						</div>
+										
 											</tr>
-											
+															
+
 											<?php 
 $cnt=$cnt+1;
 											 }?>

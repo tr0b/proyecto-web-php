@@ -50,7 +50,7 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-								<h3><strong>ADMINISTRADOR | AGREGAR ESPECIALIZACIÓN</strong> </h3>	
+							
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -75,7 +75,7 @@ if(isset($_GET['del']))
 											<div class="panel panel-white">
 												<div class="panel-heading">
 
-													<h5 class="panel-title">Especializacion del Doctor</h5>
+													<h5 class="panel-title">Especialización del doctor</h5>
 												</div>
 
 												<div class="panel-body">
@@ -84,9 +84,9 @@ if(isset($_GET['del']))
 													<form role="form" name="dcotorspcl" method="post" >
 														<div class="form-group">
 															<label for="exampleInputEmail1">
-															Especializacion del Doctor
+															Especialización del doctor
 															</label>
-							<input type="text" name="doctorspecilization" class="form-control"  placeholder="Ingrese una especializacion ">
+							<input type="text" name="doctorspecilization" class="form-control"  placeholder="Ingrese una especialización ">
 														</div>	
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
@@ -113,7 +113,7 @@ if(isset($_GET['del']))
 										<br>
 										<br>
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Administrar  <span class="text-bold">Especializacion del Doctor</span></h5>
+									<h5 class="over-title margin-bottom-15"><h5><strong>Administrar </strong>especialización del doctor</h5>
 									
 									<table class="table table-hover" id="sample-table-1">
 										<thead>

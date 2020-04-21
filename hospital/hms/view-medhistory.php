@@ -142,7 +142,11 @@ while ($row=mysqli_fetch_array($ret)) {
     <th>Género</th>
     <td><?php  echo $row['PatientGender'];?></td>
     <th>  Edad del paciente</th>
-    <td><?php  echo $row['PatientAge'];?></td>
+     <td><?php 
+  $birth= new DateTime($row['fnacimiento']);
+  $today = new DateTime('today');
+  echo $birth->diff($today)->y;
+  ?></td>
   </tr>
   <tr>
     
@@ -163,6 +167,7 @@ while ($row=mysqli_fetch_array($ret)) {
       
  
   </tr>
+ 
  
   
   <tr>
@@ -187,7 +192,16 @@ while ($row=mysqli_fetch_array($ret)) {
       
  
   </tr>
+  <tr>
+    
+    <th>Fecha de salida</th>
+    <td><?php  echo $row['fsalida'];?></td>
+      <th></th>
+    <td><?php  echo $row[''];?></td>
+   
+      
  
+  </tr>
 <?php }?>
 </table>
 <?php  

@@ -63,10 +63,10 @@ check_login();
 <th class="center">#</th>
 <th>	Nombre del paciente</th>
 <th>Número de contacto del paciente</th>
-<th>Sexo del paciente</th>
+<th>Cedula del paciente</th>
 <th>Fecha de creación</th>
 <th>Fecha de actualización</th>
-<th>Habitacion</th>
+
 
 <th>Acción</th>
 </tr>
@@ -83,10 +83,10 @@ while($row=mysqli_fetch_array($sql))
 <td class="center"><?php echo $cnt;?>.</td>
 <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 <td><?php echo $row['PatientContno'];?></td>
-<td><?php echo $row['PatientGender'];?></td>
+<td><?php echo $row['cedula'];?></td>
 <td><?php echo $row['CreationDate'];?></td>
 <td><?php echo $row['UpdationDate'];?>
-<td><?php echo $row['habitacion'];?>
+
 </td>
 <td>
 

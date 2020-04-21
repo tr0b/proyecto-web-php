@@ -57,7 +57,8 @@ check_login();
 <img width="400" height="300" src="ico/7.jpg">
 <div class="form-group">
 <label for="doctorname">
-Buscar Por Nombre / Cedula no.
+	<h4 class="over-title margin-bottom-15"><h4><strong>Buscar por nombre / número de cédula / número de documento
+</strong> </span></h4>
 </label>
 <input type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
 </div>
@@ -81,7 +82,7 @@ $sdata=$_POST['searchdata'];
 <th class="center">#</th>
 <th>Nombre del Paciente</th>
 <th>Documento del paciente</th>
-<th>Género del Paciente </th>
+<th>Cédula del paciente </th>
 <th>Fecha de Creación</th>
 <th>Fecha de Actualización</th>
 <th>Accion</th>
@@ -89,7 +90,7 @@ $sdata=$_POST['searchdata'];
 </thead>
 <tbody>
 <?php
-$sql=mysqli_query($con,"select * from tblpatient where PatientName like '%$sdata%'|| PatientContno like '%$sdata%' ||  PatientEmail  like '%$sdata%'");
+$sql=mysqli_query($con,"select * from tblpatient where PatientName like '%$sdata%'|| PatientContno like '%$sdata%' ||  PatientEmail  like '%$sdata%' ||  cedula  like '%$sdata%'");
 $num=mysqli_num_rows($sql);
 if($num>0){
 $cnt=1;
@@ -100,7 +101,7 @@ while($row=mysqli_fetch_array($sql))
 <td class="center"><?php echo $cnt;?>.</td>
 <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 <td><?php echo $row['PatientContno'];?></td>
-<td><?php echo $row['PatientGender'];?></td>
+<td><?php echo $row['cedula'];?></td>
 <td><?php echo $row['CreationDate'];?></td>
 <td><?php echo $row['UpdationDate'];?>
 </td>

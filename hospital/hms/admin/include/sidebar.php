@@ -48,6 +48,16 @@
 											<span class="title"> Administrar médicos </span>
 										</a>
 									</li>
+									<li>
+										<a href="book-appointment.php">
+											<span class="title"> Añadir tarea de medico </span>
+										</a>
+									</li>
+									<li>
+										<a href="appointment-history.php">
+											<span class="title"> Ver tarea de medico </span>
+										</a>
+									</li>
 									
 								</ul>
 								</li>
@@ -181,6 +191,19 @@
 										</div>
 										<div class="item-inner">
 											<span class="title"> <strong>Búsqueda de pacientes</strong> </span>
+										</div>
+									</div>
+								</a>
+							</li>
+								</li>
+								<li>
+								<a href="doctorsearch.php">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-search"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> <strong>Búsqueda de doctor</strong> </span>
 										</div>
 									</div>
 								</a>

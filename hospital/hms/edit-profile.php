@@ -13,13 +13,13 @@ $PatientContno=$_POST['PatientContno'];
 
 $cedula=$_POST['cedula'];
 $fnacimiento=$_POST['fnacimiento'];
-$PatientAge=$_POST['PatientAge'];	
+	
 $PatientGender=$_POST['PatientGender'];
 $PatientEmail=$_POST['PatientEmail'];
 
 
 
-$sql=mysqli_query($con,"Update tblpatient set PatientName='$PatientName',PatientContno='$PatientContno',cedula='$cedula',fnacimiento='$fnacimiento',PatientAge='$PatientAge',PatientGender='$PatientGender',PatientEmail='$PatientEmail' where id='".$_SESSION['id']."'");
+$sql=mysqli_query($con,"Update tblpatient set PatientName='$PatientName',PatientContno='$PatientContno',cedula='$cedula',fnacimiento='$fnacimiento',PatientGender='$PatientGender',PatientEmail='$PatientEmail' where id='".$_SESSION['id']."'");
 if($sql)
 {
 $msg="
@@ -144,12 +144,7 @@ while($data=mysqli_fetch_array($sql))
 														</div>
 														
 
-														<div class="form-group">
-															<label for="PatientAge">
-														Edad
-															</label>
-		<input type="text" name="PatientAge" readonly="readonly"  class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['PatientAge']);?>" >
-														</div>
+														
 
 														
 
@@ -157,7 +152,7 @@ while($data=mysqli_fetch_array($sql))
 															<label for="fnacimiento">
 															Fecha de nacimiento
 															</label>
-		<input type="text" name="fnacimiento" readonly="readonly"  class="form-control"  readonly="readonly"  required="required"  value="<?php echo htmlentities($data['fnacimiento']);?>" >
+		<input type="date" name="fnacimiento"   class="form-control"  required="required"  value="<?php echo htmlentities($data['fnacimiento']);?>" >
 														</div>
 
 <div class="form-group">

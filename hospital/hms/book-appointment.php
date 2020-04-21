@@ -9,16 +9,17 @@ if(isset($_POST['submit']))
 {
 $specilization=$_POST['Doctorspecialization'];
 $doctorid=$_POST['doctor'];
-$userid=$_SESSION['id'];
+$patname=$_POST['patname'];
+$cedula=$_POST['cedula'];
 $fees=$_POST['fees'];
 $appdate=$_POST['appdate'];
 $time=$_POST['apptime'];
-$userstatus=1;
+
 $docstatus=1;
-$query=mysqli_query($con,"insert into appointment(doctorSpecialization,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
+$query=mysqli_query($con,"insert into appointment(doctorSpecialization,doctorId,patname,cedula,consultancyFees,appointmentDate,appointmentTime,doctorStatus) values('$specilization','$doctorid','$patname','$cedula','$fees','$appdate','$time','$docstatus')");
 	if($query)
 	{
-		echo "<script>alert('Su cita reservada con éxito');</script>";
+		echo "<script>alert('asignacion con exito');</script>";
 	}
 
 }
@@ -148,7 +149,22 @@ while($row=mysqli_fetch_array($ret))
 														</div>
 
 
+<div class="form-group">
+	<label for="patname">
 
+		Nombre del paciente
+	</label>
+		<input type="text" id="patname" name="patname" class="form-control"  placeholder="Nombre" required="true">
+
+	</div>
+	<div class="form-group">
+	<label for="cedula">
+
+	Cedula del paciente
+	</label>
+		<input type="text" id="cedula" name="cedula" class="form-control"  placeholder="cedula" required="true">
+
+	</div>
 
 
 														<div class="form-group">

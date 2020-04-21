@@ -85,7 +85,7 @@ while($row=mysqli_fetch_array($sql))
 ?>
 <tr>
 <td class="center"><?php echo $cnt;?>.</td>
-<td><?php echo $row['Cedula'];?></td>
+<td><?php echo $row['cedula'];?></td>
 <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 <td><?php echo $row['PatientContno'];?></td>
 

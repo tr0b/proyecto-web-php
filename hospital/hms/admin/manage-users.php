@@ -63,7 +63,8 @@ if(isset($_GET['del']))
                              <br>
 									<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Administrar <span class="text-bold"> Paciente</span></h5>
+									<h5 class="over-title margin-bottom-15"><h5><strong>Administrar</strong> Paciente</span></h5>
+
 									 <br>
                              <br>
                               <br>
@@ -75,12 +76,12 @@ if(isset($_GET['del']))
 											<tr>
 												<th class="center">#</th>
 												<th>Nombre completo</th>
-												<th>Numero de Documento</th>
+												<th>Número de Documento</th>
 												<th class="hidden-xs">Dirección</th>
-												<th>edad</th>
-												<th>Género</th>
+											
+												<th>Cédula</th>
 												<th>Email </th>
-												<th>	Fecha de creación</th>
+												<th>Fecha de creación</th>
 												<th>Fecha de actualización </th>
 												<th>Acción</th>
 												
@@ -99,9 +100,9 @@ while($row=mysqli_fetch_array($sql))
 												<td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 													<td><?php echo $row['PatientContno'];?></td>
 												<td><?php echo $row['PatientAdd'];?></td>
-												<td><?php echo $row['PatientAge'];?>
+												
 												</td>
-												<td><?php echo $row['PatientGender'];?></td>
+												<td><?php echo $row['cedula'];?></td>
 												<td><?php echo $row['PatientEmail'];?></td>
 												<td><?php echo $row['regDate'];?></td>
 												<td><?php echo $row['updationDate'];?>

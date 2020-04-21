@@ -11,11 +11,13 @@ if(isset($_POST['submit']))
 	$patname=$_POST['patname'];
 $patcontact=$_POST['patcontact'];
 $patemail=$_POST['patemail'];
-$gender=$_POST['gender'];
+
 $pataddress=$_POST['pataddress'];
-$patage=$_POST['patage'];
+
 $medhis=$_POST['medhis'];
-$sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where ID='$eid'");
+$fsalida=$_POST['fsalida'];
+
+$sql=mysqli_query($con,"update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientAdd='$pataddress',PatientMedhis='$medhis',fsalida='$fsalida' where ID='$eid'");
 if($sql)
 {
 echo "<script>alert('Información del paciente actualizada con éxito');</script>";
@@ -107,36 +109,35 @@ Email del paciente
 <input type="email" id="patemail" name="patemail" class="form-control"  value="<?php  echo $row['PatientEmail'];?>" >
 <span id="email-availability-status"></span>
 </div>
-<div class="form-group">
-              <label class="control-label">Género: </label>
-              <?php  if($row['Gender']=="Female"){ ?>
-              <input type="radio" name="gender" id="gender" value="Hombre" checked="true">Hombre
-              <input type="radio" name="gender" id="gender" value="Mujer">Mujer
-              <?php } else { ?>
-              <label>
-              <input type="radio" name="gender" id="gender" value="Hombre" >Hombre
-              <input type="radio" name="gender" id="gender" value="Mujer">mujer
-              </label>
-             <?php } ?>
-            </div>
+
 <div class="form-group">
 <label for="address">
 Dirección del paciente
 </label>
 <textarea name="pataddress" class="form-control" required="true"><?php  echo $row['PatientAdd'];?></textarea>
 </div>
-<div class="form-group">
-<label for="fess">
- Edad del paciente
-</label>
-<input type="text" name="patage" class="form-control"  value="<?php  echo $row['PatientAge'];?>" required="true">
-</div>
+
 <div class="form-group">
 <label for="fess">
 Historial médico
 </label>
 <textarea type="text" name="medhis" class="form-control"  placeholder="Enter Patient Medical History(if any)" required="true"><?php  echo $row['PatientMedhis'];?></textarea>
 </div>	
+
+<div class="form-group">
+<label for="fsalida">
+Fecha de salida
+</label>
+	<input type="date" name="fsalida"  class="form-control"  required="true"  value="<?php  echo $row['fsalida'];?>">
+
+<div class="form-group">
+<label for="fsalida">
+Fecha Nacimiento
+</label>
+	<input type="date" name="fnacimiento"  class="form-control"  required="true"  value="<?php  echo $row['fnacimiento'];?>">
+
+
+</div>
 <div class="form-group">
 <label for="fess">
 Fecha de creación

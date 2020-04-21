@@ -14,7 +14,7 @@
 		$patemail=$_POST['patemail'];
 		$gender=$_POST['gender'];
 		$pataddress=$_POST['pataddress'];
-		$patage=$_POST['patage'];
+	;
 		$fnacimiento=$_POST['fnacimiento'];
 		$medhis=$_POST['medhis'];
 		$password=md5($_POST['password']);
@@ -23,7 +23,7 @@
 		$piso=$_POST['piso'];
 		$cama=$_POST['cama'];
 				$ingreso=$_POST['ingreso'];
-		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,cedula,PatientEmail,PatientGender,PatientAdd,PatientAge,fnacimiento,PatientMedhis,password,habitacion,piso,cama,ingreso) values('$docid','$patname','$PatientContno','$cedula','$patemail','$gender','$pataddress','$patage','$fnacimiento','$medhis','$password','$habitacion','$piso','$cama','$ingreso')");
+		$sql=mysqli_query($con,"insert into tblpatient(Docid,PatientName,PatientContno,cedula,PatientEmail,PatientGender,PatientAdd,fnacimiento,PatientMedhis,password,habitacion,piso,cama,ingreso) values('$docid','$patname','$PatientContno','$cedula','$patemail','$gender','$pataddress','$fnacimiento','$medhis','$password','$habitacion','$piso','$cama','$ingreso')");
 		if($sql)
 {
 	echo "<script>alert('Registrado exitosamente.');</script>";
@@ -200,14 +200,14 @@ error:function (){}
 	<div class="form-group">
 	<label for="doctorname">
 
-		Nombre del paciente
+		Nombre completo del paciente
 	</label>
 		<input type="text" id="patname" name="patname" class="form-control"  placeholder="Nombre" required="true">
 
 	</div>
 	<div class="form-group">
 									<label for="fess">
-																Numero de Documento del Paciente
+																Número de documento del Paciente
 															</label>
 <input type="number" id="PatientContno" name="PatientContno" class="form-control"  placeholder="Documento" required="true" onBlur="checkemailAvailability2()">
 <span id="document-availability-status"></span>
@@ -215,9 +215,9 @@ error:function (){}
 
 <div class="form-group">
 									<label for="fess">
-																Cedula del paciente
+																Número de cédula del paciente
 															</label>
-<input type="number" id="cedula" name="cedula" class="form-control"  placeholder="cedula" required="true" onBlur="checkemailAvailability22()">
+<input type="number" id="cedula" name="cedula" class="form-control"  placeholder="Cédula" required="true" onBlur="checkemailAvailability22()">
 <span id="emailc-availability-status"></span>
 </div>
 
@@ -231,7 +231,7 @@ error:function (){}
 									<label for="fess">
 																Correo del paciente
 															</label>
-<input type="email" id="PatientEmail" name="patemail" class="form-control"  placeholder="Email" required="true" onBlur="checkemailAvailability()">
+<input type="email" id="PatientEmail" name="patemail" class="form-control"  placeholder="Correo" required="true" onBlur="checkemailAvailability()">
 <span id="email-availability-status"></span>
 </div>
 
@@ -267,16 +267,11 @@ Motivo de ingreso
 <textarea name="ingreso" class="form-control"  placeholder="moitvo de ingreso" required="true"></textarea>
 </div>
 
-<div class="form-group">
-<label for="fess">
-	Edad del paciente
-</label>
-<input type="number" name="patage" class="form-control"  placeholder="Ingrese la edad del paciente" required="true">
-</div>
+
 
 <div class="form-group">
 <label for="fnacimiento">
-Fecha dnacimintp
+Fecha dnaciminto
 </label>
 	<input type="date" name="fnacimiento" step="1" min="1800-01-01" max="2037-12-31" value="2020-01-01" class="form-control"  required="true">
 

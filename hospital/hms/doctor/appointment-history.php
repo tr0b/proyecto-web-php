@@ -13,7 +13,7 @@ mysqli_query($con,"update appointment set doctorStatus='0' where id ='".$_GET['i
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | Historial del Internado</title>
+		<title>Doctor | Asignaciones medicas</title>
 		
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -44,14 +44,14 @@ mysqli_query($con,"update appointment set doctorStatus='0' where id ='".$_GET['i
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor  | Historial del Internado</h1>
+									<h1 class="mainTitle">Doctor  | Asignaciones medicas</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
 										<span>Doctor </span>
 									</li>
 									<li class="active">
-										<span>Historial del Internado</span>
+										<span>Asignaciones medicas</span>
 									</li>
 								</ol>
 							</div>
@@ -73,17 +73,21 @@ mysqli_query($con,"update appointment set doctorStatus='0' where id ='".$_GET['i
 												<th class="hidden-xs">Nombre del Paciente</th>
 												
 												<th> Especializacion </th>
-												<th> Tarifa de consultoría </th>
+												<th> Cedula del paciente </th>
 												<th> Fecha / hora del Internado </th>
 												<th> Fecha de creación del Internado </th>
-												<th> Estado actual </th>
-												<th> Acción </th>
+															<th>estado</th>
+													<th> Accion </th>
+										
+												
 												
 											</tr>
+											<div class="visible-md visible-lg hidden-sm hidden-xs">
+             
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."'");
+$sql=mysqli_query($con,"select* from appointment where appointment.doctorId='".$_SESSION['id']."'");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
@@ -91,21 +95,29 @@ while($row=mysqli_fetch_array($sql))
 
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
-												<td class="hidden-xs"><?php echo $row['fname'];?></td>
+												<td class="hidden-xs"><?php echo $row['patname'];?></td>
 												<td><?php echo $row['doctorSpecialization'];?></td>
-												<td><?php echo $row['consultancyFees'];?></td>
+												<td><?php echo $row['cedula'];?></td>
 												<td><?php echo $row['appointmentDate'];?> / <?php echo
 												 $row['appointmentTime'];?>
 												</td>
 												<td><?php echo $row['postingDate'];?></td>
+												<td><?php echo $row['estado'];?></td>
 												<td>
+													  
+                     <div class="visible-md visible-lg hidden-sm hidden-xs">
+							<a href="editasig.php?id=<?php echo $row['id'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+													
+	
+												</div>     
+  
 <?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
 {
 	echo "Active";
 }
 if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
 {
-	echo "Cancel by Patient";
+	echo "";
 }
 
 if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
@@ -122,11 +134,12 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 { ?>
 
 													
-	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
+	
 	<?php } else {
 
-		echo "Canceled";
+		echo "";
 		} ?>
+
 												</div>
 												</td>
 											</tr>
